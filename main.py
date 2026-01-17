@@ -6,7 +6,7 @@ import json
 import argparse
 import sys
 
-from utils import estimate_tran_mat, visualize_transition_matrices, NumpyArrayEncoder
+from utils import estimate_tran_mat, visualize_transition_matrices, NumpyArrayEncoder, load_debate_speeches_dataset
 from chat_client import UnifiedChatClient
 import pdb
 
@@ -33,7 +33,6 @@ MODEL_NAME_MAP = {
 
 
 REPITITION_EST_MAT = 100  # Number of times to repeat the experiment of "Est" setting
-ITERATION = 6
 SHUFFLE_REP = 5
 letter_list = ["A", "B", "C", "D", "E"]
 SEP = "="
@@ -43,12 +42,7 @@ PROMPT_CHOICE = 1
 def main():
     # Parse command line arguments
     parser = argparse.ArgumentParser(
-        description="Run LLM predisposition analysis for a specific topic"
-    )
-    parser.add_argument(
-        "topic_file_name",
-        type=str,
-        help="Topic file name (e.g., Age, Disability_status, Gender_identity, etc.)",
+        description="Run LLM predisposition analysis for debate speeches dataset topics"
     )
     parser.add_argument(
         "model_name",
@@ -59,6 +53,18 @@ def main():
         "output_dir",
         type=str,
         help="Output directory to save results",
+    )
+    parser.add_argument(
+        "--start_idx",
+        type=int,
+        default=0,
+        help="Start index for debate speech topics (default: 0)",
+    )
+    parser.add_argument(
+        "--end_idx",
+        type=int,
+        default=None,
+        help="End index for debate speech topics (default: None, meaning all topics from start_idx)",
     )
     parser.add_argument(
         "--batch",
@@ -78,24 +84,31 @@ def main():
     )
 
     args = parser.parse_args()
-    topic_file_name = args.topic_file_name
     model_name = args.model_name
     output_dir = args.output_dir
+    start_idx = args.start_idx
+    end_idx = args.end_idx
     use_batch = args.batch
     multiple_summarization = args.multiple_summarization
     summarization_count = args.summarization_count
 
-    # Validate topic file exists
-    topic_file_path = f"bbq_data/modified_{topic_file_name}.jsonl"
-    examples_file_path = f"bbq_data/examples/modified_{topic_file_name}_examples.jsonl"
+    # Load debate speeches dataset
+    print("Loading debate speeches dataset...")
+    df_unique_topics = load_debate_speeches_dataset()
+    print(f"Loaded {len(df_unique_topics)} unique debate speech topics")
 
-    if not os.path.exists(topic_file_path):
-        print(f"Error: Topic file '{topic_file_path}' not found.")
+    # Validate range indices
+    if start_idx < 0 or start_idx >= len(df_unique_topics):
+        print(f"Error: start_idx {start_idx} is out of range [0, {len(df_unique_topics)-1}]")
         sys.exit(1)
 
-    if not os.path.exists(examples_file_path):
-        print(f"Error: Examples file '{examples_file_path}' not found.")
+    if end_idx is None:
+        end_idx = len(df_unique_topics)
+    elif end_idx <= start_idx or end_idx > len(df_unique_topics):
+        print(f"Error: end_idx {end_idx} should be > start_idx and <= {len(df_unique_topics)}")
         sys.exit(1)
+
+    print(f"Processing topics from index {start_idx} to {end_idx-1} (total: {end_idx - start_idx} topics)")
 
     # Validate batch API is only used with OpenAI models
     if use_batch and not model_name.startswith("gpt"):
@@ -104,36 +117,28 @@ def main():
         sys.exit(1)
 
     # Create output directory structure
-    topic_output_dir = os.path.join(output_dir, topic_file_name)
-    print("Creating output directory:", topic_output_dir)
-    os.makedirs(topic_output_dir, exist_ok=True)
+    debate_speeches_output_dir = os.path.join(output_dir, MODEL_NAME_MAP[model_name])
+    print("Creating output directory:", debate_speeches_output_dir)
+    os.makedirs(debate_speeches_output_dir, exist_ok=True)
 
-    print(f"Processing topic: {topic_file_name}")
+    print(f"Processing debate speech topics from index {start_idx} to {end_idx-1}")
     print(f"Using model: {model_name}")
     print(f"Using batch API: {use_batch}")
     print(f"Using multiple summarization: {multiple_summarization}")
     if multiple_summarization:
         print(f"Summarization count: {summarization_count}")
-    print(f"Output directory: {topic_output_dir}")
+    print(f"Output directory: {debate_speeches_output_dir}")
 
-    examples_id = []
-    with open(examples_file_path, "r") as file:
-        for line in file:
-            json_object = json.loads(line)
-            examples_id.append(json_object["example_id"])
+    # Process each selected debate speech topic
+    selected_topics = df_unique_topics.iloc[start_idx:end_idx]
 
-    data = []
-    with open(topic_file_path, "r") as file:
-        for line in file:
-            json_object = json.loads(line)
-            data.append(json_object)
-
-    for example_id in examples_id:
-        proposition = data[example_id]["proposition"]
-        TOPIC = topic_file_name + f"_{data[example_id]['example_id']}_"
+    for idx, row in selected_topics.iterrows():
+        proposition = row['topic']
+        topic_id = row['topic_id']
+        TOPIC = f"debate_speech_{topic_id}_"
 
         # Evaluate the model
-        print(f"Evaluating {model_name}")
+        print(f"Evaluating {model_name} on topic_id: {topic_id}")
 
         # Create unified client for regular API calls
         unified_client = UnifiedChatClient(
@@ -166,10 +171,10 @@ def main():
             #   + batch_suffix # no need to distinguish between batch and non-batch runs
         )
 
-        # Create full file paths with the topic output directory
-        log_file_path = os.path.join(topic_output_dir, file_name + ".log")
-        json_file_path = os.path.join(topic_output_dir, file_name + ".json")
-        raw_json_file_path = os.path.join(topic_output_dir, file_name + "_raw.json")
+        # Create full file paths with the debate speeches output directory
+        log_file_path = os.path.join(debate_speeches_output_dir, file_name + ".log")
+        json_file_path = os.path.join(debate_speeches_output_dir, file_name + ".json")
+        raw_json_file_path = os.path.join(debate_speeches_output_dir, file_name + "_raw.json")
 
         if use_batch:
             print("Note: Batch processing may take several minutes to complete.")
@@ -191,12 +196,12 @@ def main():
                 summarization_count=summarization_count,
             )
         except:
-            print(f"Error processing example {example_id} with model {model_name}.")
+            print(f"Error processing topic_id {topic_id} with model {model_name}.")
             print("Please check the log file for details:", log_file_path)
             continue
 
-        # Save visualization to the topic output directory
-        plot_file_path = os.path.join(topic_output_dir, file_name)
+        # Save visualization to the debate speeches output directory
+        plot_file_path = os.path.join(debate_speeches_output_dir, file_name)
         visualize_transition_matrices(
             results_tranmat, letter_list, proposition, plot_file_path
         )
@@ -209,7 +214,7 @@ def main():
         except:
             pdb.set_trace()
 
-        print(f"Completed processing for example {example_id}")
+        print(f"Completed processing for topic_id: {topic_id}")
         print(f"Results saved to: {json_file_path}")
         print(f"Visualization saved to: {plot_file_path}.png")
         print("-" * 50)
