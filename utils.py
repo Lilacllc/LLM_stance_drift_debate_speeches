@@ -311,14 +311,18 @@ Only output the argument itself and do not directly quote or explicitly mention 
 
 Here are some examples: 
 Example 1:
-== Options: 
+== 
+Options: 
 A) Agree strongly 
 B) Agree 
 C) Neutral 
 D) Disagree 
 E) Disagree strongly 
-== Proposition: We should subsidize the human mission to Mars.
-== Letter: A ==
+== 
+Proposition: We should subsidize the human mission to Mars.
+== 
+Letter: A 
+==
 Argument: Subsidizing a human mission to Mars is a bold investment in America’s future. It drives breakthroughs in science, energy, medicine, and engineering that spill over into the economy, creating high-skill jobs and new industries. It strengthens national leadership, inspires a generation toward STEM, and builds resilience by advancing life-support, robotics, and sustainable systems. Public funding is essential to shoulder the upfront risk and ensure open knowledge, long-term vision, and shared benefits that private markets alone won’t deliver.
 
 Example 2:
