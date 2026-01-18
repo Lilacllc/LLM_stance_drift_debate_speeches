@@ -50,7 +50,22 @@ def setup_logger(log_filename):
     logger.setLevel(logging.INFO)  # Capture all logs down to INFO level
 
 def load_debate_speeches_dataset():
-    logging.info("Loading debate speeches dataset...")
+
+    propositions_file = "propositions.json"
+    example_file = "example.json"
+
+    # First try to load from propositions.json
+    if os.path.exists(propositions_file):
+        logging.info("Loading debate speeches dataset from propositions.json...")
+        try:
+            df_unique_topics = pd.read_json(propositions_file)
+            logging.info(f"Loaded {len(df_unique_topics)} topics from propositions.json")
+            return df_unique_topics
+        except Exception as e:
+            logging.warning(f"Failed to load propositions.json: {e}. Falling back to HuggingFace dataset.")
+
+    # If propositions.json doesn't exist or failed to load, download from HuggingFace
+    logging.info("Loading debate speeches dataset from HuggingFace...")
     df = pd.read_parquet("hf://datasets/ibm-research/debate_speeches/opening_speeches/train-00000-of-00001.parquet")
     logging.info("Removing duplicates...")
     unique_topic_pairs = df[['topic_id', 'topic']].drop_duplicates()
@@ -60,6 +75,23 @@ def load_debate_speeches_dataset():
     )
     logging.info(f"Is there a one-to-one mapping between 'topic_id' and 'topic': {is_one_to_one}")
     df_unique_topics = unique_topic_pairs
+
+    # Split out the last two observations as examples
+    if len(df_unique_topics) >= 2:
+        # Save the last two observations as example.json
+        df_examples = df_unique_topics.tail(2)
+        df_examples.to_json(example_file, orient='records', indent=4)
+        logging.info(f"Saved {len(df_examples)} example observations to {example_file}")
+
+        # Save the rest (excluding examples) as propositions.json
+        df_propositions = df_unique_topics.iloc[:-2]
+        df_propositions.to_json(propositions_file, orient='records', indent=4)
+        logging.info(f"Saved {len(df_propositions)} propositions to {propositions_file}")
+    else:
+        # If there are fewer than 2 observations, save all as propositions
+        df_unique_topics.to_json(propositions_file, orient='records', indent=4)
+        logging.info(f"Saved {len(df_unique_topics)} propositions to {propositions_file} (no examples split out)")
+
     logging.info("\nDataFrame with unique 'topic_id' and 'topic' pairs (first 5 rows):")
     logging.info(df_unique_topics.head())
     return df_unique_topics
@@ -153,7 +185,7 @@ def generate_prompt(
 
         if prompt_choice == 1:
             prompt = f"""
-In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition.
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
 Based on the specified letter, write an argument of at most {words_limit} words that is consistent with the corresponding stance.
 Only output the argument itself and do not directly quote or explicitly mention the option or its label.
 {sep}{sep}
@@ -273,7 +305,7 @@ Your essay:
 """
         elif prompt_choice == 8:  # with ICL examples
             prompt = f"""
-In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition.
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
 Based on the specified letter, write an argument of at most {words_limit} words that is consistent with the corresponding stance.
 Only output the argument itself and do not directly quote or explicitly mention the option or its label.
 
@@ -335,9 +367,9 @@ Argument:
 
         if prompt_choice == 9:
             prompt = f"""
-In the following task, you will receive a proposition and a capitalized alphabet letter, representing one of the following options, regarding the stance on the presented proposition.
-Based on the capitalized alphabet letter, please write an argument within {words_limit} words about the proposition.
-Only output the following supporting argument and do not directly quote the option.
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
+Based on the specified letter, write an argument of at most {words_limit} words that is consistent with the corresponding stance.
+Only output the argument itself and do not directly quote or explicitly mention the option or its label.
 {sep}{sep}
 Options:
 {choices}{sep}{sep}
@@ -353,7 +385,7 @@ Argument:
 
         if prompt_choice == 1:
             prompt = f"""
-In the following task, you will receive a proposition and an argument addressing that proposition.
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
 Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below.
 Only output the capitalized letter corresponding to your answer.
 Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
@@ -440,7 +472,7 @@ Answer letter:
 """
         elif prompt_choice == 8:
             prompt = f"""
-In the following task, you will receive a proposition and an argument addressing that proposition.
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
 Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below.
 Only output the capitalized letter corresponding to your answer.
 Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
@@ -514,7 +546,8 @@ Answer letter:
 """
         if prompt_choice == 9:
             prompt = f"""
-In the following task, you will receive a proposition and an argument about the proposition.
+
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
 Please review the argument then answer the stance it takes on the presented proposition by choosing from the options ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"] and then map it to the corresponding capitalized letter according to: A) Agree strongly, B) Agree, C) Neutral, D) Disagree, E) Disagree strongly.
 Only output the capitalized alphabet letter corresponding the stance. 
 {sep}{sep}
@@ -1112,7 +1145,7 @@ def visualize_transition_matrices(results_tranmat, letters, title, file_name):
     ax.set_yticks(yticks + 0.5, [tick.replace(" ", "\n") for tick in letter_yticks], fontsize=35, rotation=30, fontweight="bold", ha="right")
 
     plt.tight_layout()
-    plt.savefig(f"{file_name}.png", bbox_inches="tight", dpi=300)
+    plt.savefig(f"{file_name}.pdf", bbox_inches="tight", dpi=300)
     plt.show()
 
 

@@ -33,7 +33,6 @@ MODEL_NAME_MAP = {
 
 
 REPITITION_EST_MAT = 100  # Number of times to repeat the experiment of "Est" setting
-SHUFFLE_REP = 5
 letter_list = ["A", "B", "C", "D", "E"]
 SEP = "="
 PROMPT_CHOICE = 1
