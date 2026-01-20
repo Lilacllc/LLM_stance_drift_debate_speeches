@@ -21,6 +21,7 @@ import pdb
 
 MODEL_NAME_MAP = {
     "gpt-4o-mini": "gpt_4o_mini",
+    "gpt-4.1": "gpt_4_1",
     "gpt-3.5-turbo": "gpt_3_5_turbo",
     "gpt-4o": "gpt_4o",
     "meta-llama/Llama-3-8b-chat-hf": "llama3_8b",
