@@ -82,6 +82,12 @@ def main():
         default=5,
         help="Number of encodings with different shuffled option orders when using multiple summarization (default: 5)",
     )
+    parser.add_argument(
+        "--prompt_choice",
+        type=int,
+        default=1,
+        help="Prompt choice for the experiment (default: 1)",
+    )
 
     args = parser.parse_args()
     model_name = args.model_name
@@ -91,6 +97,7 @@ def main():
     use_batch = args.batch
     multiple_summarization = args.multiple_summarization
     summarization_count = args.summarization_count
+    prompt_choice = args.prompt_choice
 
     # Load debate speeches dataset
     print("Loading debate speeches dataset...")
@@ -127,6 +134,7 @@ def main():
     print(f"Using multiple summarization: {multiple_summarization}")
     if multiple_summarization:
         print(f"Summarization count: {summarization_count}")
+    print(f"Prompt choice: {prompt_choice}")
     print(f"Output directory: {debate_speeches_output_dir}")
 
     # Process each selected debate speech topic
@@ -167,7 +175,7 @@ def main():
             TOPIC
             + MODEL_NAME_MAP[model_name]
             + "_prompt_"
-            + str(PROMPT_CHOICE)
+            + str(prompt_choice)
             #   + batch_suffix # no need to distinguish between batch and non-batch runs
         )
 
@@ -190,7 +198,7 @@ def main():
                 log_filename=log_file_path,
                 max_tokens=200,
                 max_argument_words=100,
-                prompt_choice=PROMPT_CHOICE,
+                prompt_choice=prompt_choice,
                 use_batch=use_batch,
                 multiple_summarization=multiple_summarization,
                 summarization_count=summarization_count,
