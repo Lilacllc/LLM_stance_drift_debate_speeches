@@ -1,0 +1,173 @@
+Start Logging Estimation of the Transition Matrix
+2026-02-03 22:02:48,332 - INFO - Model: <meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8>
+2026-02-03 22:02:48,332 - INFO - prompt choice: <1>
+2026-02-03 22:02:48,332 - INFO - ===================================================
+2026-02-03 22:02:48,332 - INFO - Proposition: We should fight nationalism
+2026-02-03 22:02:48,332 - INFO - ---------------Shuffled_rep: 0----------------
+2026-02-03 22:02:48,332 - INFO - Shuffled letter in decoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:02:48,332 - INFO - Task: decoding
+2026-02-03 22:02:48,332 - INFO - Given letter: <A>
+2026-02-03 22:02:48,332 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
+Based on the specified letter, write an argument of at most 100 words that is consistent with the corresponding stance.
+Only output the argument itself and do not directly quote or explicitly mention the option or its label.
+==
+Options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Proposition: We should fight nationalism
+==
+Letter: A
+==
+Argument:
+
+2026-02-03 22:02:49,761 - INFO - Given opinion: Agree strongly
+2026-02-03 22:02:49,762 - INFO - Generated argument: Nationalism has been a divisive force throughout history, pitting groups against one another and fueling conflict. By fighting nationalism, we can promote a more inclusive and equitable society where people are judged on their character, not their nationality. This shift in perspective can foster global cooperation and understanding, allowing us to tackle pressing issues like climate change and economic inequality more effectively. Embracing a more cosmopolitan worldview can lead to a more peaceful and prosperous world for all, making it a crucial step towards a brighter future. Global unity is essential now.
+2026-02-03 22:02:49,762 - INFO - Job: encoding
+2026-02-03 22:02:49,762 - INFO - Shuffled letter in encoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:02:49,762 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
+Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below.
+Only output the capitalized letter corresponding to your answer.
+Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+==
+Proposition: We should fight nationalism
+==
+Argument: Nationalism has been a divisive force throughout history, pitting groups against one another and fueling conflict. By fighting nationalism, we can promote a more inclusive and equitable society where people are judged on their character, not their nationality. This shift in perspective can foster global cooperation and understanding, allowing us to tackle pressing issues like climate change and economic inequality more effectively. Embracing a more cosmopolitan worldview can lead to a more peaceful and prosperous world for all, making it a crucial step towards a brighter future. Global unity is essential now.
+==
+Please choose from the following options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Answer letter: 
+
+2026-02-03 22:02:50,024 - INFO - Top choice (answer): <To>
+2026-02-03 22:02:50,024 - INFO - ---------------Shuffled_rep: 1----------------
+2026-02-03 22:02:50,024 - INFO - Shuffled letter in decoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:02:50,024 - INFO - Task: decoding
+2026-02-03 22:02:50,024 - INFO - Given letter: <A>
+2026-02-03 22:02:50,025 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
+Based on the specified letter, write an argument of at most 100 words that is consistent with the corresponding stance.
+Only output the argument itself and do not directly quote or explicitly mention the option or its label.
+==
+Options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Proposition: We should fight nationalism
+==
+Letter: A
+==
+Argument:
+
+2026-02-03 22:02:52,282 - INFO - Given opinion: Agree strongly
+2026-02-03 22:02:52,282 - INFO - Generated argument: Nationalism often leads to division, xenophobia, and conflict, undermining global cooperation and progress. By fighting nationalism, we promote a more inclusive and equitable society that values diversity and recognizes our shared humanity. This fosters international collaboration, essential for addressing global challenges like climate change, pandemics, and economic inequality. Embracing a more cosmopolitan worldview encourages mutual understanding and respect among nations, ultimately leading to a more peaceful and prosperous world for all. It's crucial to challenge nationalist ideologies that prioritize one nation's interests over the well-being of others.
+2026-02-03 22:02:52,283 - INFO - Job: encoding
+2026-02-03 22:02:52,283 - INFO - Shuffled letter in encoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:02:52,283 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
+Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below.
+Only output the capitalized letter corresponding to your answer.
+Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+==
+Proposition: We should fight nationalism
+==
+Argument: Nationalism often leads to division, xenophobia, and conflict, undermining global cooperation and progress. By fighting nationalism, we promote a more inclusive and equitable society that values diversity and recognizes our shared humanity. This fosters international collaboration, essential for addressing global challenges like climate change, pandemics, and economic inequality. Embracing a more cosmopolitan worldview encourages mutual understanding and respect among nations, ultimately leading to a more peaceful and prosperous world for all. It's crucial to challenge nationalist ideologies that prioritize one nation's interests over the well-being of others.
+==
+Please choose from the following options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Answer letter: 
+
+2026-02-03 22:02:52,555 - INFO - Top choice (answer): <A>
+2026-02-03 22:02:52,555 - INFO - ---------------Shuffled_rep: 2----------------
+2026-02-03 22:02:52,555 - INFO - Shuffled letter in decoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:02:52,555 - INFO - Task: decoding
+2026-02-03 22:02:52,555 - INFO - Given letter: <A>
+2026-02-03 22:02:52,555 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
+Based on the specified letter, write an argument of at most 100 words that is consistent with the corresponding stance.
+Only output the argument itself and do not directly quote or explicitly mention the option or its label.
+==
+Options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Proposition: We should fight nationalism
+==
+Letter: A
+==
+Argument:
+
+2026-02-03 22:02:54,129 - INFO - Given opinion: Agree strongly
+2026-02-03 22:02:54,130 - INFO - Generated argument: Nationalism often leads to division and xenophobia, hindering global cooperation and progress. By fighting nationalism, we can foster a more inclusive and collaborative environment, allowing diverse cultures to thrive together. This approach promotes understanding and unity, crucial for tackling global challenges like climate change and economic inequality. Embracing a more global perspective can help the United States build stronger international relationships and address issues that transcend national borders, ultimately benefiting the nation and the world at large. It's a step towards a more harmonious and interconnected world.
+2026-02-03 22:02:54,130 - INFO - Job: encoding
+2026-02-03 22:02:54,130 - INFO - Shuffled letter in encoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:02:54,130 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
+Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below.
+Only output the capitalized letter corresponding to your answer.
+Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+==
+Proposition: We should fight nationalism
+==
+Argument: Nationalism often leads to division and xenophobia, hindering global cooperation and progress. By fighting nationalism, we can foster a more inclusive and collaborative environment, allowing diverse cultures to thrive together. This approach promotes understanding and unity, crucial for tackling global challenges like climate change and economic inequality. Embracing a more global perspective can help the United States build stronger international relationships and address issues that transcend national borders, ultimately benefiting the nation and the world at large. It's a step towards a more harmonious and interconnected world.
+==
+Please choose from the following options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Answer letter: 
+
+2026-02-03 22:02:54,829 - INFO - Top choice (answer): <To>
+2026-02-03 22:02:54,829 - INFO - ---------------Shuffled_rep: 3----------------
+2026-02-03 22:02:54,829 - INFO - Shuffled letter in decoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:02:54,829 - INFO - Task: decoding
+2026-02-03 22:02:54,829 - INFO - Given letter: <A>
+2026-02-03 22:02:54,829 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
+Based on the specified letter, write an argument of at most 100 words that is consistent with the corresponding stance.
+Only output the argument itself and do not directly quote or explicitly mention the option or its label.
+==
+Options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Proposition: We should fight nationalism
+==
+Letter: A
+==
+Argument:
+
+2026-02-03 22:03:16,347 - INFO - error_code=None error_message='Input validation error' error_param=None error_type=invalid_request_error message='Together API error received' stream_error=False
