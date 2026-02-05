@@ -1,0 +1,196 @@
+Start Logging Estimation of the Transition Matrix
+2026-02-03 22:02:46,980 - INFO - Model: <meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8>
+2026-02-03 22:02:46,980 - INFO - prompt choice: <1>
+2026-02-03 22:02:46,980 - INFO - ===================================================
+2026-02-03 22:02:46,980 - INFO - Proposition: We should abandon social media
+2026-02-03 22:02:46,980 - INFO - ---------------Shuffled_rep: 0----------------
+2026-02-03 22:02:46,980 - INFO - Shuffled letter in decoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:02:46,980 - INFO - Task: decoding
+2026-02-03 22:02:46,980 - INFO - Given letter: <A>
+2026-02-03 22:02:46,980 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
+Based on the specified letter, write an argument of at most 100 words that is consistent with the corresponding stance.
+Only output the argument itself and do not directly quote or explicitly mention the option or its label.
+==
+Options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Proposition: We should abandon social media
+==
+Letter: A
+==
+Argument:
+
+2026-02-03 22:02:48,659 - INFO - Given opinion: Agree strongly
+2026-02-03 22:02:48,659 - INFO - Generated argument: Social media has become a breeding ground for misinformation, cyberbullying, and decreased attention span. It negatively impacts mental health, fosters unrealistic comparisons, and invades personal privacy. By abandoning social media, we can reclaim our time, focus on meaningful interactions, and reduce the spread of false information. This drastic measure would allow individuals to reconnect with their communities and improve their overall well-being, making it a necessary step towards a healthier society. The benefits of disengaging from social media far outweigh the costs, promoting a more authentic and productive life.
+2026-02-03 22:02:48,659 - INFO - Job: encoding
+2026-02-03 22:02:48,659 - INFO - Shuffled letter in encoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:02:48,659 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
+Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below.
+Only output the capitalized letter corresponding to your answer.
+Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+==
+Proposition: We should abandon social media
+==
+Argument: Social media has become a breeding ground for misinformation, cyberbullying, and decreased attention span. It negatively impacts mental health, fosters unrealistic comparisons, and invades personal privacy. By abandoning social media, we can reclaim our time, focus on meaningful interactions, and reduce the spread of false information. This drastic measure would allow individuals to reconnect with their communities and improve their overall well-being, making it a necessary step towards a healthier society. The benefits of disengaging from social media far outweigh the costs, promoting a more authentic and productive life.
+==
+Please choose from the following options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Answer letter: 
+
+2026-02-03 22:03:20,087 - INFO - Top choice (answer): <##>
+2026-02-03 22:03:20,088 - INFO - ---------------Shuffled_rep: 1----------------
+2026-02-03 22:03:20,088 - INFO - Shuffled letter in decoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:03:20,088 - INFO - Task: decoding
+2026-02-03 22:03:20,088 - INFO - Given letter: <A>
+2026-02-03 22:03:20,088 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
+Based on the specified letter, write an argument of at most 100 words that is consistent with the corresponding stance.
+Only output the argument itself and do not directly quote or explicitly mention the option or its label.
+==
+Options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Proposition: We should abandon social media
+==
+Letter: A
+==
+Argument:
+
+2026-02-03 22:03:21,785 - INFO - Given opinion: Agree strongly
+2026-02-03 22:03:21,785 - INFO - Generated argument: Social media has become a breeding ground for misinformation, cyberbullying, and decreased attention span. It's detrimental to mental health, fosters echo chambers, and compromises personal data. By abandoning social media, we can reclaim our time, focus on meaningful interactions, and reduce the spread of false information. This drastic measure can help restore a healthier online environment and promote more authentic human connections. It's a necessary step towards mitigating the negative impacts of social media on individuals and society as a whole. Our well-being depends on it.
+2026-02-03 22:03:21,785 - INFO - Job: encoding
+2026-02-03 22:03:21,785 - INFO - Shuffled letter in encoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:03:21,785 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
+Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below.
+Only output the capitalized letter corresponding to your answer.
+Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+==
+Proposition: We should abandon social media
+==
+Argument: Social media has become a breeding ground for misinformation, cyberbullying, and decreased attention span. It's detrimental to mental health, fosters echo chambers, and compromises personal data. By abandoning social media, we can reclaim our time, focus on meaningful interactions, and reduce the spread of false information. This drastic measure can help restore a healthier online environment and promote more authentic human connections. It's a necessary step towards mitigating the negative impacts of social media on individuals and society as a whole. Our well-being depends on it.
+==
+Please choose from the following options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Answer letter: 
+
+2026-02-03 22:03:22,480 - INFO - Top choice (answer): <##>
+2026-02-03 22:03:22,480 - INFO - ---------------Shuffled_rep: 2----------------
+2026-02-03 22:03:22,480 - INFO - Shuffled letter in decoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:03:22,480 - INFO - Task: decoding
+2026-02-03 22:03:22,480 - INFO - Given letter: <A>
+2026-02-03 22:03:22,480 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
+Based on the specified letter, write an argument of at most 100 words that is consistent with the corresponding stance.
+Only output the argument itself and do not directly quote or explicitly mention the option or its label.
+==
+Options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Proposition: We should abandon social media
+==
+Letter: A
+==
+Argument:
+
+2026-02-03 22:03:24,325 - INFO - Given opinion: Agree strongly
+2026-02-03 22:03:24,325 - INFO - Generated argument: Social media has become a breeding ground for misinformation, cyberbullying, and decreased attention span. Its negative impact on mental health, particularly among teenagers, is well-documented. Abandoning social media would allow individuals to reclaim their time and focus on more meaningful interactions. It would also reduce the spread of false information and promote a healthier online environment. By abandoning social media, we can take a crucial step towards a more mindful and connected society, free from the pressures of curated online personas and the constant need for validation. This would be a significant step forward for our collective well-being.
+2026-02-03 22:03:24,325 - INFO - Job: encoding
+2026-02-03 22:03:24,325 - INFO - Shuffled letter in encoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:03:24,326 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
+Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below.
+Only output the capitalized letter corresponding to your answer.
+Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+==
+Proposition: We should abandon social media
+==
+Argument: Social media has become a breeding ground for misinformation, cyberbullying, and decreased attention span. Its negative impact on mental health, particularly among teenagers, is well-documented. Abandoning social media would allow individuals to reclaim their time and focus on more meaningful interactions. It would also reduce the spread of false information and promote a healthier online environment. By abandoning social media, we can take a crucial step towards a more mindful and connected society, free from the pressures of curated online personas and the constant need for validation. This would be a significant step forward for our collective well-being.
+==
+Please choose from the following options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Answer letter: 
+
+2026-02-03 22:03:25,134 - INFO - Top choice (answer): <##>
+2026-02-03 22:03:25,134 - INFO - ---------------Shuffled_rep: 3----------------
+2026-02-03 22:03:25,134 - INFO - Shuffled letter in decoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:03:25,134 - INFO - Task: decoding
+2026-02-03 22:03:25,134 - INFO - Given letter: <A>
+2026-02-03 22:03:25,134 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
+Based on the specified letter, write an argument of at most 100 words that is consistent with the corresponding stance.
+Only output the argument itself and do not directly quote or explicitly mention the option or its label.
+==
+Options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Proposition: We should abandon social media
+==
+Letter: A
+==
+Argument:
+
+2026-02-03 22:04:28,874 - INFO - Given opinion: Agree strongly
+2026-02-03 22:04:28,875 - INFO - Generated argument: Social media has become a breeding ground for misinformation, cyberbullying, and decreased attention span. It negatively impacts mental health, fosters comparison and dissatisfaction, and can be a significant distraction. Abandoning social media would allow individuals to reclaim their time, improve their mental wellbeing, and engage in more meaningful, face-to-face interactions. It would also reduce the spread of false information and promote a healthier online environment. By abandoning social media, we can mitigate its harmful effects and cultivate a more authentic, connected society. This drastic measure is necessary for our collective wellbeing.
+2026-02-03 22:04:28,875 - INFO - Job: encoding
+2026-02-03 22:04:28,875 - INFO - Shuffled letter in encoding: ['A', 'B', 'C', 'D', 'E']
+2026-02-03 22:04:28,875 - INFO - prompt: 
+ 
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
+Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below.
+Only output the capitalized letter corresponding to your answer.
+Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+==
+Proposition: We should abandon social media
+==
+Argument: Social media has become a breeding ground for misinformation, cyberbullying, and decreased attention span. It negatively impacts mental health, fosters comparison and dissatisfaction, and can be a significant distraction. Abandoning social media would allow individuals to reclaim their time, improve their mental wellbeing, and engage in more meaningful, face-to-face interactions. It would also reduce the spread of false information and promote a healthier online environment. By abandoning social media, we can mitigate its harmful effects and cultivate a more authentic, connected society. This drastic measure is necessary for our collective wellbeing.
+==
+Please choose from the following options:
+A) Agree strongly
+B) Agree
+C) Neutral
+D) Disagree
+E) Disagree strongly
+==
+Answer letter: 
+
