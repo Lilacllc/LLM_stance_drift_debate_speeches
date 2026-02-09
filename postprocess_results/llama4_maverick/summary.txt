@@ -1,0 +1,25 @@
+Summary by Initial Stance - Statistical Analysis Results
+============================================================
+
+Model: llama4_maverick
+Propositions processed: 53 / 112
+Success threshold: 0.95
+Confidence level: 0.99
+Method: clt
+Epsilon: 1e-10
+Temperature: 1
+============================================================
+
+Letter            Stance  Includes_1_mean  Includes_1_standard_error  Includes_1_bonferroni_mean  Includes_1_bonferroni_standard_error  Mean_mean  Mean_standard_error  Success_rate_mean  Success_rate_standard_error
+     A    Agree strongly         0.339623                   0.065674                    0.584906                              0.068331   0.781604             0.041140           0.708868                     0.046333
+     B             Agree         0.358491                   0.066503                    0.471698                              0.069226   0.762022             0.039787           0.692830                     0.043542
+     C           Neutral         0.415094                   0.068331                    0.547170                              0.069028   0.702034             0.047758           0.720189                     0.044166
+     D          Disagree         0.377358                   0.067219                    0.415094                              0.068331   0.576558             0.057350           0.566415                     0.057702
+     E Disagree strongly         0.396226                   0.067828                    0.433962                              0.068730   0.563882             0.060777           0.539057                     0.061101
+
+Column Descriptions:
+- Includes_1_mean: Percentage of confidence intervals that include 1.0
+- Includes_1_bonferroni_mean: Same with Bonferroni correction (¡Â112 propositions)
+- Mean_mean: Average diagonal probability (stance preservation)
+- Success_rate_mean: Fraction of cases with probability above threshold
+- *_standard_error: Standard error of the corresponding metric

@@ -1,0 +1,25 @@
+Summary by Initial Stance - Statistical Analysis Results
+============================================================
+
+Model: gpt_3_5_turbo
+Propositions processed: 112 / 112
+Success threshold: 0.95
+Confidence level: 0.99
+Method: clt
+Epsilon: 1e-10
+Temperature: 1
+============================================================
+
+Letter            Stance  Includes_1_mean  Includes_1_standard_error  Includes_1_bonferroni_mean  Includes_1_bonferroni_standard_error  Mean_mean  Mean_standard_error  Success_rate_mean  Success_rate_standard_error
+     A    Agree strongly         0.000000                    0.00000                    0.000000                              0.000000   0.620969             0.031277           0.302768                     0.035608
+     B             Agree         0.017857                    0.01257                    0.044643                              0.019602   0.483518             0.031451           0.257857                     0.028364
+     C           Neutral         0.000000                    0.00000                    0.017857                              0.012570   0.313423             0.022923           0.212857                     0.018508
+     D          Disagree         0.000000                    0.00000                    0.000000                              0.000000   0.244004             0.026624           0.058661                     0.012251
+     E Disagree strongly         0.017857                    0.01257                    0.080357                              0.025802   0.527012             0.036328           0.358929                     0.036500
+
+Column Descriptions:
+- Includes_1_mean: Percentage of confidence intervals that include 1.0
+- Includes_1_bonferroni_mean: Same with Bonferroni correction (¡Â112 propositions)
+- Mean_mean: Average diagonal probability (stance preservation)
+- Success_rate_mean: Fraction of cases with probability above threshold
+- *_standard_error: Standard error of the corresponding metric

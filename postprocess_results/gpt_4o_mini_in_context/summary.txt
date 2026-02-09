@@ -1,0 +1,25 @@
+Summary by Initial Stance - Statistical Analysis Results
+============================================================
+
+Model: gpt_4o_mini_in_context
+Propositions processed: 112 / 112
+Success threshold: 0.95
+Confidence level: 0.99
+Method: clt
+Epsilon: 1e-10
+Temperature: 1
+============================================================
+
+Letter            Stance  Includes_1_mean  Includes_1_standard_error  Includes_1_bonferroni_mean  Includes_1_bonferroni_standard_error  Mean_mean  Mean_standard_error  Success_rate_mean  Success_rate_standard_error
+     A    Agree strongly         0.080357                   0.025802                    0.151786                              0.034057   0.922059             0.023080           0.921786                     0.023145
+     B             Agree         0.000000                   0.000000                    0.000000                              0.000000   0.091483             0.012181           0.065357                     0.009241
+     C           Neutral         0.392857                   0.046356                    0.535714                              0.047337   0.738500             0.030343           0.682411                     0.032927
+     D          Disagree         0.000000                   0.000000                    0.053571                              0.021372   0.199588             0.029669           0.135089                     0.024499
+     E Disagree strongly         0.428571                   0.046971                    0.687500                              0.043995   0.914435             0.018866           0.865000                     0.024684
+
+Column Descriptions:
+- Includes_1_mean: Percentage of confidence intervals that include 1.0
+- Includes_1_bonferroni_mean: Same with Bonferroni correction (¡Â112 propositions)
+- Mean_mean: Average diagonal probability (stance preservation)
+- Success_rate_mean: Fraction of cases with probability above threshold
+- *_standard_error: Standard error of the corresponding metric

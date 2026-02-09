@@ -1,0 +1,25 @@
+Summary by Initial Stance - Statistical Analysis Results
+============================================================
+
+Model: gemma_3n_e4b
+Propositions processed: 112 / 112
+Success threshold: 0.95
+Confidence level: 0.99
+Method: clt
+Epsilon: 1e-10
+Temperature: 1
+============================================================
+
+Letter            Stance  Includes_1_mean  Includes_1_standard_error  Includes_1_bonferroni_mean  Includes_1_bonferroni_standard_error  Mean_mean  Mean_standard_error  Success_rate_mean  Success_rate_standard_error
+     A    Agree strongly         0.258929                   0.041578                    0.348214                              0.045218   0.595310             0.039696           0.563839                     0.040249
+     B             Agree         0.062500                   0.022975                    0.098214                              0.028247   0.348079             0.034074           0.311696                     0.032423
+     C           Neutral         0.339286                   0.044939                    0.500000                              0.047458   0.920028             0.019353           0.914643                     0.019887
+     D          Disagree         0.008929                   0.008929                    0.008929                              0.008929   0.113652             0.021634           0.086875                     0.019113
+     E Disagree strongly         0.312500                   0.043995                    0.464286                              0.047337   0.617291             0.041302           0.599732                     0.041510
+
+Column Descriptions:
+- Includes_1_mean: Percentage of confidence intervals that include 1.0
+- Includes_1_bonferroni_mean: Same with Bonferroni correction (¡Â112 propositions)
+- Mean_mean: Average diagonal probability (stance preservation)
+- Success_rate_mean: Fraction of cases with probability above threshold
+- *_standard_error: Standard error of the corresponding metric

@@ -1,0 +1,25 @@
+Summary by Initial Stance - Statistical Analysis Results
+============================================================
+
+Model: qwen3_a3b
+Propositions processed: 112 / 112
+Success threshold: 0.95
+Confidence level: 0.99
+Method: clt
+Epsilon: 1e-10
+Temperature: 1
+============================================================
+
+Letter            Stance  Includes_1_mean  Includes_1_standard_error  Includes_1_bonferroni_mean  Includes_1_bonferroni_standard_error  Mean_mean  Mean_standard_error  Success_rate_mean  Success_rate_standard_error
+     A    Agree strongly         0.366071                   0.045724                    0.607143                              0.046356   0.938581             0.020495           0.934107                     0.020629
+     B             Agree         0.017857                   0.012570                    0.071429                              0.024445   0.268367             0.030084           0.215982                     0.027772
+     C           Neutral         0.044643                   0.019602                    0.107143                              0.029357   0.402106             0.033863           0.381518                     0.032978
+     D          Disagree         0.232143                   0.040073                    0.321429                              0.044328   0.440758             0.041383           0.403750                     0.040845
+     E Disagree strongly         0.241071                   0.040599                    0.419643                              0.046841   0.677125             0.039060           0.645357                     0.040425
+
+Column Descriptions:
+- Includes_1_mean: Percentage of confidence intervals that include 1.0
+- Includes_1_bonferroni_mean: Same with Bonferroni correction (¡Â112 propositions)
+- Mean_mean: Average diagonal probability (stance preservation)
+- Success_rate_mean: Fraction of cases with probability above threshold
+- *_standard_error: Standard error of the corresponding metric

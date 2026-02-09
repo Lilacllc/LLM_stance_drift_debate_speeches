@@ -1,0 +1,561 @@
+Proposition_ID,Proposition,Perm,Letter,Mean,CI_low,CI_high,Includes_1,Includes_1_bonferroni,Success_rate
+1161,We should ban cosmetic surgery,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.980000004515837,0,1.0132712524872047,True,True,0.98
+1161,We should ban cosmetic surgery,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,1.487162057223701e-06,0,4.205015417987362e-06,False,False,0.0
+1161,We should ban cosmetic surgery,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.09918820333471844,0,0.16629644348117287,False,False,0.08
+1161,We should ban cosmetic surgery,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.18262245544862524,0,0.24960477942506043,False,False,0.02
+1161,We should ban cosmetic surgery,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9653184994711107,0,0.9929428990327341,False,True,0.87
+1661,We should ban school uniforms,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999995327391,0,0.9999999997277809,False,False,1.0
+1661,We should ban school uniforms,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.36028476477535193,0,0.464392141591578,False,False,0.25
+1661,We should ban school uniforms,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9994695802830351,0,1.0003457904459168,True,True,1.0
+1661,We should ban school uniforms,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.023706189103637188,0,0.05423512623021984,False,False,0.01
+1661,We should ban school uniforms,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9998399932904937,0,1.0001003540612927,True,True,1.0
+1902,We should legalize ivory trade,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999947185879909,0,0.9999980915739094,False,True,1.0
+1902,We should legalize ivory trade,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.3860866942896447,0,0.49003140833178227,False,False,0.28
+1902,We should legalize ivory trade,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.998799578202539,0,1.0016180776717494,True,True,0.99
+1902,We should legalize ivory trade,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,3.2264076776889407e-10,0,4.478830821295555e-10,False,False,0.0
+1902,We should legalize ivory trade,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999986660206,0,1.0000000010412633,True,True,1.0
+2108,Surrogacy should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999992724146,0,0.9999999998337892,False,True,1.0
+2108,Surrogacy should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.00025044636539449166,0,0.0006699621624664466,False,False,0.0
+2108,Surrogacy should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.4340936902398667,0,0.5437241472924556,False,False,0.33
+2108,Surrogacy should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.05375049607444784,0,0.08837152830468267,False,False,0.0
+2108,Surrogacy should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9587519570137006,0,0.9978872758511493,False,True,0.9
+2110,We should lower the age of consent,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999980266757,0,0.9999999992013244,False,False,1.0
+2110,We should lower the age of consent,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.3666907756427163,0,0.47080935430440374,False,False,0.25
+2110,We should lower the age of consent,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9902561303355969,0,1.0116785042795942,True,True,0.98
+2110,We should lower the age of consent,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,8.931632809846126e-10,0,1.1602040440160388e-09,False,False,0.0
+2110,We should lower the age of consent,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999992865324,0,0.9999999995034952,False,False,1.0
+2125,We should ban organic food,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,4.329816064135245e-11,0,6.594695545290834e-11,False,False,0.0
+2125,We should ban organic food,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,2.1215628976307682e-10,0,2.907915551044888e-10,False,False,0.0
+2125,We should ban organic food,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.10243414155939921,0,0.16677864605710588,False,False,0.04
+2125,We should ban organic food,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.0008040383439283351,0,0.001601515256348155,False,False,0.0
+2125,We should ban organic food,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999506609466233,0,1.0000264785948705,True,True,1.0
+2143,We should ban abortions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999945088,0,0.9999999999961123,False,False,1.0
+2143,We should ban abortions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.10598325133194032,0,0.17572134103104978,False,False,0.08
+2143,We should ban abortions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.5731273173919836,0,0.6857011634700576,False,False,0.49
+2143,We should ban abortions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,1.5258825198565505e-07,0,2.612871488025054e-07,False,False,0.0
+2143,We should ban abortions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999251054753,0,0.9999999901133976,False,True,1.0
+2401,We should increase fuel tax,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999805967,0,0.9999999999879474,False,False,1.0
+2401,We should increase fuel tax,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,3.363629691988681e-06,0,7.49283546434237e-06,False,False,0.0
+2401,We should increase fuel tax,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999999358839976,0,1.0000000492752024,True,True,1.0
+2401,We should increase fuel tax,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.006718229059445841,0,0.014118371955904114,False,False,0.0
+2401,We should increase fuel tax,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999314050165635,0,1.0000896274797524,True,True,1.0
+2449,Organ donation should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999997225119,0,0.9999999999060354,False,True,1.0
+2449,Organ donation should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.07842284634529481,0,0.13928851151803995,False,False,0.07
+2449,Organ donation should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.5899811136170795,0,0.6989978049627612,False,False,0.5
+2449,Organ donation should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,6.55422951393922e-06,0,1.4956915731442271e-05,False,False,0.0
+2449,Organ donation should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999998310630047,0,0.9999999447242706,False,True,1.0
+2458,We should abolish the needle exchange programs,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.009761825669940341,0,0.032713777151024484,False,False,0.01
+2458,We should abolish the needle exchange programs,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,2.87721830185952e-10,0,5.802306048645101e-10,False,False,0.0
+2458,We should abolish the needle exchange programs,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.5137211946412441,0,0.6258990727061231,False,False,0.45
+2458,We should abolish the needle exchange programs,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,2.5634112972126658e-05,0,5.2560661551622665e-05,False,False,0.0
+2458,We should abolish the needle exchange programs,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999868275033363,0,0.9999982956078978,False,True,1.0
+2465,We should further exploit small modular reactors,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999900793,0,0.9999999999933682,False,False,1.0
+2465,We should further exploit small modular reactors,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,6.686933656177744e-08,0,1.3971047937544345e-07,False,False,0.0
+2465,We should further exploit small modular reactors,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999640157428993,0,1.0000261258239167,True,True,1.0
+2465,We should further exploit small modular reactors,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.0004101449880571946,0,0.0008817883151293069,False,False,0.0
+2465,We should further exploit small modular reactors,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999992066136,0,0.9999999997937119,False,True,1.0
+2480,We should ban racial profiling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999991482,0,0.9999999999992646,False,False,1.0
+2480,We should ban racial profiling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,3.144996493527604e-12,0,4.249955631904448e-12,False,False,0.0
+2480,We should ban racial profiling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.6815234893151809,0,0.7789105103838663,False,False,0.53
+2480,We should ban racial profiling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.9191917432260837,0,0.9669734016336389,False,False,0.81
+2480,We should ban racial profiling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.8799517538343838,0,0.9401337613783127,False,False,0.73
+2486,We should abolish the US Electoral College,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.999999999996854,0,0.9999999999974102,False,False,1.0
+2486,We should abolish the US Electoral College,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.14026385647848832,0,0.21793133037003973,False,False,0.1
+2486,We should abolish the US Electoral College,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9779493894884805,0,1.0100469652905097,True,True,0.97
+2486,We should abolish the US Electoral College,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.009869808022768848,0,0.01938605074556807,False,False,0.0
+2486,We should abolish the US Electoral College,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999905977955494,0,1.0000075355415943,True,True,1.0
+2489,We should abolish no-knock warrants,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999921811,0,0.9999999999948144,False,False,1.0
+2489,We should abolish no-knock warrants,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.14274803504645653,0,0.22361208743217556,False,False,0.13
+2489,We should abolish no-knock warrants,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9007671625723936,0,0.9614456705417779,False,True,0.8
+2489,We should abolish no-knock warrants,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.7064681102652774,0,0.7890978816173405,False,False,0.4
+2489,We should abolish no-knock warrants,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.8230581416552585,0,0.9098394234116225,False,False,0.78
+2496,We should adopt a zero tolerance policy in schools,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999749921,0,0.9999999999806164,False,False,1.0
+2496,We should adopt a zero tolerance policy in schools,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.3718580097821095,0,0.47270887415144053,False,False,0.2
+2496,We should adopt a zero tolerance policy in schools,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.5866731149212532,0,0.6909899934275626,False,False,0.44
+2496,We should adopt a zero tolerance policy in schools,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,4.932673853193958e-06,0,8.268815095273275e-06,False,False,0.0
+2496,We should adopt a zero tolerance policy in schools,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999996141239624,0,1.0000001535917762,True,True,1.0
+2539,We should ban genetically modified crops,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999428395,0,0.9999999999651932,False,False,1.0
+2539,We should ban genetically modified crops,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.013630460029780028,0,0.036880112883874994,False,False,0.0
+2539,We should ban genetically modified crops,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.48194636697381016,0,0.5940108531775931,False,False,0.39
+2539,We should ban genetically modified crops,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.0035211048701895486,0,0.006783293008130532,False,False,0.0
+2539,We should ban genetically modified crops,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999534876663383,0,1.0000034968051412,True,True,1.0
+2572,We should ban algorithmic trading,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999998934276,0,0.9999999999238255,False,False,1.0
+2572,We should ban algorithmic trading,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.09159068014037157,0,0.1565675845461182,False,False,0.07
+2572,We should ban algorithmic trading,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.5683330476248408,0,0.6670024660061482,False,False,0.37
+2572,We should ban algorithmic trading,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.10817783665857902,0,0.16133409850325972,False,False,0.0
+2572,We should ban algorithmic trading,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9980307088936974,0,1.0000929378327696,True,True,0.98
+2604,The right to Internet access should be protected,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999983951,0,0.9999999999986235,False,False,1.0
+2604,The right to Internet access should be protected,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.00971381432043324,0,0.03266659159847961,False,False,0.01
+2604,The right to Internet access should be protected,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9902726835212046,0,1.012795057308797,True,True,0.99
+2604,The right to Internet access should be protected,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.09109081522711752,0,0.1303926357997723,False,False,0.01
+2604,The right to Internet access should be protected,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9990537127518563,0,1.0008578542678999,True,True,0.99
+2615,We should ban homeopathy,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999889002,0,0.9999999999934854,False,False,1.0
+2615,We should ban homeopathy,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.0548933572470945,0,0.1067291421038502,False,False,0.05
+2615,We should ban homeopathy,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.3091823888763253,0,0.40570677892403906,False,False,0.17
+2615,We should ban homeopathy,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.7882306761723857,0,0.8610575601059461,False,False,0.55
+2615,We should ban homeopathy,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.37556948418541025,0,0.4527861524410721,False,False,0.05
+2616,We should ban alternative medicine,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999094352,0,0.9999999999506104,False,False,1.0
+2616,We should ban alternative medicine,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,3.359915178650546e-09,0,4.7067571211910015e-09,False,False,0.0
+2616,We should ban alternative medicine,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.012516159087976675,0,0.036684803501970814,False,False,0.01
+2616,We should ban alternative medicine,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.3587994067382247,0,0.44106682358108557,False,False,0.06
+2616,We should ban alternative medicine,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.7730721318390701,0,0.841306734573815,False,False,0.47
+2647,We should abolish term limits,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999993680497,0,0.9999999997892175,False,True,1.0
+2647,We should abolish term limits,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.11006483670124996,0,0.17920517337351963,False,False,0.07
+2647,We should abolish term limits,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999997697549048,0,1.000000094764653,True,True,1.0
+2647,We should abolish term limits,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,8.688684384084197e-07,0,1.422510968940992e-06,False,False,0.0
+2647,We should abolish term limits,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999991685046007,0,1.000000577648614,True,True,1.0
+2654,We should protect whistleblowers,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999989069,0,0.9999999999990524,False,False,1.0
+2654,We should protect whistleblowers,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.008182920564870244,0,0.027515170569092057,False,False,0.0
+2654,We should protect whistleblowers,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.8865953186640283,0,0.9513848055297148,False,False,0.82
+2654,We should protect whistleblowers,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.9405871771709761,0,0.9861454423939221,False,True,0.88
+2654,We should protect whistleblowers,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.8876732518591395,0,0.9514198198042187,False,False,0.79
+2679,We should disband UNESCO,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.018894072044629492,0,0.05024409395441279,False,False,0.01
+2679,We should disband UNESCO,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,5.3312460774752505e-08,0,1.3634861628432734e-07,False,False,0.0
+2679,We should disband UNESCO,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.1341285393710827,0,0.21042237014840753,False,False,0.1
+2679,We should disband UNESCO,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.023581372907403888,0,0.04944877567613728,False,False,0.0
+2679,We should disband UNESCO,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.997165411971222,0,1.0035247132948315,True,True,0.99
+2694,We should abolish intelligence tests,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.999999999941527,0,0.9999999999532855,False,False,1.0
+2694,We should abolish intelligence tests,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.11221513039082581,0,0.18107745440280765,False,False,0.07
+2694,We should abolish intelligence tests,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.7286675309511874,0,0.8189542670187457,False,False,0.56
+2694,We should abolish intelligence tests,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.12295421831446704,0,0.18463577595625902,False,False,0.05
+2694,We should abolish intelligence tests,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9977329508503773,0,1.002062478835911,True,True,0.99
+2747,We should ban telemarketing,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999681838,0,0.9999999999826793,False,False,1.0
+2747,We should ban telemarketing,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.21681457768629184,0,0.30727750188856073,False,False,0.17
+2747,We should ban telemarketing,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.46533220137308284,0,0.5695269528235589,False,False,0.29
+2747,We should ban telemarketing,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.6977587985251195,0,0.7816067955617148,False,False,0.44
+2747,We should ban telemarketing,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.6150385677513284,0,0.6924223527742656,False,False,0.2
+2767,We should subsidize investigative journalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999981674,0,0.9999999999985246,False,False,1.0
+2767,We should subsidize investigative journalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,8.195756684489362e-11,0,1.290951687954866e-10,False,False,0.0
+2767,We should subsidize investigative journalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999974509977639,0,1.0000015771712085,True,True,1.0
+2767,We should subsidize investigative journalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,7.670114442189372e-08,0,1.357756843521144e-07,False,False,0.0
+2767,We should subsidize investigative journalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.999999997738543,0,0.9999999989102489,False,False,1.0
+3052,We should raise the corporate tax,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999949225,0,0.9999999999959824,False,False,1.0
+3052,We should raise the corporate tax,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.03709028871599455,0,0.07224361793570033,False,False,0.01
+3052,We should raise the corporate tax,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999927781293847,0,1.0000095577833155,True,True,1.0
+3052,We should raise the corporate tax,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,5.738882696411162e-07,0,9.89556910098934e-07,False,False,0.0
+3052,We should raise the corporate tax,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999924518148,0,0.9999999996192342,False,True,1.0
+3166,We should abolish the American Jobs Act,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.23851551587058353,0,0.3394439144260604,False,False,0.23
+3166,We should abolish the American Jobs Act,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.00022989209591099222,0,0.0007731836970305579,False,False,0.0
+3166,We should abolish the American Jobs Act,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.8322895410749155,0,0.9155564419668265,False,False,0.77
+3166,We should abolish the American Jobs Act,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.0013209024844542641,0,0.0035936870342031233,False,False,0.0
+3166,We should abolish the American Jobs Act,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.999966596753147,0,1.0000140255821321,True,True,1.0
+3170,We should end mandatory retirement,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.99999999998899,0,0.999999999991742,False,False,1.0
+3170,We should end mandatory retirement,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.10639592018533056,0,0.17542470410737565,False,False,0.07
+3170,We should end mandatory retirement,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9892081993760594,0,1.008292162296231,True,True,0.98
+3170,We should end mandatory retirement,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.06586303599267185,0,0.106593812016618,False,False,0.01
+3170,We should end mandatory retirement,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9138062344824024,0,0.9740397934312716,False,True,0.86
+3194,We should abandon television,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999996276903,0,0.9999999997975085,False,False,1.0
+3194,We should abandon television,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.005292259335840511,0,0.017783121239728555,False,False,0.0
+3194,We should abandon television,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.08484899890696986,0,0.14508501126442622,False,False,0.05
+3194,We should abandon television,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.9174486774609589,0,0.9681527864412269,False,True,0.83
+3194,We should abandon television,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.40965699513881026,0,0.5046976025459144,False,False,0.16
+3195,Casinos should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999066612,0,0.9999999999412204,False,False,1.0
+3195,Casinos should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.00011223915857537749,0,0.0003714103084031197,False,False,0.0
+3195,Casinos should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.7422067023235783,0,0.8336734317417186,False,False,0.58
+3195,Casinos should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.39932200894658704,0,0.49833338431552676,False,False,0.2
+3195,Casinos should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9202463196701238,0,0.9693082647909687,False,True,0.82
+3196,We should increase immigration to the United States,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.999999999998306,0,0.999999999998551,False,False,1.0
+3196,We should increase immigration to the United States,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,4.000266000511184e-10,0,6.707964664898044e-10,False,False,0.0
+3196,We should increase immigration to the United States,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.992413171268537,0,1.0031915209437332,True,True,0.98
+3196,We should increase immigration to the United States,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.06108539316245559,0,0.1134891383019612,False,False,0.04
+3196,We should increase immigration to the United States,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.999980688923071,0,1.00001287749495,True,True,1.0
+3201,We should subsidize embryonic stem cell research,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999963236,0,0.9999999999972657,False,False,1.0
+3201,We should subsidize embryonic stem cell research,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,1.7818222187821177e-10,0,3.206340145151902e-10,False,False,0.0
+3201,We should subsidize embryonic stem cell research,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999978860116618,0,1.000002147911093,True,True,1.0
+3201,We should subsidize embryonic stem cell research,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,2.8648682050371834e-07,0,5.087062082123825e-07,False,False,0.0
+3201,We should subsidize embryonic stem cell research,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999875946102,0,1.000000004472779,True,True,1.0
+3222,We should abolish bitcoins,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999993048364,0,0.999999999556493,False,False,1.0
+3222,We should abolish bitcoins,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.16406101546530039,0,0.24691496328455584,False,False,0.12
+3222,We should abolish bitcoins,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.43844629624100206,0,0.5479625884418451,False,False,0.35
+3222,We should abolish bitcoins,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.39383676861646877,0,0.49247719529663253,False,False,0.21
+3222,We should abolish bitcoins,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9614596436459025,0,0.9966211252970495,False,True,0.9
+3223,We should fight global warming,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999995199,0,0.9999999999995877,False,False,1.0
+3223,We should fight global warming,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.020017310587392798,0,0.05317247571306169,False,False,0.02
+3223,We should fight global warming,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.549923667235048,0,0.6586715960732579,False,False,0.42
+3223,We should fight global warming,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.92082047679195,0,0.9773692602130659,False,True,0.89
+3223,We should fight global warming,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.7731640827361431,0,0.853717383359986,False,False,0.62
+3234,The use of AI should be abandoned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.39598355026213455,0,0.5113728110543925,False,False,0.39
+3234,The use of AI should be abandoned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,1.29307736909137e-08,0,3.551032669036782e-08,False,False,0.0
+3234,The use of AI should be abandoned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.026061273563558304,0,0.06138041828047815,False,False,0.0
+3234,The use of AI should be abandoned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.010969766210813452,0,0.025403303336223065,False,False,0.0
+3234,The use of AI should be abandoned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9987632716979787,0,1.0005694809041212,True,True,0.99
+3263,We should end the use of economic sanctions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999996085487,0,0.9999999996913548,False,False,1.0
+3263,We should end the use of economic sanctions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.18447729431642748,0,0.2706167603682782,False,False,0.13
+3263,We should end the use of economic sanctions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9534681551872269,0,0.9959461638272243,False,True,0.92
+3263,We should end the use of economic sanctions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.07555514238663277,0,0.12948068223936876,False,False,0.03
+3263,We should end the use of economic sanctions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999419595001912,0,0.9999956584880236,False,True,1.0
+3279,Blockade of the Gaza Strip should be ended,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999855268,0,0.9999999999892372,False,False,1.0
+3279,Blockade of the Gaza Strip should be ended,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,1.9841832951384648e-07,0,4.404352150434555e-07,False,False,0.0
+3279,Blockade of the Gaza Strip should be ended,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9963362232154189,0,1.001132537188322,True,True,0.98
+3279,Blockade of the Gaza Strip should be ended,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.07950059480983558,0,0.12754150709793197,False,False,0.01
+3279,Blockade of the Gaza Strip should be ended,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9995025283125664,0,1.0002688675448554,True,True,1.0
+3581,We should end cheerleading,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999972493966,0,0.9999999987430814,False,False,1.0
+3581,We should end cheerleading,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.009995603800664728,0,0.0336136970434042,False,False,0.01
+3581,We should end cheerleading,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.6873112747287459,0,0.7887900535393383,False,False,0.57
+3581,We should end cheerleading,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.10821200729052871,0,0.16181400424670128,False,False,0.0
+3581,We should end cheerleading,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9270742194021763,0,0.9710790817171372,False,False,0.79
+3699,We should abolish primary elections,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999922657679,0,0.9999999976455286,False,True,1.0
+3699,We should abolish primary elections,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.35080995282038707,0,0.4552050012402367,False,False,0.23
+3699,We should abolish primary elections,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9816855044673872,0,1.0081689206691615,True,True,0.95
+3699,We should abolish primary elections,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.011851164577938245,0,0.025409435376531363,False,False,0.0
+3699,We should abolish primary elections,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9515161643404825,0,1.0002965176511325,True,True,0.95
+3759,Tattoos should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.25017679299211126,0,0.3530596401284099,False,False,0.25
+3759,Tattoos should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,1.2960169740340999e-09,0,3.408820218813978e-09,False,False,0.0
+3759,Tattoos should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.2217052671716992,0,0.3147517596141735,False,False,0.18
+3759,Tattoos should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,1.9395259794799605e-05,0,4.366582710772755e-05,False,False,0.0
+3759,Tattoos should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999862239132195,0,1.000003713608319,True,True,1.0
+802,We should protect Antarctica,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999979937,0,0.9999999999982643,False,False,1.0
+802,We should protect Antarctica,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,1.0172323480272287e-07,0,3.4124941486003793e-07,False,False,0.0
+802,We should protect Antarctica,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.8569552451689959,0,0.932298346489977,False,False,0.79
+802,We should protect Antarctica,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.6817802727759478,0,0.7745510131018466,False,False,0.47
+802,We should protect Antarctica,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.7743301421511383,0,0.8552832094379132,False,False,0.58
+2122,We should further exploit green technology,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999985998,0,0.9999999999988423,False,False,1.0
+2122,We should further exploit green technology,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.04926456019366931,0,0.10030395708882815,False,False,0.05
+2122,We should further exploit green technology,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.8962982136434715,0,0.9565895418275547,False,False,0.84
+2122,We should further exploit green technology,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.784305146649277,0,0.8659941641852374,False,False,0.63
+2122,We should further exploit green technology,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9185997905471173,0,0.9715955391976,False,True,0.84
+2124,We should subsidize higher education,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999983932,0,0.9999999999985911,False,False,1.0
+2124,We should subsidize higher education,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.00882390664492445,0,0.029650935589783822,False,False,0.0
+2124,We should subsidize higher education,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999942185027433,0,1.000001551128444,True,True,1.0
+2124,We should subsidize higher education,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.00015626307660659714,0,0.0004887177473114978,False,False,0.0
+2124,We should subsidize higher education,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999997553204052,0,1.0000001663430522,True,True,1.0
+2184,We should legalize public nudity,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999515881,0,0.9999999999731658,False,False,1.0
+2184,We should legalize public nudity,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.13600770376228344,0,0.20344537805187968,False,False,0.03
+2184,We should legalize public nudity,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999862360567688,0,1.000014256814182,True,True,1.0
+2184,We should legalize public nudity,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.0009050169009719207,0,0.0027020103723574503,False,False,0.0
+2184,We should legalize public nudity,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999991247178407,0,1.0000001355248682,True,True,1.0
+2225,We should ban factory farming,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999985001,0,0.9999999999988008,False,False,1.0
+2225,We should ban factory farming,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.13507140645026663,0,0.20892177014808833,False,False,0.07
+2225,We should ban factory farming,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.6754820836868941,0,0.7705828090592493,False,False,0.48
+2225,We should ban factory farming,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.7619455722589918,0,0.8407989224183334,False,False,0.51
+2225,We should ban factory farming,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.7095198424247507,0,0.7928823764111265,False,False,0.43
+2227,We should ban whaling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999982139,0,0.9999999999985343,False,False,1.0
+2227,We should ban whaling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,5.714315228028464e-11,0,1.604726872001049e-10,False,False,0.0
+2227,We should ban whaling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9039266635608056,0,0.9610220928678401,False,False,0.77
+2227,We should ban whaling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.9089153268961419,0,0.9646215153717304,False,True,0.79
+2227,We should ban whaling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.7851892675571668,0,0.8576020649649416,False,False,0.52
+2482,We should limit the use of birth control,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.439999999837758,0,0.5579672663204429,False,False,0.44
+2482,We should limit the use of birth control,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.1802465590691828,0,0.26396365203175653,False,False,0.12
+2482,We should limit the use of birth control,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.6204852908927345,0,0.7281699241291204,False,False,0.54
+2482,We should limit the use of birth control,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,2.757518349604898e-06,0,8.931073697081417e-06,False,False,0.0
+2482,We should limit the use of birth control,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999997714924084,0,1.000000086621666,True,True,1.0
+2483,We should ban anonymous posts,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999423879,0,0.9999999999598734,False,False,1.0
+2483,We should ban anonymous posts,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.41842430882617243,0,0.5253300311105831,False,False,0.3
+2483,We should ban anonymous posts,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.32338717373468134,0,0.4266268830700708,False,False,0.25
+2483,We should ban anonymous posts,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.021590321417023627,0,0.04768426270986889,False,False,0.01
+2483,We should ban anonymous posts,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9998706171024669,0,1.0000934098721177,True,True,1.0
+2588,Assisted suicide should be a criminal offence,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999123641,0,0.9999999999632513,False,False,1.0
+2588,Assisted suicide should be a criminal offence,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.021064905849278802,0,0.051437372756027194,False,False,0.01
+2588,Assisted suicide should be a criminal offence,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9679015630320126,0,1.0025946311028908,True,True,0.95
+2588,Assisted suicide should be a criminal offence,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,1.9399809039142244e-05,0,5.487521641343843e-05,False,False,0.0
+2588,Assisted suicide should be a criminal offence,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999939210086979,0,1.0000003065242116,True,True,1.0
+2613,We should abolish the two-party system,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999926392,0,0.9999999999942193,False,False,1.0
+2613,We should abolish the two-party system,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.20522387230901867,0,0.2979675168460657,False,False,0.18
+2613,We should abolish the two-party system,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.964685690815462,0,1.0062990038811712,True,True,0.96
+2613,We should abolish the two-party system,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.032911525982083335,0,0.05988682551193865,False,False,0.0
+2613,We should abolish the two-party system,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9940204987848041,0,1.007329095434395,True,True,0.99
+2621,We should disband the United Nations,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.1800000002319532,0,0.2713028519605457,False,False,0.18
+2621,We should disband the United Nations,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,2.567566138845591e-10,0,4.885993813738488e-10,False,False,0.0
+2621,We should disband the United Nations,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.11469523328849902,0,0.1887724255073722,False,False,0.09
+2621,We should disband the United Nations,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.000666151442619826,0,0.002088733546783652,False,False,0.0
+2621,We should disband the United Nations,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.999995402725351,0,0.9999999208208463,False,True,1.0
+2678,We should subsidize distance education,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999953424,0,0.9999999999963249,False,False,1.0
+2678,We should subsidize distance education,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,2.4768197819692556e-05,0,6.609008335512609e-05,False,False,0.0
+2678,We should subsidize distance education,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9977526464722368,0,1.0030183385814873,True,True,0.99
+2678,We should subsidize distance education,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.00012909896043092293,0,0.000389965690237379,False,False,0.0
+2678,We should subsidize distance education,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999981871369,0,0.9999999990771343,False,False,1.0
+2689,We should subsidize Wikipedia,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999935383,0,0.9999999999953046,False,False,1.0
+2689,We should subsidize Wikipedia,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.01214144232197149,0,0.036060641546256066,False,False,0.01
+2689,We should subsidize Wikipedia,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9998083189978385,0,1.0002335502632052,True,True,1.0
+2689,We should subsidize Wikipedia,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,7.056498749682103e-05,0,0.00017103228974134149,False,False,0.0
+2689,We should subsidize Wikipedia,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999681018144004,0,1.0000431205231934,True,True,1.0
+3168,We should introduce year round schooling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999764384,0,0.999999999984184,False,False,1.0
+3168,We should introduce year round schooling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,5.5126204476219336e-05,0,0.00017856069403843298,False,False,0.0
+3168,We should introduce year round schooling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999999661852328,0,1.0000000186337668,True,True,1.0
+3168,We should introduce year round schooling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.041063348147996816,0,0.07476554139367259,False,False,0.0
+3168,We should introduce year round schooling,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999616318705727,0,1.0000367212904289,True,True,1.0
+3180,We should introduce goal line technology,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999875792,0,0.9999999999918533,False,False,1.0
+3180,We should introduce goal line technology,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.01047840172183491,0,0.03413922020689221,False,False,0.01
+3180,We should introduce goal line technology,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999566520456098,0,1.0000530045253722,True,True,1.0
+3180,We should introduce goal line technology,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.0024858167000828004,0,0.006142735804048864,False,False,0.0
+3180,We should introduce goal line technology,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999937993276,0,0.9999999963750574,False,False,1.0
+3183,We should increase airport racial profiling in the United States,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999968289846446,0,0.9999983985265359,False,False,1.0
+3183,We should increase airport racial profiling in the United States,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.692844666925552,0,0.7906367246546805,False,False,0.56
+3183,We should increase airport racial profiling in the United States,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.11712624335232463,0,0.18819051990197683,False,False,0.09
+3183,We should increase airport racial profiling in the United States,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,2.1351415600258981e-10,0,3.5157538475161054e-10,False,False,0.0
+3183,We should increase airport racial profiling in the United States,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999999471127,0,0.9999999999580679,False,False,1.0
+3185,We should adopt socialism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.999999999828675,0,0.9999999998881511,False,False,1.0
+3185,We should adopt socialism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.35538088664856643,0,0.4612553042391766,False,False,0.25
+3185,We should adopt socialism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9977143505130387,0,1.0029803929834735,True,True,0.99
+3185,We should adopt socialism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,7.911843426605013e-10,0,1.1318014658543803e-09,False,False,0.0
+3185,We should adopt socialism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999998478354,0,0.9999999998815022,False,False,1.0
+3191,We should introduce recall elections,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999913683,0,0.9999999999942079,False,False,1.0
+3191,We should introduce recall elections,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,3.761038169010126e-06,0,1.172502729947687e-05,False,False,0.0
+3191,We should introduce recall elections,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.994385337099595,0,1.0050638176327453,True,True,0.98
+3191,We should introduce recall elections,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,2.986746497513861e-06,0,9.161416206614847e-06,False,False,0.0
+3191,We should introduce recall elections,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999900762606,0,0.9999999967056474,False,True,1.0
+3198,We should limit the right of self-defense,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999959690442,0,0.9999999977818547,False,False,1.0
+3198,We should limit the right of self-defense,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.085445686954912,0,0.14731000870622246,False,False,0.07
+3198,We should limit the right of self-defense,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9102069457524776,0,0.9711886179141025,False,True,0.85
+3198,We should limit the right of self-defense,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,1.1225005152640479e-07,0,3.515850959675652e-07,False,False,0.0
+3198,We should limit the right of self-defense,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999998874786432,0,1.0000001271412253,True,True,1.0
+3199,We should fight urbanization,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999979185479,0,1.0000000013449286,True,True,1.0
+3199,We should fight urbanization,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.2122556871391159,0,0.30393377480073513,False,False,0.16
+3199,We should fight urbanization,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.48611079295547116,0,0.5845192334415495,False,False,0.27
+3199,We should fight urbanization,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.23011006803729966,0,0.3073058727001609,False,False,0.05
+3199,We should fight urbanization,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9984133735538578,0,1.001914035465685,True,True,0.99
+3207,We should abandon social media,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999193804,0,0.9999999999449805,False,False,1.0
+3207,We should abandon social media,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,1.3426419576331547e-05,0,4.110950525362762e-05,False,False,0.0
+3207,We should abandon social media,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.13780474251382713,0,0.20787443636213992,False,False,0.06
+3207,We should abandon social media,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.8832210564290284,0,0.9384449359752995,False,False,0.6
+3207,We should abandon social media,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.42185627350354254,0,0.5122912682658732,False,False,0.18
+3208,We should prohibit slum tourism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999916049,0,0.9999999999936019,False,False,1.0
+3208,We should prohibit slum tourism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.0026190627200150603,0,0.008123076740133702,False,False,0.0
+3208,We should prohibit slum tourism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.8749967555111094,0,0.9411678506924487,False,False,0.75
+3208,We should prohibit slum tourism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.943246691200773,0,0.984957929250098,False,True,0.87
+3208,We should prohibit slum tourism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.49671115472897703,0,0.5837865234266028,False,False,0.2
+3212,We should adopt the teacher tenure reform,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999889286,0,0.999999999993913,False,False,1.0
+3212,We should adopt the teacher tenure reform,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,2.9081330864639623e-07,0,9.417101705713736e-07,False,False,0.0
+3212,We should adopt the teacher tenure reform,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9911861798311646,0,1.0120134243382592,True,True,0.99
+3212,We should adopt the teacher tenure reform,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.000243173776071357,0,0.0007864655816056109,False,False,0.0
+3212,We should adopt the teacher tenure reform,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999989130179113,0,1.0000001800258296,True,True,1.0
+3227,We should abolish capital punishment,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999939146,0,0.9999999999953474,False,False,1.0
+3227,We should abolish capital punishment,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.03568491764587564,0,0.0768857136138637,False,False,0.03
+3227,We should abolish capital punishment,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9997679219750024,0,1.0003112142667028,True,True,1.0
+3227,We should abolish capital punishment,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.0005278687517246323,0,0.0014214718976426682,False,False,0.0
+3227,We should abolish capital punishment,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999996519728359,0,1.0000001727728391,True,True,1.0
+3232,We should cancel pride parades,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9699945463042688,0,1.0105346843061307,True,True,0.97
+3232,We should cancel pride parades,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.2582733430745734,0,0.35640896710455094,False,False,0.2
+3232,We should cancel pride parades,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.6819328697161541,0,0.7858077611480043,False,False,0.58
+3232,We should cancel pride parades,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,4.810408454066447e-07,0,1.0431854976575312e-06,False,False,0.0
+3232,We should cancel pride parades,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999779992474,0,0.9999999944883693,False,True,1.0
+3487,We should close landfills,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999969753,0,0.9999999999976811,False,False,1.0
+3487,We should close landfills,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.00018544127611552338,0,0.0005256847429026229,False,False,0.0
+3487,We should close landfills,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9634052343847421,0,0.9952930344440512,False,True,0.91
+3487,We should close landfills,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.5875791810107064,0,0.6808201096670538,False,False,0.28
+3487,We should close landfills,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9101026523603928,0,0.9576332898605096,False,False,0.76
+3492,We should further exploit natural gas,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999992706415,0,0.9999999998775493,False,True,1.0
+3492,We should further exploit natural gas,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.05781201822351766,0,0.10074466739187829,False,False,0.0
+3492,We should further exploit natural gas,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999522425038206,0,0.999990639833587,False,True,1.0
+3492,We should further exploit natural gas,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,5.333071792648796e-10,0,6.742379994197501e-10,False,False,0.0
+3492,We should further exploit natural gas,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999996813806,0,0.9999999998041974,False,False,1.0
+3661,We should abolish foster care,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.989950011020118,0,1.0135951027038843,True,True,0.99
+3661,We should abolish foster care,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,3.705838561591086e-08,0,6.768008180248945e-08,False,False,0.0
+3661,We should abolish foster care,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.01961785790885461,0,0.05096733708045445,False,False,0.01
+3661,We should abolish foster care,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.10114958996030382,0,0.1521066107506652,False,False,0.01
+3661,We should abolish foster care,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9519563161207962,0,0.9976866372346178,False,True,0.93
+3688,We should abolish the presidential pardon,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.6872946834504706,0,0.7968744024650334,False,False,0.68
+3688,We should abolish the presidential pardon,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.00013246077613313429,0,0.0002882080019103321,False,False,0.0
+3688,We should abolish the presidential pardon,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.4381493056964465,0,0.5432265612078832,False,False,0.28
+3688,We should abolish the presidential pardon,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.15449056385567958,0,0.21490285964866965,False,False,0.04
+3688,We should abolish the presidential pardon,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.831225252035177,0,0.8990488649799063,False,False,0.6
+3730,Community service should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999496074,0,0.9999999999661641,False,False,1.0
+3730,Community service should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.00013620746479160124,0,0.000360553305324126,False,False,0.0
+3730,Community service should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9838440247358501,0,1.0077620661632178,True,True,0.94
+3730,Community service should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,4.849653781460434e-07,0,9.917031965174257e-07,False,False,0.0
+3730,Community service should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999833384682,0,0.9999999906082682,False,False,1.0
+3758,We should further exploit sustainable energies,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999982018,0,0.9999999999985252,False,False,1.0
+3758,We should further exploit sustainable energies,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.03588325088328101,0,0.07787491045946876,False,False,0.03
+3758,We should further exploit sustainable energies,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.8415305036138012,0,0.9199922502795698,False,False,0.75
+3758,We should further exploit sustainable energies,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.9638345995776681,0,0.9956837683342394,False,True,0.91
+3758,We should further exploit sustainable energies,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9457927171645393,0,0.983845682814008,False,True,0.86
+2083,We should legalize organ trade,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.999999999618709,0,0.9999999998479366,False,False,1.0
+2083,We should legalize organ trade,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.0002714023801835755,0,0.0008162045873590546,False,False,0.0
+2083,We should legalize organ trade,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9984874697267968,0,1.0019877334497416,True,True,0.99
+2083,We should legalize organ trade,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,1.6356507923715575e-08,0,3.174473220724455e-08,False,False,0.0
+2083,We should legalize organ trade,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999933605462,0,0.9999999994804895,False,True,1.0
+2166,We should legalize sex selection,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999986570426,0,0.9999999993974935,False,False,1.0
+2166,We should legalize sex selection,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.1729469082479792,0,0.25268034865707106,False,False,0.09
+2166,We should legalize sex selection,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999579138943366,0,1.0000077591062169,True,True,1.0
+2166,We should legalize sex selection,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,1.3801198375366175e-07,0,3.8094102385822096e-07,False,False,0.0
+2166,We should legalize sex selection,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999881853741,0,1.0000000078677582,True,True,1.0
+2402,We should close the Guantanamo Bay detention camp,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999955292,0,0.999999999996246,False,False,1.0
+2402,We should close the Guantanamo Bay detention camp,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,5.717563848938182e-10,0,1.556672360396727e-09,False,False,0.0
+2402,We should close the Guantanamo Bay detention camp,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999048415821906,0,1.0000016341773816,True,True,1.0
+2402,We should close the Guantanamo Bay detention camp,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.0035494713703069416,0,0.009997706832952362,False,False,0.0
+2402,We should close the Guantanamo Bay detention camp,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.999999926969376,0,0.9999999646364451,False,False,1.0
+3193,We should fight nationalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999735326,0,0.9999999999788958,False,False,1.0
+3193,We should fight nationalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.06201765082506355,0,0.1157927180116732,False,False,0.03
+3193,We should fight nationalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.998601216436098,0,0.9999467266036003,False,True,0.99
+3193,We should fight nationalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.49817237306052176,0,0.6062281610210012,False,False,0.36
+3193,We should fight nationalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.15137182579464248,0,0.23096406148396909,False,False,0.09
+3197,We should end progressive taxation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9899999950209941,0,1.01364605351989,True,True,0.99
+3197,We should end progressive taxation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.21234581463515176,0,0.30163129424217705,False,False,0.14
+3197,We should end progressive taxation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9259793324000297,0,0.9859662048222688,False,True,0.91
+3197,We should end progressive taxation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,1.4734079531600106e-06,0,2.5583145433447687e-06,False,False,0.0
+3197,We should end progressive taxation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.999999752790638,0,0.9999999343546394,False,True,1.0
+4004,Blood donation should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999994680977,0,0.9999999999948506,False,True,1.0
+4004,Blood donation should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.19117125550946168,0,0.27841305377113523,False,False,0.16
+4004,Blood donation should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.1350377465686442,0,0.2097993636477492,False,False,0.07
+4004,Blood donation should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,2.213452521633975e-06,0,4.6688135058518715e-06,False,False,0.0
+4004,Blood donation should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999998604639694,0,0.9999999866433299,False,True,1.0
+3205,We should end water fluoridation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999990144833,0,0.9999999993737252,False,False,1.0
+3205,We should end water fluoridation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.02069326802663342,0,0.053970666448717466,False,False,0.02
+3205,We should end water fluoridation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9621664953761069,0,1.0015319259132602,True,True,0.94
+3205,We should end water fluoridation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.013848109297874424,0,0.031035444930456693,False,False,0.0
+3205,We should end water fluoridation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9996862834020669,0,1.0000573826242511,True,True,1.0
+3237,We should prohibit unisex bathrooms,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999961445214,0,0.9999999983433314,False,False,1.0
+3237,We should prohibit unisex bathrooms,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.02274464802979072,0,0.05101090579169327,False,False,0.01
+3237,We should prohibit unisex bathrooms,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.87107275646498,0,0.9432961070397622,False,False,0.83
+3237,We should prohibit unisex bathrooms,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,7.172112647198397e-06,0,1.2845560928586054e-05,False,False,0.0
+3237,We should prohibit unisex bathrooms,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999991336639685,0,1.0000002235317018,True,True,1.0
+2652,We should ban mass surveillance,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999967066,0,0.9999999999975402,False,False,1.0
+2652,We should ban mass surveillance,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.13174357102694387,0,0.20523471959461845,False,False,0.09
+2652,We should ban mass surveillance,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.4629348575743991,0,0.574882222712274,False,False,0.39
+2652,We should ban mass surveillance,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.613484980821106,0,0.697467522267683,False,False,0.24
+2652,We should ban mass surveillance,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.990305889120356,0,0.9979375750536924,False,True,0.94
+3435,Begging should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999996334862238,0,1.0000000368137816,True,True,1.0
+3435,Begging should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.23513887358666408,0,0.32580498564849303,False,False,0.15
+3435,Begging should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.41848547102489525,0,0.5263417301964795,False,False,0.31
+3435,Begging should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.009379533631704783,0,0.01738471153422217,False,False,0.0
+3435,Begging should be banned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9998967093095783,0,0.9999735062305858,False,True,1.0
+3923,Health education should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999980947,0,0.9999999999984601,False,False,1.0
+3923,Health education should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,3.362674562355333e-10,0,1.0983592100526435e-09,False,False,0.0
+3923,Health education should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9807335336543699,0,1.0085590953457588,True,True,0.96
+3923,Health education should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.06409481964533911,0,0.10516852471331278,False,False,0.01
+3923,Health education should be mandatory,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9997075495423878,0,1.000150484706013,True,True,1.0
+4000,The Euro should be abandoned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999880466387,0,1.0000000036241132,True,True,1.0
+4000,The Euro should be abandoned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.22793719554807684,0,0.32091211670732456,False,False,0.14
+4000,The Euro should be abandoned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9931347827158709,0,1.009193185444668,True,True,0.99
+4000,The Euro should be abandoned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.031741662610769064,0,0.05878320588908169,False,False,0.01
+4000,The Euro should be abandoned,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9903191087372646,0,1.0076827056898943,True,True,0.98
+3244,We should abandon Twitter,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999997311848,0,0.9999999998337089,False,False,1.0
+3244,We should abandon Twitter,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.024669150777691315,0,0.05794300407520624,False,False,0.01
+3244,We should abandon Twitter,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.6395418985022787,0,0.7411754341412499,False,False,0.5
+3244,We should abandon Twitter,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.9178844236183623,0,0.9675604222744165,False,False,0.79
+3244,We should abandon Twitter,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.4256455516916466,0,0.5221027520494963,False,False,0.24
+4275,We should abandon speed limit enforcement,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.060000191131804034,0,0.11643936228455051,False,False,0.06
+4275,We should abandon speed limit enforcement,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,7.484623555461957e-06,0,2.5099581531258076e-05,False,False,0.0
+4275,We should abandon speed limit enforcement,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.17498324474985952,0,0.2551961410078622,False,False,0.11
+4275,We should abandon speed limit enforcement,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,1.290814968823509e-06,0,2.2474989858619506e-06,False,False,0.0
+4275,We should abandon speed limit enforcement,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9904621329040318,0,1.0084821290690955,True,True,0.98
+3415,We should abandon the sexual revolution,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.060000000141830274,0,0.11643918286959759,False,False,0.06
+3415,We should abandon the sexual revolution,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.13066187965400508,0,0.20304490908408726,False,False,0.08
+3415,We should abandon the sexual revolution,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.12894162911670157,0,0.2042225435338555,False,False,0.11
+3415,We should abandon the sexual revolution,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,5.874785585016454e-07,0,1.1260558790688405e-06,False,False,0.0
+3415,We should abandon the sexual revolution,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999295059341,0,1.0000000013777246,True,True,1.0
+3273,We should abolish judicial activism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999998782297,0,0.9999999999110827,False,False,1.0
+3273,We should abolish judicial activism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.06185992076935802,0,0.11752034494651203,False,False,0.06
+3273,We should abolish judicial activism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9408834381683316,0,0.9884009617249788,False,True,0.87
+3273,We should abolish judicial activism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.26356925094430766,0,0.35692454769511595,False,False,0.15
+3273,We should abolish judicial activism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9236923948943437,0,0.9740955006221156,False,True,0.83
+3636,We should ban billboards,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999998040078,0,0.9999999999105859,False,False,1.0
+3636,We should ban billboards,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.21199038087557212,0,0.30675609530738646,False,False,0.17
+3636,We should ban billboards,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9424638545660774,0,0.9863355018293787,False,True,0.87
+3636,We should ban billboards,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.4421289021728066,0,0.537963477472648,False,False,0.22
+3636,We should ban billboards,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9124276343880844,0,0.9510789739562394,False,False,0.71
+2765,We should ban media conglomerates,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999918959,0,0.9999999999965586,False,False,1.0
+2765,We should ban media conglomerates,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.20752808464076175,0,0.29743057599377576,False,False,0.18
+2765,We should ban media conglomerates,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.6249185425384295,0,0.7226547268360136,False,False,0.4
+2765,We should ban media conglomerates,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.7935638811330396,0,0.8703971995628259,False,False,0.62
+2765,We should ban media conglomerates,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9874099593076329,0,1.0038123673989638,True,True,0.97
+3977,We should ban rodenticide,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999916451,0,0.9999999999936262,False,False,1.0
+3977,We should ban rodenticide,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.19607727081450094,0,0.2879078254050196,False,False,0.17
+3977,We should ban rodenticide,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.4791057680873443,0,0.5834055566647661,False,False,0.27
+3977,We should ban rodenticide,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.34408565289685256,0,0.42434564315887124,False,False,0.05
+3977,We should ban rodenticide,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9555505343373444,0,0.9879870839927167,False,True,0.85
+3518,We should ban the use of petroleum,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999964821,0,0.9999999999972986,False,False,1.0
+3518,We should ban the use of petroleum,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.45231056425181665,0,0.5662370534098748,False,False,0.4
+3518,We should ban the use of petroleum,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.41313502160395926,0,0.5092729679169568,False,False,0.24
+3518,We should ban the use of petroleum,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.504905988023021,0,0.6028773563257405,False,False,0.22
+3518,We should ban the use of petroleum,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.8110315730540333,0,0.8784846405429971,False,False,0.57
+3705,We should close the sex offender registry,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999993453139,0,1.000000000019844,True,True,1.0
+3705,We should close the sex offender registry,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.07631016317274121,0,0.13279808585222969,False,False,0.04
+3705,We should close the sex offender registry,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9256701962947553,0,0.9809943785121324,False,True,0.87
+3705,We should close the sex offender registry,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,8.735776230578887e-05,0,0.0002901499353183181,False,False,0.0
+3705,We should close the sex offender registry,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999996539070909,0,1.0000000147820598,True,True,1.0
+3459,We should fight environmental degradation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999994964,0,0.9999999999995717,False,False,1.0
+3459,We should fight environmental degradation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.06694166795105212,0,0.12497328627753236,False,False,0.05
+3459,We should fight environmental degradation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.4654770434448779,0,0.5692713307467812,False,False,0.32
+3459,We should fight environmental degradation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.8229430571366106,0,0.9058942933611719,False,False,0.77
+3459,We should fight environmental degradation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.502005644176168,0,0.5953105001156181,False,False,0.24
+3490,We should further exploit filibusters,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999805755659,0,0.999999997904739,False,True,1.0
+3490,We should further exploit filibusters,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.15735211573696398,0,0.24016093938524502,False,False,0.13
+3490,We should further exploit filibusters,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9295134806681083,0,0.9845535118303543,False,True,0.9
+3490,We should further exploit filibusters,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,3.4452714660881336e-09,0,5.2813659561567685e-09,False,False,0.0
+3490,We should further exploit filibusters,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.999999997377041,0,0.9999999984430278,False,False,1.0
+3902,We should further exploit genetic engineering,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999437287,0,0.9999999999685479,False,False,1.0
+3902,We should further exploit genetic engineering,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.06452184909852969,0,0.11499558733003498,False,False,0.02
+3902,We should further exploit genetic engineering,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9354218194484162,0,0.9916476181455748,False,True,0.92
+3902,We should further exploit genetic engineering,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.0005037187217544879,0,0.0010967547433398785,False,False,0.0
+3902,We should further exploit genetic engineering,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999932024020023,0,1.0000040215918595,True,True,1.0
+3939,We should increase historic preservation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999981413,0,0.9999999999984804,False,False,1.0
+3939,We should increase historic preservation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,1.9173944141692225e-10,0,3.3454817553838703e-10,False,False,0.0
+3939,We should increase historic preservation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9863274704638397,0,1.003800565017334,True,True,0.96
+3939,We should increase historic preservation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.1272375792577972,0,0.1907337049710851,False,False,0.04
+3939,We should increase historic preservation,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9989632883266605,0,1.0003128321416686,True,True,1.0
+3252,We should increase mixed-use development,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999985056,0,0.9999999999987924,False,False,1.0
+3252,We should increase mixed-use development,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,2.7616235934195455e-07,0,9.272556571605326e-07,False,False,0.0
+3252,We should increase mixed-use development,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9586668027294546,0,0.994186513161439,False,True,0.88
+3252,We should increase mixed-use development,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.004957894405587323,0,0.015342737419283315,False,False,0.0
+3252,We should increase mixed-use development,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999714461619,0,1.000000006863961,True,True,1.0
+3750,We should increase public space,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999982627,0,0.9999999999986191,False,False,1.0
+3750,We should increase public space,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.006791787419569611,0,0.022851687039222995,False,False,0.0
+3750,We should increase public space,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9449227018666986,0,0.9875557088474508,False,True,0.87
+3750,We should increase public space,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.10179938236748849,0,0.16985439739726305,False,False,0.08
+3750,We should increase public space,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999535364714868,0,1.0000063565799462,True,True,1.0
+4124,We should increase the use of artificial insemination,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999998710527,0,0.9999999999289608,False,False,1.0
+4124,We should increase the use of artificial insemination,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,3.704793828686989e-06,0,6.672335374115052e-06,False,False,0.0
+4124,We should increase the use of artificial insemination,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.999989435975462,0,1.0000038104065634,True,True,1.0
+4124,We should increase the use of artificial insemination,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.024777026480677335,0,0.059225110259255795,False,False,0.02
+4124,We should increase the use of artificial insemination,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999998922198027,0,0.999999995722496,False,True,1.0
+3450,We should increase the use of credit unions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999970889,0,0.9999999999976376,False,False,1.0
+3450,We should increase the use of credit unions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,7.098754720045306e-06,0,2.3879612555724954e-05,False,False,0.0
+3450,We should increase the use of credit unions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999602200610603,0,1.0000127035037063,True,True,1.0
+3450,We should increase the use of credit unions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.6000880680530488,0,0.6997754294257092,False,False,0.38
+3450,We should increase the use of credit unions,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9416806736017973,0,0.989591236175122,False,True,0.89
+3202,We should introduce the alternative vote,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999803315,0,0.999999999990122,False,False,1.0
+3202,We should introduce the alternative vote,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,2.198119518299807e-07,0,5.59551495828427e-07,False,False,0.0
+3202,We should introduce the alternative vote,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9955958928033887,0,1.0059482435501579,True,True,0.99
+3202,We should introduce the alternative vote,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.000678261497051502,0,0.0016641450492559952,False,False,0.0
+3202,We should introduce the alternative vote,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999989521649918,0,0.999999835930712,False,True,1.0
+3924,We should limit Hydrocarbon exploration,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999949538,0,0.9999999999961002,False,False,1.0
+3924,We should limit Hydrocarbon exploration,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.010751479146118272,0,0.03443063645920001,False,False,0.01
+3924,We should limit Hydrocarbon exploration,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.987106227959902,0,1.0104179021953326,True,True,0.97
+3924,We should limit Hydrocarbon exploration,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.0386704124921052,0,0.06432538110468758,False,False,0.0
+3924,We should limit Hydrocarbon exploration,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999336454582668,0,0.9999958902150347,False,True,1.0
+3674,We should limit judicial review,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999923679819,0,0.9999999955854975,False,False,1.0
+3674,We should limit judicial review,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.40791790898199065,0,0.5163895208732545,False,False,0.33
+3674,We should limit judicial review,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9146048347714619,0,0.9767105115167902,False,True,0.88
+3674,We should limit judicial review,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,7.466075476831015e-07,0,1.3665346404606617e-06,False,False,0.0
+3674,We should limit judicial review,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999994604566299,0,1.0000002201525655,True,True,1.0
+3633,We should not subsidize athletes,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.99999999917152,0,0.9999999993584375,False,False,1.0
+3633,We should not subsidize athletes,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.028580621808439496,0,0.06623507210937324,False,False,0.02
+3633,We should not subsidize athletes,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9985832695147934,0,1.0001177112617583,True,True,0.99
+3633,We should not subsidize athletes,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,6.48413173773728e-13,0,1.1292265537719358e-12,False,False,0.0
+3633,We should not subsidize athletes,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,2.2925566089483974e-10,0,3.091175228667392e-10,False,False,0.0
+3432,We should prohibit bailouts,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999109803,0,0.9999999999298744,False,False,1.0
+3432,We should prohibit bailouts,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.1334017447829516,0,0.20712291213730308,False,False,0.1
+3432,We should prohibit bailouts,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9597806502135122,0,0.9904352124492812,False,True,0.86
+3432,We should prohibit bailouts,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.6838098012638776,0,0.7793241516985343,False,False,0.5
+3432,We should prohibit bailouts,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,1.5610594839367007e-12,0,1.853794213959636e-12,False,False,0.0
+3743,We should prohibit over the counter drugs,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999998531953,0,0.9999999999367695,False,False,1.0
+3743,We should prohibit over the counter drugs,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.12290572234860056,0,0.19530166925012948,False,False,0.09
+3743,We should prohibit over the counter drugs,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.2729294824358627,0,0.36651589128791073,False,False,0.12
+3743,We should prohibit over the counter drugs,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.0009609498933742724,0,0.002161488346382525,False,False,0.0
+3743,We should prohibit over the counter drugs,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9995719553912535,0,1.0000432800194605,True,True,1.0
+2463,We should prohibit school prayer,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.999999995542259,0,1.000000000096785,True,True,1.0
+2463,We should prohibit school prayer,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.057753798109379854,0,0.1101255274381775,False,False,0.05
+2463,We should prohibit school prayer,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9840631496992054,0,1.0098621903411311,True,True,0.97
+2463,We should prohibit school prayer,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.09477156822938028,0,0.14375894090265032,False,False,0.02
+2463,We should prohibit school prayer,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9898569515950393,0,1.0022909594768876,True,True,0.96
+3241,We should prohibit tabloid journalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999842629,0,0.9999999999887795,False,False,1.0
+3241,We should prohibit tabloid journalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.1872215450198367,0,0.2712694168193721,False,False,0.11
+3241,We should prohibit tabloid journalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.08326172703153427,0,0.14385500738960483,False,False,0.04
+3241,We should prohibit tabloid journalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.16210998143480654,0,0.22981610321128196,False,False,0.03
+3241,We should prohibit tabloid journalism,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9846365911371806,0,0.9979323202629432,False,True,0.92
+3656,We should subsidize financial advisors,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999750122,0,0.9999999999808871,False,False,1.0
+3656,We should subsidize financial advisors,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.0014939866013433194,0,0.004994465960025833,False,False,0.0
+3656,We should subsidize financial advisors,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999998250826941,0,1.000000133323551,True,True,1.0
+3656,We should subsidize financial advisors,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,9.212281043616e-06,0,3.075296643280109e-05,False,False,0.0
+3656,We should subsidize financial advisors,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999981971435,0,0.9999999992259214,False,False,1.0
+3541,We should subsidize scholarships,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.999999999998753,0,0.9999999999989345,False,False,1.0
+3541,We should subsidize scholarships,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,8.509996704566278e-10,0,2.4655223823448406e-09,False,False,0.0
+3541,We should subsidize scholarships,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9998442743459951,0,1.0000663235462806,True,True,1.0
+3541,We should subsidize scholarships,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,0.004569348127116661,0,0.013595835316101899,False,False,0.0
+3541,We should subsidize scholarships,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999993881510402,0,1.0000004846684192,True,True,1.0
+4212,We should subsidize space exploration,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",A,0.9999999999942811,0,0.9999999999958835,False,False,1.0
+4212,We should subsidize space exploration,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",B,0.0003737575732396582,0,0.001256380239582331,False,False,0.0
+4212,We should subsidize space exploration,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",C,0.9999859894197773,0,1.0000031521691228,True,True,1.0
+4212,We should subsidize space exploration,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",D,3.627355649389591e-07,0,9.268797824201216e-07,False,False,0.0
+4212,We should subsidize space exploration,"[['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']]",E,0.9999999991607667,0,0.9999999994173027,False,False,1.0

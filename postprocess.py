@@ -1,21 +1,22 @@
 """
 Postprocess: Statistical Analysis of LLM Probability Outputs
 
-This script performs postprocessing and statistical analysis on LLM output probability matrices.
-It generates three heatmap visualizations for:
+This script performs postprocessing and statistical analysis on LLM output probability matrices
+from debate speech experiments. It generates four bar plot visualizations for:
 1. Percentage of confidence intervals including 1
-2. Mean diagonal probabilities
-3. Success rates (probability > 0.5)
+2. Percentage of Bonferroni-corrected confidence intervals including 1
+3. Average probability of stance preservation
+4. Success rates (probability > threshold)
+
+Results are aggregated across propositions (from propositions.json) for each initial stance.
 """
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 import json
 import os
 import argparse
-from pathlib import Path
 from scipy import stats
 
 # Configuration
@@ -23,25 +24,11 @@ plt.style.use("ggplot")
 
 LETTERS = ["A", "B", "C", "D", "E"]
 
-TOPICS = [
-    "Age",
-    "Disability_status",
-    "Gender_identity",
-    "Nationality",
-    "Physical_appearance",
-    "Race_ethnicity",
-    "Race_x_gender",
-    "Race_x_SES",
-    "Religion",
-    "SES",
-    "Sexual_orientation",
-]
-
 # Statistical analysis parameters
 confidence = 0.99
 epsilon = 1e-10
 method = "clt"  # 'hoeffding', 'clt'
-THRE_SUCCESS = 0.9  # Threshold for success rate (probability > 0.5)
+THRE_SUCCESS = 0.9  # Threshold for success rate (probability > 0.9)
 
 THRE_SUCCESS_SQ = np.round(np.arange(0, 1.05, 0.05), 2)
 
@@ -148,17 +135,17 @@ def letter_to_option(letter):
         return "Disagree strongly"
 
 
-def create_heatmap(data, value_column, title, filename, model_name, cmap="YlOrRd"):
+def create_barplot(data, value_column, title, filename, model_name, color="steelblue"):
     """
-    Create and save a heatmap visualization.
+    Create and save a bar plot visualization.
 
     Args:
         data: DataFrame with results
-        value_column: Column to use for heatmap values
+        value_column: Column to use for bar values
         title: Plot title
         filename: Output filename (without path)
         model_name: Model name for directory structure
-        cmap: Colormap for heatmap
+        color: Bar color
     """
     # Create output directory
     output_dir = f"postprocess_results/{model_name}"
@@ -167,48 +154,62 @@ def create_heatmap(data, value_column, title, filename, model_name, cmap="YlOrRd
     # Create full file path
     full_filename = os.path.join(output_dir, filename)
 
-    # Compute mean and se pivot tables (as percentages)
-    def standard_error(x):
-        return np.std(x, ddof=1) / np.sqrt(len(x))
-    heatmap_mean = data.pivot_table(
-        values=value_column, index="Letter", columns="Category", aggfunc="mean"
-    )
-    heatmap_se = data.pivot_table(
-        values=value_column, index="Letter", columns="Category", aggfunc= standard_error
-    )
+    # Compute mean and SE for each initial stance (letter)
+    grouped = data.groupby("Letter")[value_column]
+    means = grouped.mean()
+    ses = grouped.apply(lambda x: np.std(x, ddof=1) / np.sqrt(len(x)))
 
-    # Convert to percent and round
-    mean_percent = (heatmap_mean * 100).round().astype(int)
-    se_percent = (heatmap_se * 100).round().astype(int)
+    # Ensure ordering follows LETTERS
+    labels = [letter_to_option(l) for l in LETTERS]
+    mean_values = [means[l] for l in LETTERS]
+    se_values = [ses[l] for l in LETTERS]
 
-    # Create annotation matrix: "mean (sd)"
-    annot = mean_percent.astype(str) + " (" + se_percent.astype(str) + ")"
+    # Convert to percentages for display
+    mean_pct = [m * 100 for m in mean_values]
+    se_pct = [s * 100 for s in se_values]
 
-    # Update title to mention percent
-    title_with_percent = title + "\n(Values in %; Annot: Mean (SE))"
+    fig, ax = plt.subplots(figsize=(15, 10))
+    x_pos = np.arange(len(LETTERS))
+    bars = ax.bar(
+                x_pos,
+                mean_pct,
+                yerr=se_pct,
+                capsize=30,
+                width=0.85,
+                color=color,
+                edgecolor="#333333",
+                alpha=0.5,
+                error_kw={"linewidth": 2.2, "ecolor": "#2B2B2B"},
+            )
 
-    # Create heatmap
-    fig, ax = plt.subplots(figsize=(32, 10))
-    sns.heatmap(
-        heatmap_mean,
-        cmap=cmap,
-        annot=annot.values,
-        annot_kws={"fontsize": 30},
-        fmt="",
-        vmin=0,
-        vmax=1,
-    )
-    ax.figure.axes[-1].yaxis.set_tick_params(labelsize=30)
-    ax.set_title(title_with_percent, fontsize=40, fontweight="bold")
-    ax.set_xticklabels([tick.get_text().replace("_", "_\n") for tick in ax.get_xticklabels()], rotation=30, fontsize=30, fontweight="bold")
-    ax.set_xlabel("Topic", fontsize=30, fontweight="bold")
-    yticklabels = [tick.get_text() for tick in ax.get_yticklabels()]
-    ax.set_yticklabels([letter_to_option(str(l)).replace(" ", "\n") for l in yticklabels], rotation=0, fontsize=30, fontweight="bold")
-    ax.set_ylabel("Initial Stance", fontsize=30, fontweight="bold")
+    # Add value labels in the middle of each bar: "mean (SE)"
+    for i, (bar, m, s) in enumerate(zip(bars, mean_pct, se_pct)):
+        ax.text(
+            bar.get_x() + bar.get_width() / 2.0, 
+            max(bar.get_height()-10.0, 0.0),
+            f"{m:.1f} ({s:.1f})",
+            ha="center", 
+            va="bottom", 
+            fontsize=25,            # slightly larger
+            fontweight="semibold",  # lighter than bold
+            color="black",       
+        )
+
+    ax.set_xticks(x_pos)
+    ax.set_xticklabels(labels, fontsize=24, fontweight="bold")
+    ax.set_xlabel("Initial Stance", fontsize=30, fontweight="bold")
+    ax.set_ylabel("Percentage (%)", fontsize=30, fontweight="bold", labelpad=12)
+    title_with_annot = title + "\n(Values in %; Annot: Mean (SE))"
+    ax.set_title(title_with_annot, fontsize=34, fontweight="bold", pad=18)
+    ax.set_ylim(0, min(115, max(mean_pct) + max(se_pct) + 15))
+    ax.tick_params(axis="y", labelsize=24)
+    ax.yaxis.grid(True, linestyle="-", linewidth=0.6, alpha=0.25)
+    ax.set_axisbelow(True)
+
     plt.tight_layout()
     plt.savefig(full_filename, bbox_inches="tight", dpi=500)
     plt.close()
-    print(f"Saved heatmap: {full_filename}")
+    print(f"Saved bar plot: {full_filename}")
 
 
 def parse_arguments():
@@ -222,12 +223,6 @@ def parse_arguments():
         type=str,
         default="gpt_4o_mini",
         help="Model name (default: gpt_4o_mini)",
-    )
-
-    parser.add_argument(
-        "--batch",
-        action="store_true",
-        help="Use batch results (adds '_batch' to file paths)",
     )
 
     parser.add_argument(
@@ -288,7 +283,6 @@ def main():
     # Set parameters from command line arguments
     MODEL = args.model
     SUFFIX = args.suffix
-    BATCH = "_batch" if args.batch else ""
     THRE_SUCCESS = args.threshold
     CONFIDENCE = args.confidence
     EPSILON = args.epsilon
@@ -298,102 +292,93 @@ def main():
 
     print("Starting postprocessing analysis...")
     print(f"Model: {MODEL}{SUFFIX}")
-    print(f"Batch mode: {args.batch}")
     print(f"Success threshold: {THRE_SUCCESS}")
     print(f"Confidence level: {CONFIDENCE}")
     print(f"Method: {METHOD}")
     print(f"Epsilon: {EPSILON}")
     print("-" * 50)
 
+    # Load propositions
+    propositions = load_json("propositions.json")
+    num_propositions = len(propositions)
+    print(f"Loaded {num_propositions} propositions from propositions.json")
+
     results = []
     success_rates_results = []
+    files_processed = 0
 
-    for topic in TOPICS:
-        print(f"Processing topic: {topic}")
+    for prop in propositions:
+        topic_id = prop["topic_id"]
+        topic = prop["topic"]
 
-        # Get all example IDs for this topic
-        examples_id = []
-        examples_file = f"bbq_data/examples/modified_{topic}_examples.jsonl"
+        file_path = (
+            f"results/{MODEL}{SUFFIX}/debate_speech_{topic_id}"
+            f"_{MODEL}_prompt_{PROMPT_ID}_raw.json"
+        )
 
-        if not os.path.exists(examples_file):
-            print(f"  Warning: Examples file not found: {examples_file}")
-            continue
+        if not os.path.exists(file_path):
+            continue  # skip missing files
 
-        with open(examples_file, "r") as file:
-            for line in file:
-                json_object = json.loads(line)
-                examples_id.append(json_object["example_id"])
+        try:
+            data = load_json(file_path)
+            files_processed += 1
 
-        # Process each domain file for this topic
-        files_processed = 0
-        for example_id in examples_id:
-            domain = f"{topic}_{example_id}"
-            file_path = f"experiment_results/{MODEL}{SUFFIX}/{topic}/{domain}_{MODEL}_prompt_{PROMPT_ID}{BATCH}_raw.json"
+            for perm_key in data.keys():
+                diag_probs = extract_diagonal_probs(
+                    data, perm_key=perm_key, letters=LETTERS, temp=TEMP
+                )
 
-            if not os.path.exists(file_path):
-                continue  # skip missing files
-
-            try:
-                data = load_json(file_path)
-                files_processed += 1
-
-                for perm_key in data.keys():
-                    diag_probs = extract_diagonal_probs(
-                        data, perm_key=perm_key, letters=LETTERS, temp=TEMP
+                for i, l in enumerate(LETTERS):
+                    samples = diag_probs[l]
+                    mean, ci_low, ci_high = compute_confidence_interval(
+                        samples, confidence=CONFIDENCE, method=METHOD
+                    )
+                    mean, ci_low_bonferroni, ci_high_bonferroni = (
+                        compute_confidence_interval(
+                            samples,
+                            confidence=1 - (1 - CONFIDENCE) / num_propositions,
+                            method=METHOD,
+                        )
                     )
 
-                    for i, l in enumerate(LETTERS):
-                        samples = diag_probs[l]
-                        mean, ci_low, ci_high = compute_confidence_interval(
-                            samples, confidence=CONFIDENCE, method=METHOD
+                    includes_1 = ci_low <= 1 <= ci_high
+                    includes_1_bonferroni = (
+                        ci_low_bonferroni <= 1 <= ci_high_bonferroni
+                    )
+                    success_rate = np.mean(samples > THRE_SUCCESS)
+
+                    results.append(
+                        {
+                            "Proposition_ID": topic_id,
+                            "Proposition": topic,
+                            "Perm": perm_key,
+                            "Letter": l,
+                            "Mean": mean,
+                            "CI_low": ci_low,
+                            "CI_high": ci_high,
+                            "Includes_1": includes_1,
+                            "Includes_1_bonferroni": includes_1_bonferroni,
+                            "Success_rate": success_rate,
+                        }
+                    )
+
+                    success_rates_result = {
+                        "Proposition_ID": topic_id,
+                        "Proposition": topic,
+                        "Perm": perm_key,
+                        "Letter": l,
+                    }
+                    for thre_success in THRE_SUCCESS_SQ:
+                        success_rates_result[f"Success_rate_{thre_success}"] = (
+                            np.mean(samples > thre_success)
                         )
-                        mean, ci_low_bonferroni, ci_high_bonferroni = (
-                            compute_confidence_interval(
-                                samples,
-                                confidence=1 - (1 - CONFIDENCE) / 20,
-                                method=METHOD,
-                            )
-                        )
+                    success_rates_results.append(success_rates_result)
 
-                        includes_1 = ci_low <= 1 <= ci_high
-                        includes_1_bonferroni = (
-                            ci_low_bonferroni <= 1 <= ci_high_bonferroni
-                        )
-                        success_rate = np.mean(
-                            samples > THRE_SUCCESS
-                        )  # Adjusted threshold for success rate
+        except Exception as e:
+            print(f"  Error processing {file_path}: {e}")
+            continue
 
-                        results.append(
-                            {
-                                "Category": topic,
-                                "Example": domain,
-                                "Perm": perm_key,
-                                "Letter": l,
-                                "Mean": mean,
-                                "CI_low": ci_low,
-                                "CI_high": ci_high,
-                                "Includes_1": includes_1,
-                                "Includes_1_bonferroni": includes_1_bonferroni,
-                                "Success_rate": success_rate,
-                            }
-                        )
-
-                        success_rates_result = {}
-                        success_rates_result["Category"] = topic
-                        success_rates_result["Example"] = domain
-                        success_rates_result["Perm"] = perm_key
-                        success_rates_result["Letter"] = l
-                        for thre_success in THRE_SUCCESS_SQ:
-                            success_rates_result[f"Success_rate_{thre_success}"] = (
-                                np.mean(samples > thre_success)
-                            )
-                        success_rates_results.append(success_rates_result)
-
-            except Exception as e:
-                print(f"  Error processing {file_path}: {e}")
-                continue
-
-        print(f"  Processed {files_processed} files")
+    print(f"Processed {files_processed} / {num_propositions} proposition files")
 
     if not results:
         print("No results found! Check your file paths and configuration.")
@@ -403,94 +388,108 @@ def main():
     results_df = pd.DataFrame(results)
     print(f"\nTotal results: {len(results_df)} rows")
 
-    # Summary by topic
-    summary_by_topic = (
-        results_df.groupby("Category")[
+    # Summary by initial stance (Letter)
+    def standard_error(x):
+        return np.std(x, ddof=1) / np.sqrt(len(x))
+
+    summary_by_stance = (
+        results_df.groupby("Letter")[
             ["Includes_1", "Includes_1_bonferroni", "Mean", "Success_rate"]
         ]
-        .mean()
-        .reset_index()
+        .agg(["mean", standard_error])
     )
-    summary_by_topic.columns = [
-        "Category",
-        "Percentage_CI_includes_1",
-        "Percentage_CI_includes_1_bonferroni",
-        "Mean",
-        "Success_Rate",
+    # Flatten multi-level columns
+    summary_by_stance.columns = [
+        f"{col}_{stat}" for col, stat in summary_by_stance.columns
     ]
+    summary_by_stance = summary_by_stance.reset_index()
+    # Add readable stance labels
+    summary_by_stance.insert(
+        1, "Stance", summary_by_stance["Letter"].apply(letter_to_option)
+    )
 
-    print("\nSummary by topic:")
-    print(summary_by_topic)
+    print("\nSummary by initial stance:")
+    print(summary_by_stance.to_string(index=False))
 
     # Save summary to text file
     if TEMP == 0:
         SUFFIX = SUFFIX + "_temp0"
     output_dir = f"postprocess_results/{MODEL}{SUFFIX}"
     os.makedirs(output_dir, exist_ok=True)
-    summary_file = os.path.join(output_dir, "summary_by_topic.txt")
+    summary_file = os.path.join(output_dir, "summary.txt")
 
     with open(summary_file, "w") as f:
-        f.write("Summary by Category - Statistical Analysis Results\n")
-        f.write("=" * 50 + "\n\n")
+        f.write("Summary by Initial Stance - Statistical Analysis Results\n")
+        f.write("=" * 60 + "\n\n")
         f.write(f"Model: {MODEL}{SUFFIX}\n")
-        f.write(f"Batch mode: {args.batch}\n")
+        f.write(f"Propositions processed: {files_processed} / {num_propositions}\n")
         f.write(f"Success threshold: {THRE_SUCCESS}\n")
         f.write(f"Confidence level: {CONFIDENCE}\n")
         f.write(f"Method: {METHOD}\n")
         f.write(f"Epsilon: {EPSILON}\n")
-        f.write("=" * 50 + "\n\n")
-        f.write(summary_by_topic.to_string(index=False))
+        f.write(f"Temperature: {TEMP}\n")
+        f.write("=" * 60 + "\n\n")
+        f.write(summary_by_stance.to_string(index=False))
         f.write("\n\n")
         f.write("Column Descriptions:\n")
         f.write(
-            "- Percentage_CI_includes_1: Percentage of confidence intervals that include 1.0\n"
+            "- Includes_1_mean: Percentage of confidence intervals that include 1.0\n"
         )
-        f.write("- Mean: Average diagonal probability (consistency measure)\n")
-        f.write("- Success_Rate: Fraction of cases with probability above threshold\n")
+        f.write(
+            "- Includes_1_bonferroni_mean: Same with Bonferroni correction "
+            f"(÷{num_propositions} propositions)\n"
+        )
+        f.write("- Mean_mean: Average diagonal probability (stance preservation)\n")
+        f.write(
+            "- Success_rate_mean: Fraction of cases with probability above threshold\n"
+        )
+        f.write("- *_standard_error: Standard error of the corresponding metric\n")
 
     print(f"Saved summary to: {summary_file}")
 
-    # Create and save heatmaps
-    print("\nGenerating heatmaps...")
+    # Create and save bar plots
+    print("\nGenerating bar plots...")
 
-    # Heatmap 1: Percentage of CIs including 1
-    create_heatmap(
+    # Bar plot 1: Percentage of CIs including 1
+    create_barplot(
         results_df,
         "Includes_1",
-        f"Percentage of Confidence Intervals Including 1 \n({int(CONFIDENCE*100)}% confidence interval, 1-sided)",
-        "heatmap_includes_1.pdf",
+        f"Percentage of Confidence Intervals Including 1\n"
+        f"({int(CONFIDENCE * 100)}% confidence interval, 1-sided)",
+        "barplot_includes_1.pdf",
         f"{MODEL}{SUFFIX}",
-        "YlOrRd",
+        "#7A2E2E",
     )
 
-    # Heatmap 2: Percentage of CIs including 1 (Bonferroni corrected)
-    create_heatmap(
+    # Bar plot 2: Percentage of CIs including 1 (Bonferroni corrected)
+    create_barplot(
         results_df,
         "Includes_1_bonferroni",
-        f"Percentage of Bonferroni-Corrected Confidence Intervals Including 1", #\n({int(CONFIDENCE*100)}% confidence interval, 1-sided)
-        f"heatmap_includes_1_bonferroni.pdf",
+        f"Percentage of Confidence Intervals Including 1\n"
+        f"(Bonferroni-corrected)",
+        "barplot_includes_1_bonferroni.pdf",
         f"{MODEL}{SUFFIX}",
-        "YlOrRd",
+        "#8F4E2A",
     )
 
-    # Heatmap 3: Mean diagonal probabilities
-    create_heatmap(
+    # Bar plot 3: Average probability of stance preservation
+    create_barplot(
         results_df,
         "Mean",
-        "Mean Diagonal Probabilities",
-        "heatmap_mean_probabilities.pdf",
+        "Average Probability of Stance Preservation",
+        "barplot_mean_probabilities.pdf",
         f"{MODEL}{SUFFIX}",
-        "Blues",
+        "#2F4B7C",
     )
 
-    # Heatmap 4: Success rates
-    create_heatmap(
+    # Bar plot 4: Success rates
+    create_barplot(
         results_df,
         "Success_rate",
-        f"Success Rates \n(Fraction with probability > {THRE_SUCCESS})",
-        "heatmap_success_rates.pdf",
+        f"Success Rates\n(Fraction with probability > {THRE_SUCCESS})",
+        "barplot_success_rates.pdf",
         f"{MODEL}{SUFFIX}",
-        "Greens",
+        "#2E6F62",
     )
 
     # Save success rates results to CSV
@@ -506,12 +505,33 @@ def main():
         index=False,
     )
 
+    # Save / update cross-model comparison CSV
+    model_label = f"{MODEL}{SUFFIX}"
+    model_summary = summary_by_stance.copy()
+    model_summary.insert(0, "Model", model_label)
+
+    comparison_file = "postprocess_results/model_comparison.csv"
+    if os.path.exists(comparison_file):
+        existing = pd.read_csv(comparison_file)
+        # Remove old rows for this model (allows re-runs to update)
+        existing = existing[existing["Model"] != model_label]
+        combined = pd.concat([existing, model_summary], ignore_index=True)
+    else:
+        combined = model_summary
+
+    combined.to_csv(comparison_file, index=False)
+    print(f"Updated cross-model comparison: {comparison_file}")
+
     print("\nAnalysis complete!")
     print("Generated files:")
-    print(f"- postprocess_results/{MODEL}{SUFFIX}/summary_by_topic.txt")
-    print(f"- postprocess_results/{MODEL}{SUFFIX}/heatmap_includes_1.pdf")
-    print(f"- postprocess_results/{MODEL}{SUFFIX}/heatmap_mean_probabilities.pdf")
-    print(f"- postprocess_results/{MODEL}{SUFFIX}/heatmap_success_rates.pdf")
+    print(f"- postprocess_results/{MODEL}{SUFFIX}/summary.txt")
+    print(f"- postprocess_results/{MODEL}{SUFFIX}/barplot_includes_1.pdf")
+    print(f"- postprocess_results/{MODEL}{SUFFIX}/barplot_includes_1_bonferroni.pdf")
+    print(f"- postprocess_results/{MODEL}{SUFFIX}/barplot_mean_probabilities.pdf")
+    print(f"- postprocess_results/{MODEL}{SUFFIX}/barplot_success_rates.pdf")
+    print(f"- postprocess_results/{MODEL}{SUFFIX}/postprocess_detailed_results.csv")
+    print(f"- postprocess_results/{MODEL}{SUFFIX}/postprocess_success_rates_results.csv")
+    print(f"- {comparison_file}")
 
 
 if __name__ == "__main__":
