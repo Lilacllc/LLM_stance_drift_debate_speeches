@@ -24,17 +24,25 @@ def main():
     args = parser.parse_args()
 
     # Create metrics directory if it doesn't exist
-    metrics_dir = "metrics"
+    metrics_dir = "figures"
     os.makedirs(metrics_dir, exist_ok=True)
 
-    # Find all model/suffix subdirectories
+    # Fixed comprehensive model list (13 models)
     model_dirs = [
-        d
-        for d in os.listdir(RESULTS_DIR)
-        if os.path.isdir(os.path.join(RESULTS_DIR, d))
+        "gpt_4o_mini",
+        "gpt_4_1",
+        "gpt_3_5_turbo",
+        "gemma_3n_e4b",
+        "llama3_3_70b",
+        "llama3_1_8b",
+        "llama4_maverick",
+        "qwen3_a3b",
+        "gpt_4o_mini_reversed",
+        "gpt_4o_mini_temp0",
+        "gpt_4o_mini_multiple_summarization",
+        "gpt_4o_mini_in_context",
+        "gpt_4o_mini_assert",
     ]
-    if "gpt_5_nano" in model_dirs:
-        model_dirs.remove("gpt_5_nano")
 
     # Store results for plotting
     curves = {}
@@ -111,7 +119,7 @@ def main():
     plt.xticks(fontsize=30, fontweight="bold")
     plt.xlim(0.5, 1.0)  # Align with AUC computation range (0.5 to 1.0)
     plt.title("Threshold vs. Average Success Rate", fontsize=40, fontweight="bold")
-    plt.legend(prop={'size': 30})
+    plt.legend(prop={'size': 30}, ncol=2)
     plt.tight_layout()
     plt.savefig(
         os.path.join(metrics_dir, "success_rate_vs_threshold_all_letters.pdf"),  dpi=500
@@ -137,7 +145,7 @@ def main():
         plt.xlabel("Threshold")
         plt.ylabel("Average Success Rate (Neutral)")
         plt.title("Threshold vs. Average Success Rate (Neutral)")
-        plt.legend()
+        plt.legend(prop={'size': 30}, ncol=2)
         plt.tight_layout()
         plt.savefig(
             os.path.join(metrics_dir, "success_rate_vs_threshold_Neutral.pdf"),  dpi=500
@@ -179,11 +187,12 @@ def main():
         model_lower = model_name.lower()
         # Check for GPT-4o-mini variants first (most specific)
         gpt4o_mini_variants = {
-            "gpt_4o_mini_reversed": "#4ECDC4",  # Base teal
-            "gpt_4o_mini_temp0": "#3DBDB6",  # Slightly darker teal
-            "gpt_4o_mini_double_summarization": "#6ED4CC",  # Slightly lighter teal
-            "gpt_4o_mini": "#2AADA6",  # Darker teal
-            "gpt_4o_mini_in_context": "#5BCCC4",  # Another shade
+            "gpt_4o_mini_reversed": "#4ECDC4",  # Teal
+            "gpt_4o_mini_temp0": "#3DBDB6",  # Darker teal
+            "gpt_4o_mini_multiple_summarization": "#6ED4CC",  # Lighter teal
+            "gpt_4o_mini": "#2AADA6",  # Darkest teal
+            "gpt_4o_mini_in_context": "#5BCCC4",  # Medium teal
+            "gpt_4o_mini_assert": "#7FE5CC",  # Light teal
         }
 
         for variant, color in gpt4o_mini_variants.items():
@@ -191,14 +200,18 @@ def main():
                 return color
 
         # Check for other GPT-4 variants
-        if "gpt_4" in model_lower or "gpt-4" in model_lower:
+        if "gpt_4_1" in model_lower:
+            return "#1E90FF"  # Dodger blue
+        elif "gpt_4" in model_lower or "gpt-4" in model_lower:
             return "#4ECDC4"  # Default GPT-4 teal
 
-        # Check for LLaMA3 variants
-        if "llama3_8b" in model_lower:
+        # Check for LLaMA variants
+        if "llama3_1_8b" in model_lower:
             return "#A8E6CF"  # Light mint green
         elif "llama3_3_70b" in model_lower:
             return "#7FB069"  # Darker green
+        elif "llama4" in model_lower:
+            return "#50C878"  # Emerald green
         elif "llama" in model_lower:
             return "#90EE90"  # Default light green for other LLaMA variants
 
@@ -209,6 +222,8 @@ def main():
             or "gpt3.5" in model_lower
         ):
             return "#FF6B6B"  # Light red
+        elif "qwen" in model_lower:
+            return "#FF8C00"  # Dark orange
         elif "claude" in model_lower:
             return "#95E1D3"  # Light green
         elif "gemini" in model_lower:
@@ -233,7 +248,7 @@ def main():
         ].apply(format_model_name)
 
     # Plot 3: AUC Bar Plot - All Letters
-    plt.figure(figsize=(26, 12))
+    plt.figure(figsize=(28, 12))
 
     # Get colors for each model
     colors = [get_model_color(model) for model in auc_df_all_formatted["Model"]]
@@ -278,7 +293,7 @@ def main():
 
     # Plot 4: AUC Bar Plot - Neutral (Letter C) - skip if --all-letters-only is set
     if not args.all_letters_only:
-        plt.figure(figsize=(22, 12))
+        plt.figure(figsize=(28, 12))
 
         # Get colors for each model
         colors_neutral = [

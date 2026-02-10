@@ -168,7 +168,7 @@ def create_barplot(data, value_column, title, filename, model_name, color="steel
     mean_pct = [m * 100 for m in mean_values]
     se_pct = [s * 100 for s in se_values]
 
-    fig, ax = plt.subplots(figsize=(15, 10))
+    fig, ax = plt.subplots(figsize=(17, 10))
     x_pos = np.arange(len(LETTERS))
     bars = ax.bar(
                 x_pos,

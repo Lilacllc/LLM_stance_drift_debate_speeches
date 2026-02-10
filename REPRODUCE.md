@@ -22,17 +22,14 @@ This document provides verified commands for reproducing all figures in the pape
 
 ## Quick Reference
 
-| Figure | Script | Command |
-|--------|--------|---------|
+| Table/Figure | Script | Command |
+|--------------|--------|---------|
 | Figure 2A, 2B, 2C | `visualization.py` | `python visualization.py` |
-| Figure 4A, 4B | `postprocess.py` | `python postprocess.py --model gpt_4o_mini` |
+| Table 1A, 1B | `faithfulness_metric.py` | `python faithfulness_metric.py --latex-tables` |
 | Figure 5 | `faithfulness_metric.py` | `python faithfulness_metric.py` |
 | Figure S4A, S4B | `visualization.py` | `python visualization.py` |
-| Figure S5 | `postprocess.py` | `python postprocess.py --model gpt_4o_mini --suffix _reversed` |
-| Figure S6 | `postprocess.py` | `python postprocess.py --model gpt_4o_mini --temp 0` |
-| Figure S7 | `postprocess.py` | See [Model Bar Plots](#model-bar-plots) |
+| Table S1-S4 | `faithfulness_metric.py` | `python faithfulness_metric.py --latex-tables --comprehensive` |
 | Figure S8 | `faithfulness_metric.py` | `python faithfulness_metric.py --comprehensive` |
-| Figure S9 | `postprocess.py` | `python postprocess.py --model gpt_4o_mini` |
 | Figure S10 | `success_rate_metric.py` | `python success_rate_metric.py --all-letters-only` |
 
 ---
@@ -58,23 +55,23 @@ python visualization.py
 
 ---
 
-### Model Bar Plots (Figure 4, S5, S6, S7, S9)
+### Model Bar Plots (prerequisite for Table 1, S1–S4, Figure S9)
 
 **Script:** `postprocess.py`
 
 **Output:** `postprocess_results/{model}/` and `postprocess_results/model_comparison.csv`
 
+Run these commands to generate per-model bar plots and populate `model_comparison.csv`, which is used by `faithfulness_metric.py --latex-tables` to produce Table 1A,B and Table S1–S4.
+
 ```bash
-# Figure 4A, 4B, S9 - GPT-4o-mini (main model)
+# Base model
 python postprocess.py --model gpt_4o_mini
 
-# Figure S5 - GPT-4o-mini with reversed option order
+# Variants (reversed option order, temperature=0)
 python postprocess.py --model gpt_4o_mini --suffix _reversed
-
-# Figure S6 - GPT-4o-mini with temperature=0
 python postprocess.py --model gpt_4o_mini --temp 0
 
-# Figure S7 - Other models
+# Other models
 python postprocess.py --model gpt_4_1
 python postprocess.py --model gpt_3_5_turbo
 python postprocess.py --model gemma_3n_e4b
@@ -98,6 +95,28 @@ python postprocess.py --model qwen3_a3b
 
 ---
 
+### Model Comparison Tables (Table 1, S1-S4)
+
+**Script:** `faithfulness_metric.py`
+
+**Output:** `figures/`
+
+**Prerequisites:** Run `postprocess.py` for all models first (generates `model_comparison.csv`).
+
+```bash
+# Table 1A, 1B - Subset (9 models): Mean probability & Bonferroni CI inclusion
+python faithfulness_metric.py --latex-tables
+
+# Table S1-S4 - Comprehensive (13 models): All 4 metrics
+python faithfulness_metric.py --latex-tables --comprehensive
+```
+
+**Output files:**
+- `figures/latex_tables_subset.tex` — 4 LaTeX table snippets (subset models)
+- `figures/latex_tables_comprehensive.tex` — 4 LaTeX table snippets (all models)
+
+---
+
 ### SPR Comparison Bar Charts (Figure 5, S8)
 
 **Script:** `faithfulness_metric.py`
@@ -105,15 +124,16 @@ python postprocess.py --model qwen3_a3b
 **Output:** `figures/`
 
 ```bash
-# Figure 5 - Stance Preservation Rate comparison (8 models)
+# Figure 5 - Stance Preservation Rate comparison (9 models)
 python faithfulness_metric.py
 
-# Figure S8 - Comprehensive comparison (11 models)
+# Figure S8 - Comprehensive comparison (13 models)
 python faithfulness_metric.py --comprehensive
 ```
 
 **Options:**
-- `--comprehensive`: Include all 11 models (adds llama3_8b, gpt_4o_mini_reversed, gpt_4o_mini_temp0)
+- `--comprehensive`: Include all 13 models (adds llama3_3_70b, llama3_1_8b, gpt_4o_mini_reversed, gpt_4o_mini_temp0)
+- `--latex-tables`: Generate LaTeX table snippets instead of bar plots
 - `--errorbar`: Show error bars
 - `--neutral-only`: Use only neutral (letter C) data
 
