@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import argparse
+from name_maps import get_latex_name, get_plot_name
 
 # Directory containing all model/suffix result folders
 RESULTS_DIR = "postprocess_results"
@@ -32,7 +33,7 @@ STANCE_LABELS = {
 
 
 def latex_escape(s):
-    """Escape underscores for LaTeX."""
+    """Escape underscores for LaTeX (fallback for unknown names)."""
     return s.replace("_", "\\_")
 
 
@@ -81,7 +82,7 @@ def generate_latex_tables(model_dirs, comprehensive=False):
         output_lines.append("\t\t\\hline")
 
         # Header row: stance names as columns
-        header = "Model"
+        header = "Initial Stance"
         for letter in STANCE_ORDER:
             header += f" & {STANCE_LABELS[letter]}"
         header += " \\\\"
@@ -97,7 +98,7 @@ def generate_latex_tables(model_dirs, comprehensive=False):
 
         # Data rows: one row per model
         for model in available_models:
-            row = latex_escape(model)
+            row = get_latex_name(model)
             for letter in STANCE_ORDER:
                 cell = df[(df["Model"] == model) & (df["Letter"] == letter)]
                 if len(cell) == 0:
@@ -192,11 +193,10 @@ def main():
             "gpt_4_1",
             "gpt_3_5_turbo",
             "gemma_3n_e4b",
+            "llama3_3_70b",
+            "llama3_1_8b",
             "llama4_maverick",
             "qwen3_a3b",
-            "gpt_4o_mini_multiple_summarization",
-            "gpt_4o_mini_in_context",
-            "gpt_4o_mini_assert",
         ]
 
     # If --latex-tables, generate tables and exit
@@ -312,11 +312,7 @@ def main():
 
     # Set x-axis labels
     plt.xlabel("Models", fontsize=40, fontweight="bold")
-    models_labels = [
-        model.replace("gpt_4o_mini_", "gpt_4o_mini\n_")
-             .replace("_summarization", "\n_summarization")
-        for model in models
-    ]
+    models_labels = [get_plot_name(model) for model in models]
     plt.xticks(range(len(models)), models_labels, rotation=30, ha="center", fontsize=22, fontweight="bold")
 
     # Add value labels inside bars

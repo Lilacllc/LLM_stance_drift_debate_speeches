@@ -24,14 +24,16 @@ MODEL_NAME_MAP = {
     "gpt-4.1": "gpt_4_1",
     "gpt-3.5-turbo": "gpt_3_5_turbo",
     "gpt-4o": "gpt_4o",
+    "Qwen/Qwen3-Next-80B-A3B-Instruct": "qwen3_a3b",
     "meta-llama/Llama-3-8b-chat-hf": "llama3_8b",
     "google/gemma-3n-E4B-it": "gemma_3n_e4b",
     "meta-llama/Llama-3.3-70B-Instruct-Turbo": "llama3_3_70b",
+    "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo": "llama3_1_8b",
+    "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": "llama4_maverick",
     "gemini-2.5-pro": "gemini_2_5_pro",
     "gemini-2.5-flash": "gemini_2_5_flash",
     "gemini-2.5-flash-lite": "gemini_2_5_flash_lite",
 }
-
 
 REPITITION_EST_MAT = 100  # Number of times to repeat the experiment of "Est" setting
 letter_list = ["A", "B", "C", "D", "E"]

@@ -2,7 +2,7 @@ Summary by Initial Stance - Statistical Analysis Results
 ============================================================
 
 Model: llama3_3_70b
-Propositions processed: 48 / 112
+Propositions processed: 112 / 112
 Success threshold: 0.95
 Confidence level: 0.99
 Method: clt
@@ -11,11 +11,11 @@ Temperature: 1
 ============================================================
 
 Letter            Stance  Includes_1_mean  Includes_1_standard_error  Includes_1_bonferroni_mean  Includes_1_bonferroni_standard_error  Mean_mean  Mean_standard_error  Success_rate_mean  Success_rate_standard_error
-     A    Agree strongly         0.854167                   0.051481                    0.875000                              0.048240   0.936250             0.025327           0.936250                     0.025327
-     B             Agree         0.229167                   0.061307                    0.333333                              0.068761   0.541458             0.053547           0.541458                     0.053547
-     C           Neutral         0.562500                   0.072360                    0.708333                              0.066300   0.854375             0.035397           0.854375                     0.035397
-     D          Disagree         0.041667                   0.029148                    0.062500                              0.035308   0.144167             0.040457           0.144167                     0.040457
-     E Disagree strongly         0.875000                   0.048240                    0.958333                              0.029148   0.970208             0.014005           0.970208                     0.014005
+     A    Agree strongly         0.901786                   0.028247                    0.919643                              0.025802   0.954107             0.015340           0.954107                     0.015340
+     B             Agree         0.223214                   0.039523                    0.294643                              0.043270   0.504643             0.036320           0.504643                     0.036320
+     C           Neutral         0.562500                   0.047086                    0.714286                              0.042879   0.851339             0.023328           0.851339                     0.023328
+     D          Disagree         0.035714                   0.017614                    0.053571                              0.021372   0.160893             0.025661           0.160893                     0.025661
+     E Disagree strongly         0.848214                   0.034057                    0.901786                              0.028247   0.941964             0.016945           0.941964                     0.016945
 
 Column Descriptions:
 - Includes_1_mean: Percentage of confidence intervals that include 1.0

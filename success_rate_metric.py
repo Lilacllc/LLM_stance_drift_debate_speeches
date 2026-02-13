@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import argparse
+from name_maps import get_plot_name
 
 # Directory containing all model/suffix result folders
 RESULTS_DIR = "postprocess_results"
@@ -108,11 +109,11 @@ def main():
                 avg_success,
                 yerr=std_success,
                 marker="o",
-                label=model_dir,
+                label=get_plot_name(model_dir).replace("-\n", "-").replace("\n", " "),
                 capsize=3,
             )
         else:
-            plt.plot(thresholds, avg_success, marker="o", label=model_dir)
+            plt.plot(thresholds, avg_success, marker="o", label=get_plot_name(model_dir).replace("-\n", "-").replace("\n", " "))
     plt.xlabel("Threshold", fontsize=30, fontweight="bold")
     plt.ylabel("Average Success Rate", fontsize=30, fontweight="bold")
     plt.yticks(fontsize=30, fontweight="bold")
@@ -137,11 +138,11 @@ def main():
                     avg_success_C,
                     yerr=std_success_C,
                     marker="o",
-                    label=model_dir,
+                    label=get_plot_name(model_dir).replace("-\n", "-").replace("\n", " "),
                     capsize=3,
                 )
             else:
-                plt.plot(thresholds, avg_success_C, marker="o", label=model_dir)
+                plt.plot(thresholds, avg_success_C, marker="o", label=get_plot_name(model_dir).replace("-\n", "-").replace("\n", " "))
         plt.xlabel("Threshold")
         plt.ylabel("Average Success Rate (Neutral)")
         plt.title("Threshold vs. Average Success Rate (Neutral)")
@@ -170,17 +171,8 @@ def main():
         )
 
     # Create bar plots for AUC results
-    # Function to format model names for GPT-4 variants
     def format_model_name(model_name):
-        
-        # if "gpt-4" in model_name.lower():
-        #     # Split GPT-4 variants by adding parentheses
-        #     parts = model_name.split("_")
-        #     if len(parts) > 1:
-        #         base_model = parts[0]
-        #         variant = "_".join(parts[1:])
-        #         return f"{base_model} ({variant})"
-        return model_name.replace("gpt_4o_mini_", "gpt_4o_mini\n_").replace("_summarization","\n_summarization")
+        return get_plot_name(model_name)
 
     # Function to assign colors based on model type
     def get_model_color(model_name):

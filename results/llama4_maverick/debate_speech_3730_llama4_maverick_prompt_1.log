@@ -24026,3 +24026,5 @@ Answer letter:
 2026-02-03 20:42:47,249 - INFO - expected_rate = -1.9999999994859925
 2026-02-03 20:42:47,249 - INFO - average_probs = [0.00000000e+00 0.00000000e+00 0.00000000e+00 5.14007282e-10
  9.99999999e-01]
+[SKIP] Topic 3730 already processed. Outputs exist at ./results/llama4_maverick/debate_speech_3730_llama4_maverick_prompt_1.json
+[SKIP] Topic 3730 already processed. Outputs exist at ./results/llama4_maverick/debate_speech_3730_llama4_maverick_prompt_1.json

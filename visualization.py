@@ -1,56 +1,33 @@
 import os
 import json
+import argparse
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from postprocess import letter_to_option
-# Model name mapping from main.py
-MODEL_NAME_MAP = {
-    "gpt-4o-mini": "gpt_4o_mini",
-    "gpt-3.5-turbo": "gpt_3_5_turbo",
-    "gpt-4o": "gpt_4o",
-    "gpt-4.1": "gpt_4_1",
-    "meta-llama/Llama-3-8b-chat-hf": "llama3_8b",
-    "google/gemma-3n-E4B-it": "gemma_3n_e4b",
-    "meta-llama/Llama-3.3-70B-Instruct-Turbo": "llama3_3_70b",
-    "gemini-2.5-pro": "gemini_2_5_pro",
-    "gemini-2.5-flash": "gemini_2_5_flash",
-    "gemini-2.5-flash-lite": "gemini_2_5_flash_lite",
-}
-letter_list = ["A", "B", "C", "D", "E"]
 
-def get_data_dir(topic_file_name, example_id, model_name, prompt_choice, output_dir="experiment_results"):
+LETTERS = ["A", "B", "C", "D", "E"]
+
+
+def get_raw_json_path(topic_id, model, prompt_id, results_dir="results"):
     """
-    Reconstruct plot based on given parameters.
-    
+    Construct path to a raw results JSON file.
+
     Args:
-        topic_file_name (str): Topic name (e.g., "Teaser", "Age")
-        example_id (int): Example ID from the dataset
-        model_name (str): Model name (e.g., "gpt-4o-mini")
-        prompt_choice (int): Prompt choice number
-        output_dir (str): Base output directory
+        topic_id (str): Proposition topic ID (e.g., "1161")
+        model (str): Internal model name (e.g., "gpt_4o_mini")
+        prompt_id (int): Prompt ID number
+        results_dir (str): Base results directory
+
+    Returns:
+        tuple: (json_file_path, base_name_for_plots)
     """
-    
-    
-    # Load proposition from data file
-    topic_file_path = f"bbq_data/modified_{topic_file_name}.jsonl"
-    with open(topic_file_path, "r") as file:
-        for line in file:
-            data = json.loads(line)
-            if data["example_id"] == example_id:
-                proposition = data["proposition"]
-                break
-    
-    # Construct file paths
-    EXAMPLE = f"{topic_file_name}_{example_id}"
-    file_name = f"{EXAMPLE}_{MODEL_NAME_MAP[model_name]}_prompt_{prompt_choice}_raw"
-    
-    # Load results matrix
-    topic_output_dir = os.path.join(output_dir, topic_file_name)
-    json_file_path = os.path.join(topic_output_dir, file_name + ".json")
-    
-    return json_file_path, f"{EXAMPLE}_{MODEL_NAME_MAP[model_name]}_prompt_{prompt_choice}"
+    base_name = f"debate_speech_{topic_id}_{model}_prompt_{prompt_id}"
+    json_file_path = os.path.join(
+        results_dir, model, base_name + "_raw.json"
+    )
+    return json_file_path, base_name
 
 def visualize_transition_matrices(results_tranmat, letter_list, title, plot_file_path, present_se = False, panel='left'):
     if panel=='left': 
@@ -71,14 +48,15 @@ def visualize_transition_matrices(results_tranmat, letter_list, title, plot_file
         )
 
     if present_se:
-        mean = pd.DataFrame((results_tranmat["mean"])* 100).round().astype(int)
-        se = pd.DataFrame((results_tranmat["se"])* 100).round().astype(int)
-        # Create annotation matrix: "mean (se)"
-        annot = mean.astype(str) + " (" + se.astype(str) + ")"
+        mean_pct = pd.DataFrame(results_tranmat["mean"] * 100)
+        se_pct = pd.DataFrame(results_tranmat["se"] * 100)
+        # Create annotation matrix: "mean (se)" in percentage with 1 decimal place
+        annot = mean_pct.apply(lambda col: col.map(lambda x: f"{x:.1f}")) + \
+                "\n(" + se_pct.apply(lambda col: col.map(lambda x: f"{x:.1f}")) + ")"
         # Update title to mention percent
         title = title + "\n(Values in %; Annot: Mean (SE))"
         sns.heatmap(
-            mean,
+            mean_pct,
             ax=ax,
             cmap="Reds",
             cbar=cbar,
@@ -89,7 +67,15 @@ def visualize_transition_matrices(results_tranmat, letter_list, title, plot_file
             vmax=100
             )
     else:
-        sns.heatmap(np.round(results_tranmat, 2), ax=ax, annot=True, cmap="Reds", cbar=cbar, vmin=0, vmax=1, annot_kws={"fontsize": 35})
+        # Display as percentage with 1 decimal place
+        data_pct = pd.DataFrame(results_tranmat * 100)
+        annot = data_pct.apply(lambda col: col.map(lambda x: f"{x:.1f}"))
+        title = title + "\n(Values in %)"
+        sns.heatmap(
+            data_pct, ax=ax, annot=annot.values, fmt="",
+            cmap="Reds", cbar=cbar, vmin=0, vmax=100,
+            annot_kws={"fontsize": 35}
+        )
 
     xticks = np.arange(0, len(letter_list), 1)
     letter_xticks = [letter_to_option(letter_list[tick]) for tick in list(xticks)]
@@ -117,46 +103,103 @@ def visualize_transition_matrices(results_tranmat, letter_list, title, plot_file
     print(f"Plot reconstructed and saved to: {plot_file_path}.pdf")
     return
 
-# Example usage:
+def load_and_compute(json_file_path):
+    """Load raw JSON and compute mean and SE of the transition matrix."""
+    with open(json_file_path, "r") as f:
+        data = json.load(f)
+    perm_key = list(data.keys())[0]
+    arr = np.asarray(data[perm_key])
+    mean = np.mean(arr, axis=0)
+    se = np.std(arr, axis=0, ddof=1) / np.sqrt(arr.shape[0])
+    return mean, se
+
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(
+        description="Visualize empirical transition matrices from debate speech experiments."
+    )
+    parser.add_argument(
+        "--topic_id",
+        type=str,
+        required=True,
+        help="Proposition topic_id from propositions.json (e.g., 1161)",
+    )
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="gpt_4o_mini",
+        help="Internal model name (default: gpt_4o_mini)",
+    )
+    parser.add_argument(
+        "--prompt_id",
+        type=int,
+        default=1,
+        help="Prompt ID (default: 1)",
+    )
+    parser.add_argument(
+        "--title",
+        type=str,
+        default="Empirical Transition Matrix",
+        help="Title for the plot (default: 'Empirical Transition Matrix')",
+    )
+    parser.add_argument(
+        "--panel",
+        type=str,
+        default="single",
+        choices=["left", "center", "right", "single"],
+        help="Panel layout for figure sizing/colorbar (default: single)",
+    )
+    parser.add_argument(
+        "--ideal-only",
+        action="store_true",
+        help="Only generate the ideal identity matrix figure",
+    )
+    return parser.parse_args()
+
+
 def main():
-    # Modify these parameters as needed
-    json_file_path, file_name = get_data_dir(
-        topic_file_name="Teaser",
-        example_id=22,
-        model_name="gpt-4.1",  
-        prompt_choice=1
+    args = parse_arguments()
+    # Decode escape sequences in title (e.g., \n -> actual newline)
+    if args.title:
+        args.title = args.title.encode().decode('unicode_escape')
+    os.makedirs("figures", exist_ok=True)
+
+    # Always generate the ideal identity matrix
+    if args.ideal_only:
+        visualize_transition_matrices(
+            np.eye(5), LETTERS,
+            "Identity Matrix\n(Perfect Stance Preservation)",
+            "figures/ideal",
+            present_se=False, panel="right",
+        )
+        return
+
+    # Load data for the given topic_id
+    json_file_path, base_name = get_raw_json_path(
+        topic_id=args.topic_id,
+        model=args.model,
+        prompt_id=args.prompt_id,
     )
-    plot_file_path = os.path.join("figures", file_name)
-    with open(json_file_path, "r") as file:
-        data = json.load(file)
-    perm_key = [perm_key for perm_key in data.keys()][0]
-    arr = np.asarray(data[perm_key])
-    mean = np.mean(arr, axis=0)
-    se = np.std(arr, axis=0, ddof=1)/np.sqrt(arr.shape[0])
 
-    visualize_transition_matrices({'mean': mean, 'se':se}, letter_list, "Empirical Transition Matrix\n(Mixed Pattern)", plot_file_path+"_se", present_se = True, panel='right')
+    if not os.path.exists(json_file_path):
+        print(f"Error: File not found: {json_file_path}")
+        return
 
-    visualize_transition_matrices(mean, letter_list, "Empirical Transition Matrix\n(Mixed Pattern)", plot_file_path, present_se = False, panel='center')
+    mean, se = load_and_compute(json_file_path)
+    plot_file_path = os.path.join("figures", base_name)
 
-    visualize_transition_matrices(np.eye(5), letter_list, "Identity Matrix\n(Perfect Stance Preservation)", "figures/ideal", present_se=False, panel='right')
-
-    json_file_path, file_name = get_data_dir(
-        topic_file_name="Teaser",
-        example_id=1,
-        model_name="gpt-4.1",  
-        prompt_choice=1
+    # Generate mean-only heatmap
+    visualize_transition_matrices(
+        mean, LETTERS, args.title,
+        plot_file_path, present_se=False, panel=args.panel,
     )
-    plot_file_path = os.path.join("figures", file_name)
-    with open(json_file_path, "r") as file:
-        data = json.load(file)
-    perm_key = [perm_key for perm_key in data.keys()][0]
-    arr = np.asarray(data[perm_key])
-    mean = np.mean(arr, axis=0)
-    se = np.std(arr, axis=0, ddof=1)/np.sqrt(arr.shape[0])
 
-    visualize_transition_matrices({'mean': mean, 'se':se}, letter_list, "Empirical Transition Matrix\n(Polarization)", plot_file_path+"_se", present_se = True, panel='left')
+    # Generate SE-annotated heatmap
+    visualize_transition_matrices(
+        {"mean": mean, "se": se}, LETTERS, args.title,
+        plot_file_path + "_se", present_se=True, panel=args.panel,
+    )
 
-    visualize_transition_matrices(mean, letter_list, "Empirical Transition Matrix\n(Polarization)", plot_file_path, present_se = False, panel='left')
 
 if __name__ == "__main__":
     main()

@@ -24,10 +24,11 @@ This document provides verified commands for reproducing all figures in the pape
 
 | Table/Figure | Script | Command |
 |--------------|--------|---------|
-| Figure 2A, 2B, 2C | `visualization.py` | `python visualization.py` |
+| Figure 2A, 2B | `visualization.py` | `python visualization.py --topic_id <ID> --model gpt_4o_mini --title "..." --panel ...` |
+| Figure 2C | `visualization.py` | `python visualization.py --ideal-only --topic_id dummy` |
 | Table 1A, 1B | `faithfulness_metric.py` | `python faithfulness_metric.py --latex-tables` |
 | Figure 5 | `faithfulness_metric.py` | `python faithfulness_metric.py` |
-| Figure S4A, S4B | `visualization.py` | `python visualization.py` |
+| Figure S4A, S4B | `visualization.py` | `python visualization.py --topic_id <ID> --model gpt_4o_mini --title "..." --panel ...` |
 | Table S1-S4 | `faithfulness_metric.py` | `python faithfulness_metric.py --latex-tables --comprehensive` |
 | Figure S8 | `faithfulness_metric.py` | `python faithfulness_metric.py --comprehensive` |
 | Figure S10 | `success_rate_metric.py` | `python success_rate_metric.py --all-letters-only` |
@@ -43,15 +44,26 @@ This document provides verified commands for reproducing all figures in the pape
 **Output:** `figures/`
 
 ```bash
-# Generates all transition matrix figures at once:
-# - Teaser_1_gpt_4_1_prompt_1.pdf (Figure 2A - Polarization)
-# - Teaser_22_gpt_4_1_prompt_1.pdf (Figure 2B - Mixed Pattern)
-# - ideal.pdf (Figure 2C - Perfect Preservation)
-# - Teaser_1_gpt_4_1_prompt_1_se.pdf (Figure S4A)
-# - Teaser_22_gpt_4_1_prompt_1_se.pdf (Figure S4B)
+# Figure 2C - Identity matrix (perfect stance preservation)
+python visualization.py --ideal-only --topic_id dummy
 
-python visualization.py
+# Figure 2A - Example: Polarization pattern (replace TOPIC_ID_1 with actual proposition ID)
+python visualization.py --topic_id 1902 --model gpt_4o_mini --title "Empirical Transition Matrix (Polarization)" --panel left
+
+# Figure 2B - Example: Mixed pattern (replace TOPIC_ID_2 with actual proposition ID)
+python visualization.py --topic_id 3234 --model gpt_4o_mini --title "Empirical Transition Matrix (Mixed Pattern)" --panel center
+
+# Figure S4A, S4B - SE-annotated versions are generated alongside each mean-only figure
+# (outputs: debate_speech_{TOPIC_ID}_{model}_prompt_1.pdf and debate_speech_{TOPIC_ID}_{model}_prompt_1_se.pdf)
 ```
+
+**Options:**
+- `--topic_id`: Proposition topic_id from propositions.json (required unless `--ideal-only`)
+- `--model`: Internal model name (default: `gpt_4o_mini`)
+- `--prompt_id`: Prompt ID (default: `1`)
+- `--title`: Plot title (default: `"Empirical Transition Matrix"`)
+- `--panel`: Panel layout — `left`, `center`, `right`, or `single` (default: `single`)
+- `--ideal-only`: Only generate the ideal identity matrix figure
 
 ---
 

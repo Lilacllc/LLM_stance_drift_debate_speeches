@@ -24022,3 +24022,4 @@ Answer letter:
 2026-02-04 15:13:47,966 - INFO - answer = E
 2026-02-04 15:13:47,966 - INFO - expected_rate = -1.29
 2026-02-04 15:13:47,967 - INFO - average_probs = [0.13 0.04 0.01 0.05 0.77]
+[SKIP] Topic 3432 already processed. Outputs exist at ./results/llama3_1_8b/debate_speech_3432_llama3_1_8b_prompt_1.json

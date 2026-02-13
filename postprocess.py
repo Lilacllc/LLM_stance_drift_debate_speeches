@@ -96,7 +96,7 @@ def compute_confidence_interval(samples, confidence=0.95, method="clt"):
     # Check for NaN values
     if np.any(np.isnan(samples)):
         print("N.A. exists!")
-        return 0, 0, 0
+        samples = np.nan_to_num(samples, nan=0.0)
 
     n = len(samples)
     mean = np.mean(samples)
