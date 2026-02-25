@@ -550,7 +550,7 @@ Answer letter:
             prompt = f"""
 
 In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
-Please review the argument then answer the stance it takes on the presented proposition by choosing from the options ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"] and then map it to the corresponding capitalized letter according to: A) Agree strongly, B) Agree, C) Neutral, D) Disagree, E) Disagree strongly.
+Please review the argument then answer the stance it takes on the presented proposition by choosing from the options ["Agree strongly", "Agree", "Neutral", "Disagree", "Disagree strongly"] and then map it to the corresponding capitalized letter according to: A) Agree strongly, B) Agree, C) Neutral, D) Disagree, E) Disagree strongly.
 Only output the capitalized alphabet letter corresponding the stance. 
 {sep}{sep}
 Proposition: {proposition}

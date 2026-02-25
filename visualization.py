@@ -82,7 +82,7 @@ def visualize_transition_matrices(results_tranmat, letter_list, title, plot_file
     yticks = np.arange(len(letter_list) - 1, -1, -1)
     letter_yticks = [letter_to_option(letter_list[tick]) for tick in list(yticks)]
 
-    ax.set_title(title, fontsize=40, fontweight="bold")
+    ax.set_title(title, fontsize=36, fontweight="bold")
     ax.set_xlabel("To State", fontsize=35, fontweight="bold")
     ax.set_xticks(xticks + 0.5, [tick.replace(" ", "\n") for tick in letter_xticks], fontsize=35, rotation=30, fontweight="bold", ha="center")
 
@@ -168,7 +168,7 @@ def main():
     if args.ideal_only:
         visualize_transition_matrices(
             np.eye(5), LETTERS,
-            "Identity Matrix\n(Perfect Stance Preservation)",
+            "Perfect Stance Preservation\n-Identity Matrix",
             "figures/ideal",
             present_se=False, panel="right",
         )
@@ -191,13 +191,13 @@ def main():
     # Generate mean-only heatmap
     visualize_transition_matrices(
         mean, LETTERS, args.title,
-        plot_file_path, present_se=False, panel=args.panel,
+        plot_file_path + f"_{args.panel}", present_se=False, panel=args.panel,
     )
 
     # Generate SE-annotated heatmap
     visualize_transition_matrices(
         {"mean": mean, "se": se}, LETTERS, args.title,
-        plot_file_path + "_se", present_se=True, panel=args.panel,
+        plot_file_path + f"_se_{args.panel}", present_se=True, panel=args.panel,
     )
 
 
