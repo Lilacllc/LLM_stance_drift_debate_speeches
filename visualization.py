@@ -41,7 +41,7 @@ def visualize_transition_matrices(results_tranmat, letter_list, title, plot_file
         width = 11.557 
     else:
         cbar = True
-        width = 15
+        width = 17.846
     
     fig, ax = plt.subplots(
         1, 1, figsize=(width, 15)
