@@ -149,7 +149,7 @@ def main():
     parser.add_argument(
         "--comprehensive",
         action="store_true",
-        help="Use comprehensive model list (13 models) instead of subset (9 models)",
+        help="Use comprehensive model list (14 models) instead of subset (9 models)",
     )
     parser.add_argument(
         "--latex-tables",
@@ -170,10 +170,11 @@ def main():
     }
 
     if args.comprehensive:
-        # Comprehensive list (13 models) for Figure S8
+        # Comprehensive list (14 models) for Figure S8
         model_dirs = [
             "gpt_4o_mini",
             "gpt_4_1",
+            "gpt_5_4",
             "gpt_3_5_turbo",
             "gemma_3n_e4b",
             "llama3_3_70b",
@@ -191,6 +192,7 @@ def main():
         model_dirs = [
             "gpt_4o_mini",
             "gpt_4_1",
+            "gpt_5_4",
             "gpt_3_5_turbo",
             "gemma_3n_e4b",
             "llama3_3_70b",
@@ -270,9 +272,9 @@ def main():
 
     # Create bar plot
     if args.comprehensive:
-        plt.figure(figsize=(32.5, 14))  # Larger size for comprehensive comparison
+        plt.figure(figsize=(35, 14))  # Larger size for comprehensive comparison
     else:
-        plt.figure(figsize=(22.5, 14))  # Standard size for subset
+        plt.figure(figsize=(25.31, 14))  # Standard size for subset
     models = list(model_averages.keys())
     averages = list(model_averages.values())
     stds = list(model_stds.values())
@@ -367,7 +369,7 @@ def main():
     else:
         metric_type = "Raw"
 
-    mode_type = "Comprehensive (13 models, Figure S8)" if args.comprehensive else "Subset (9 models, Figure 5)"
+    mode_type = "Comprehensive (14 models, Figure S8)" if args.comprehensive else "Subset (9 models, Figure 5)"
     print(f"Average Diagonal Probability by Model ({metric_type}, {data_type}, {mode_type}):")
     print("=" * 70)
     for model, avg in model_averages.items():
@@ -377,7 +379,7 @@ def main():
     print(f"\nPlot saved: {output_filename}")
     print(f"Total models analyzed: {len(model_averages)}")
     if args.comprehensive:
-        print("Using comprehensive model list (13 models).")
+        print("Using comprehensive model list (14 models).")
     else:
         print("Using subset model list (9 models).")
     if args.errorbar:

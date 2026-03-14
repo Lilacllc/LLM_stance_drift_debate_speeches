@@ -32,6 +32,7 @@ def main():
     model_dirs = [
         "gpt_4o_mini",
         "gpt_4_1",
+        "gpt_5_4",
         "gpt_3_5_turbo",
         "gemma_3n_e4b",
         "llama3_3_70b",
@@ -196,6 +197,8 @@ def main():
             return "#1E90FF"  # Dodger blue
         elif "gpt_4" in model_lower or "gpt-4" in model_lower:
             return "#4ECDC4"  # Default GPT-4 teal
+        elif "gpt_5_4" in model_lower or "gpt-5.4" in model_lower:
+            return "#6366F1"  # Indigo
 
         # Check for LLaMA variants
         if "llama3_1_8b" in model_lower:
@@ -240,7 +243,7 @@ def main():
         ].apply(format_model_name)
 
     # Plot 3: AUC Bar Plot - All Letters
-    plt.figure(figsize=(28, 12))
+    plt.figure(figsize=(30.16, 12))
 
     # Get colors for each model
     colors = [get_model_color(model) for model in auc_df_all_formatted["Model"]]
@@ -285,7 +288,7 @@ def main():
 
     # Plot 4: AUC Bar Plot - Neutral (Letter C) - skip if --all-letters-only is set
     if not args.all_letters_only:
-        plt.figure(figsize=(28, 12))
+        plt.figure(figsize=(30.16, 12))
 
         # Get colors for each model
         colors_neutral = [

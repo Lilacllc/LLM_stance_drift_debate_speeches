@@ -85,6 +85,7 @@ python postprocess.py --model gpt_4o_mini --temp 0
 
 # Other models
 python postprocess.py --model gpt_4_1
+python postprocess.py --model gpt_5_4
 python postprocess.py --model gpt_3_5_turbo
 python postprocess.py --model gemma_3n_e4b
 python postprocess.py --model llama3_3_70b
@@ -119,7 +120,7 @@ python postprocess.py --model qwen3_a3b
 # Table 1A, 1B - Subset (9 models): Mean probability & Bonferroni CI inclusion
 python faithfulness_metric.py --latex-tables
 
-# Table S1-S4 - Comprehensive (13 models): All 4 metrics
+# Table S1-S4 - Comprehensive (14 models): All 4 metrics
 python faithfulness_metric.py --latex-tables --comprehensive
 ```
 
@@ -139,12 +140,12 @@ python faithfulness_metric.py --latex-tables --comprehensive
 # Figure 5 - Stance Preservation Rate comparison (9 models)
 python faithfulness_metric.py
 
-# Figure S8 - Comprehensive comparison (13 models)
+# Figure S8 - Comprehensive comparison (14 models)
 python faithfulness_metric.py --comprehensive
 ```
 
 **Options:**
-- `--comprehensive`: Include all 13 models (adds llama3_3_70b, llama3_1_8b, gpt_4o_mini_reversed, gpt_4o_mini_temp0)
+- `--comprehensive`: Include all 14 models (adds llama3_3_70b, llama3_1_8b, gpt_4o_mini_reversed, gpt_4o_mini_temp0)
 - `--latex-tables`: Generate LaTeX table snippets instead of bar plots
 - `--errorbar`: Show error bars
 - `--neutral-only`: Use only neutral (letter C) data

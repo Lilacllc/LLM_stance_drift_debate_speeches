@@ -6,6 +6,7 @@ Shared model name mappings for LaTeX tables and plot labels.
 MODEL_NAME_LATEX = {
     "gpt_4o_mini": r"\texttt{gpt-4o-mini}",
     "gpt_4_1": r"\texttt{gpt-4.1}",
+    "gpt_5_4": r"\texttt{gpt-5.4}",
     "gpt_3_5_turbo": r"\texttt{gpt-3.5-turbo}",
     "gemma_3n_e4b": r"\texttt{gemma-3n-E4B}",
     "llama3_3_70b": r"\texttt{Llama-3.3-70B}",
@@ -23,6 +24,7 @@ MODEL_NAME_LATEX = {
 MODEL_NAME_PLOT = {
     "gpt_4o_mini": "gpt-4o-mini",
     "gpt_4_1": "gpt-4.1",
+    "gpt_5_4": "gpt-5.4",
     "gpt_3_5_turbo": "gpt-3.5-turbo",
     "gemma_3n_e4b": "gemma-3n-\nE4B",
     "llama3_3_70b": "Llama-3.3-70B",

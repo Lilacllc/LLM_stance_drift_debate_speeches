@@ -11,11 +11,11 @@ Temperature: 1
 ============================================================
 
 Letter            Stance  Includes_1_mean  Includes_1_standard_error  Includes_1_bonferroni_mean  Includes_1_bonferroni_standard_error  Mean_mean  Mean_standard_error  Success_rate_mean  Success_rate_standard_error
-     A    Agree strongly         0.178571                   0.036352                    0.321429                              0.044328   0.967800             0.011234           0.956964                     0.013956
-     B             Agree         0.017857                   0.012570                    0.035714                              0.017614   0.286247             0.030631           0.198125                     0.025356
-     C           Neutral         0.330357                   0.044643                    0.544643                              0.047268   0.828073             0.021609           0.783661                     0.023515
-     D          Disagree         0.000000                   0.000000                    0.062500                              0.022975   0.210086             0.030313           0.156250                     0.026209
-     E Disagree strongly         0.205357                   0.038342                    0.321429                              0.044328   0.539046             0.039235           0.484196                     0.040438
+     A    Agree strongly         0.187500                   0.037047                    0.330357                              0.044643   0.924773             0.020260           0.914821                     0.021831
+     B             Agree         0.017857                   0.012570                    0.026786                              0.015325   0.236332             0.026043           0.151429                     0.021571
+     C           Neutral         0.375000                   0.045951                    0.625000                              0.045951   0.845273             0.020487           0.802679                     0.022116
+     D          Disagree         0.000000                   0.000000                    0.053571                              0.021372   0.234904             0.031393           0.174375                     0.027253
+     E Disagree strongly         0.205357                   0.038342                    0.339286                              0.044939   0.553293             0.039368           0.499107                     0.040402
 
 Column Descriptions:
 - Includes_1_mean: Percentage of confidence intervals that include 1.0

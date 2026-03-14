@@ -22,6 +22,7 @@ import pdb
 MODEL_NAME_MAP = {
     "gpt-4o-mini": "gpt_4o_mini",
     "gpt-4.1": "gpt_4_1",
+    "gpt-5.4": "gpt_5_4",
     "gpt-3.5-turbo": "gpt_3_5_turbo",
     "gpt-4o": "gpt_4o",
     "Qwen/Qwen3-Next-80B-A3B-Instruct": "qwen3_a3b",
