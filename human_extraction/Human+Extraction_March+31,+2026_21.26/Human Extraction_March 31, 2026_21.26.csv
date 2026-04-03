@@ -1,0 +1,1312 @@
+StartDate,EndDate,Status,IPAddress,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,LocationLatitude,LocationLongitude,DistributionChannel,UserLanguage,Q1,1_Q2,2_Q2,3_Q2,4_Q2,5_Q2,6_Q2,7_Q2,8_Q2,9_Q2,10_Q2,11_Q2,12_Q2,13_Q2,14_Q2,15_Q2,16_Q2,17_Q2,18_Q2,19_Q2,20_Q2,21_Q2,22_Q2,23_Q2,24_Q2,25_Q2,26_Q2,27_Q2,28_Q2,29_Q2,30_Q2,31_Q2,32_Q2,33_Q2,34_Q2,35_Q2,36_Q2,37_Q2,38_Q2,39_Q2,40_Q2,41_Q2,42_Q2,43_Q2,44_Q2,45_Q2,46_Q2,47_Q2,48_Q2,49_Q2,50_Q2,51_Q2,52_Q2,53_Q2,54_Q2,55_Q2,56_Q2,57_Q2,58_Q2,59_Q2,60_Q2,61_Q2,62_Q2,63_Q2,64_Q2,65_Q2,66_Q2,67_Q2,68_Q2,69_Q2,70_Q2,71_Q2,72_Q2,73_Q2,74_Q2,75_Q2,76_Q2,77_Q2,78_Q2,79_Q2,80_Q2,81_Q2,82_Q2,83_Q2,84_Q2,85_Q2,86_Q2,87_Q2,88_Q2,89_Q2,90_Q2,91_Q2,92_Q2,93_Q2,94_Q2,95_Q2,96_Q2,97_Q2,98_Q2,99_Q2,100_Q2
+Start Date,End Date,Response Type,IP Address,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Recipient Last Name,Recipient First Name,Recipient Email,External Data Reference,Location Latitude,Location Longitude,Distribution Channel,User Language,Name,"The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:","The use of AI should be abandoned - Question [CurrentLoopNumber]/[TotalLoops]
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States. Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below. Only output the capitalized letter corresponding to your answer. Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+
+==
+
+Proposition: [Field-1]
+
+==
+
+Argument: [Field-2]
+
+==
+
+Please choose from the following options:"
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""ipAddress""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""recipientLastName""}","{""ImportId"":""recipientFirstName""}","{""ImportId"":""recipientEmail""}","{""ImportId"":""externalDataReference""}","{""ImportId"":""locationLatitude""}","{""ImportId"":""locationLongitude""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID3_TEXT""}","{""ImportId"":""1_QID1""}","{""ImportId"":""2_QID1""}","{""ImportId"":""3_QID1""}","{""ImportId"":""4_QID1""}","{""ImportId"":""5_QID1""}","{""ImportId"":""6_QID1""}","{""ImportId"":""7_QID1""}","{""ImportId"":""8_QID1""}","{""ImportId"":""9_QID1""}","{""ImportId"":""10_QID1""}","{""ImportId"":""11_QID1""}","{""ImportId"":""12_QID1""}","{""ImportId"":""13_QID1""}","{""ImportId"":""14_QID1""}","{""ImportId"":""15_QID1""}","{""ImportId"":""16_QID1""}","{""ImportId"":""17_QID1""}","{""ImportId"":""18_QID1""}","{""ImportId"":""19_QID1""}","{""ImportId"":""20_QID1""}","{""ImportId"":""21_QID1""}","{""ImportId"":""22_QID1""}","{""ImportId"":""23_QID1""}","{""ImportId"":""24_QID1""}","{""ImportId"":""25_QID1""}","{""ImportId"":""26_QID1""}","{""ImportId"":""27_QID1""}","{""ImportId"":""28_QID1""}","{""ImportId"":""29_QID1""}","{""ImportId"":""30_QID1""}","{""ImportId"":""31_QID1""}","{""ImportId"":""32_QID1""}","{""ImportId"":""33_QID1""}","{""ImportId"":""34_QID1""}","{""ImportId"":""35_QID1""}","{""ImportId"":""36_QID1""}","{""ImportId"":""37_QID1""}","{""ImportId"":""38_QID1""}","{""ImportId"":""39_QID1""}","{""ImportId"":""40_QID1""}","{""ImportId"":""41_QID1""}","{""ImportId"":""42_QID1""}","{""ImportId"":""43_QID1""}","{""ImportId"":""44_QID1""}","{""ImportId"":""45_QID1""}","{""ImportId"":""46_QID1""}","{""ImportId"":""47_QID1""}","{""ImportId"":""48_QID1""}","{""ImportId"":""49_QID1""}","{""ImportId"":""50_QID1""}","{""ImportId"":""51_QID1""}","{""ImportId"":""52_QID1""}","{""ImportId"":""53_QID1""}","{""ImportId"":""54_QID1""}","{""ImportId"":""55_QID1""}","{""ImportId"":""56_QID1""}","{""ImportId"":""57_QID1""}","{""ImportId"":""58_QID1""}","{""ImportId"":""59_QID1""}","{""ImportId"":""60_QID1""}","{""ImportId"":""61_QID1""}","{""ImportId"":""62_QID1""}","{""ImportId"":""63_QID1""}","{""ImportId"":""64_QID1""}","{""ImportId"":""65_QID1""}","{""ImportId"":""66_QID1""}","{""ImportId"":""67_QID1""}","{""ImportId"":""68_QID1""}","{""ImportId"":""69_QID1""}","{""ImportId"":""70_QID1""}","{""ImportId"":""71_QID1""}","{""ImportId"":""72_QID1""}","{""ImportId"":""73_QID1""}","{""ImportId"":""74_QID1""}","{""ImportId"":""75_QID1""}","{""ImportId"":""76_QID1""}","{""ImportId"":""77_QID1""}","{""ImportId"":""78_QID1""}","{""ImportId"":""79_QID1""}","{""ImportId"":""80_QID1""}","{""ImportId"":""81_QID1""}","{""ImportId"":""82_QID1""}","{""ImportId"":""83_QID1""}","{""ImportId"":""84_QID1""}","{""ImportId"":""85_QID1""}","{""ImportId"":""86_QID1""}","{""ImportId"":""87_QID1""}","{""ImportId"":""88_QID1""}","{""ImportId"":""89_QID1""}","{""ImportId"":""90_QID1""}","{""ImportId"":""91_QID1""}","{""ImportId"":""92_QID1""}","{""ImportId"":""93_QID1""}","{""ImportId"":""94_QID1""}","{""ImportId"":""95_QID1""}","{""ImportId"":""96_QID1""}","{""ImportId"":""97_QID1""}","{""ImportId"":""98_QID1""}","{""ImportId"":""99_QID1""}","{""ImportId"":""100_QID1""}"
+2026-03-25 01:34:58,2026-03-25 03:20:21,IP Address,175.159.214.234,100,6323,True,2026-03-25 03:20:22,R_9Q6lEj4ROufglsx,,,,,22.2578,114.1657,anonymous,EN,Wang Xiaolong,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,B) Agree,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,C) Neutral,D) Disagree,D) Disagree,D) Disagree,C) Neutral,C) Neutral,D) Disagree,C) Neutral,D) Disagree,D) Disagree,D) Disagree,C) Neutral,D) Disagree,D) Disagree,D) Disagree,D) Disagree,C) Neutral,D) Disagree,C) Neutral,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree
+2026-03-24 20:24:00,2026-03-25 03:29:29,IP Address,113.84.169.251,100,25528,True,2026-03-25 03:29:29,R_4lzqQrhWtg4HR2X,,,,,22.2578,114.1657,anonymous,EN,Huang Qiannan,A) Agree strongly,A) Agree strongly,A) Agree strongly,B) Agree,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,B) Agree,A) Agree strongly,B) Agree,A) Agree strongly,A) Agree strongly,A) Agree strongly,B) Agree,A) Agree strongly,A) Agree strongly,A) Agree strongly,B) Agree,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,D) Disagree,E) Disagree strongly,C) Neutral,C) Neutral,D) Disagree,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,D) Disagree,C) Neutral,C) Neutral,C) Neutral,C) Neutral,D) Disagree,C) Neutral,D) Disagree,C) Neutral,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly
+2026-03-25 07:23:36,2026-03-25 08:34:59,IP Address,202.189.110.135,100,4282,True,2026-03-25 08:35:00,R_4tKxoxICHjFraJ9,,,,,22.2578,114.1657,anonymous,EN,,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,B) Agree,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,D) Disagree,C) Neutral,C) Neutral,C) Neutral,D) Disagree,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly
+2026-03-28 02:56:05,2026-03-28 06:13:08,IP Address,202.189.108.43,100,11823,True,2026-03-28 06:13:09,R_3mER96y2u8QEJMG,,,,,22.2578,114.1657,anonymous,EN,Shiqi Lei,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,B) Agree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,C) Neutral,D) Disagree,C) Neutral,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,C) Neutral,C) Neutral,C) Neutral,C) Neutral,D) Disagree,D) Disagree,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,D) Disagree,C) Neutral,D) Disagree,C) Neutral,D) Disagree,C) Neutral,D) Disagree,D) Disagree,D) Disagree,C) Neutral,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,C) Neutral,E) Disagree strongly,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly
+2026-03-29 21:50:44,2026-03-29 22:32:02,IP Address,194.114.136.220,100,2477,True,2026-03-29 22:32:03,R_4JPDjCZiTS06H8L,,,,,34.693,135.5005,anonymous,EN,John Park,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,B) Agree,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,B) Agree,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,D) Disagree,C) Neutral,C) Neutral,D) Disagree,B) Agree,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,D) Disagree,C) Neutral,C) Neutral,C) Neutral,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,C) Neutral,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,C) Neutral,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly
+2026-03-27 08:44:18,2026-03-29 23:50:29,IP Address,45.192.148.204,100,227170,True,2026-03-29 23:50:29,R_2BLyvYj8x7EqNvX,,,,,25.0734,55.2979,anonymous,EN,Zhang Yifan,A) Agree strongly,A) Agree strongly,B) Agree,B) Agree,A) Agree strongly,B) Agree,A) Agree strongly,A) Agree strongly,B) Agree,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,B) Agree,B) Agree,B) Agree,A) Agree strongly,A) Agree strongly,B) Agree,C) Neutral,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,A) Agree strongly,D) Disagree,E) Disagree strongly,B) Agree,A) Agree strongly,C) Neutral,D) Disagree,C) Neutral,B) Agree,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,B) Agree,C) Neutral,E) Disagree strongly,D) Disagree,D) Disagree,C) Neutral,E) Disagree strongly,C) Neutral,D) Disagree,C) Neutral,D) Disagree,D) Disagree,C) Neutral,A) Agree strongly,C) Neutral,D) Disagree,C) Neutral,D) Disagree,C) Neutral,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,C) Neutral,E) Disagree strongly,D) Disagree,A) Agree strongly,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,C) Neutral,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,A) Agree strongly,B) Agree,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,D) Disagree,E) Disagree strongly,D) Disagree
+2026-03-29 07:21:42,2026-03-30 03:09:32,IP Address,68.181.17.2,100,71270,True,2026-03-30 03:09:33,R_5lsN4IcA67HN0JT,,,,,34.0322,-118.2836,anonymous,EN,Xin Tong,A) Agree strongly,B) Agree,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,D) Disagree,C) Neutral,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,C) Neutral,D) Disagree,D) Disagree,C) Neutral,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,D) Disagree,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly
+2026-03-30 08:33:38,2026-03-30 09:01:03,IP Address,143.89.88.80,100,1644,True,2026-03-30 09:01:04,R_45iTCzIQiiPdzwZ,,,,,22.2578,114.1657,anonymous,EN,Lucy,A) Agree strongly,A) Agree strongly,A) Agree strongly,B) Agree,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,B) Agree,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,B) Agree,A) Agree strongly,B) Agree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,C) Neutral,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,C) Neutral,C) Neutral,C) Neutral,D) Disagree,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,D) Disagree,C) Neutral,C) Neutral,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,C) Neutral,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly
+2026-03-30 04:07:28,2026-03-30 21:09:35,IP Address,42.200.66.14,100,61326,True,2026-03-30 21:09:35,R_3o7Fw8O8aoRi7fg,,,,,22.2578,114.1657,anonymous,EN,Helen,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,B) Agree,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,A) Agree strongly,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,C) Neutral,C) Neutral,C) Neutral,D) Disagree,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,C) Neutral,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,E) Disagree strongly,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,D) Disagree,E) Disagree strongly,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,D) Disagree,D) Disagree,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly,E) Disagree strongly
