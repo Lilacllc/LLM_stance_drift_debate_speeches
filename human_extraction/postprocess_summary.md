@@ -40,6 +40,10 @@ flowchart LR
   H --> c9[collect_additional_ai_encodes.py]
   c9 --> N9
   c9 --> BS
+
+  N9 --> mg[compute_majority_gold_scores.py]
+  Q --> mg
+  mg --> MGC[majority_gold_scores.csv]
 ```
 
 ---
@@ -106,6 +110,7 @@ You need **both** `batch_results` and `requests` in the file: recreating request
 | `build_debate_dataframe.py` | Build `debata_speeches_3234_filtered.xlsx` from speech text + raw prob tensor + proposition. |
 | `postprocess_human_extraction.py` | Merge Qualtrics human labels → `_with_human.xlsx`. |
 | `collect_additional_ai_encodes.py` | Batch extra encodes → `_with_human_9encode.xlsx`; optional `--raw-results-json` / `--from-raw-json`. |
+| `compute_majority_gold_scores.py` | **Majority-gold** descriptive **mean** and **SE** for humans vs `majority_human_extract`, and AI survey-level mean / propagated **SE** from `ai_total_count_*` (9-encode workbook); writes `majority_gold_scores.csv` (see below). |
 
 Cluster helper: `run_collect_9encode.sh` (loads conda env, sets `INPUT_XLSX` / `OUTPUT_XLSX` / `RAW_STATE_JSON`, supports `FROM_RAW`).
 
@@ -116,6 +121,31 @@ Cluster helper: `run_collect_9encode.sh` (loads conda env, sets `INPUT_XLSX` / `
 - Data rows are detected by a **date-like** first column (`YYYY-MM-DD`).
 - Question columns are expected as `1_Q2` … `100_Q2`.
 - Cell values are parsed for a leading `A)` … `E)` style label.
+
+---
+
+## Majority-gold descriptive mean and SE (`compute_majority_gold_scores.py`)
+
+This is separate from the **row-level** “majority AI == majority human” accuracy printed by `postprocess_human_extraction.py`. It summarizes **agreement with the human crowd label** on a **survey-level** scale, with **standard errors** that are meant to be **comparable** (both are uncertainties for a **mean**-type summary, not SD across unrelated units).
+
+### Gold standard \(G_i\)
+
+- Per row \(i\), **\(G_i\)** = `majority_human_extract`: argmax on `prob_human_extraction_A` … `E` with the same **A → E tie-break** as `postprocess_human_extraction.py` (`tie_human_extract` / `tied_letters_human` flag ties before resolution).
+
+### Human cohort
+
+- For each Qualtrics respondent \(p\), **score\(_p\)** = fraction of items (100 columns `1_Q2` … `100_Q2`, aligned to workbook row order) whose parsed letter equals **\(G_i\)** on that item. Default: missing / unparsable cells count as wrong (denominator 100); `--missing-exclude` averages only over items with a valid letter.
+- **Outputs:** **mean** of score\(_p\); **SE(mean)** = sample SD(score\(_p\), `ddof=1`) / \(\sqrt{N}\) over respondents with finite scores (primary uncertainty for \(\bar{H}\)). The CSV also includes **SD between participants** as descriptive spread (not the same quantity as the AI propagated SE).
+
+### AI survey-level (9-encode workbook required)
+
+- Uses **`ai_total_count_*`** and **`ai_total_votes_n`** from `_with_human_9encode.xlsx` (not `majority_AI_extract`). For row \(i\), \(X_i\) = (count of votes equal to \(G_i\)) / `ai_total_votes_n` (expected 9).
+- **\(S_{\text{AI}}\)** = mean of \(X_i\) over the 100 rows (same 0–1 scale as a human participant score).
+- **Propagated SE(\(S_{\text{AI}}\))** = \((1/100)\,\sqrt{\sum_i \widehat{\mathrm{Var}}(X_i)}\) with \(\widehat{\mathrm{Var}}(X_i) = \hat{p}_i(1-\hat{p}_i)/(n-1)\), \(\hat{p}_i = X_i\), \(n\) = votes per row. **Assumptions** (stated in script output and CSV): (1) **across items**, \(X_i\) treated as uncorrelated for propagation; (2) **within item**, Bernoulli / exchangeable encodes at rate \(p_i\). See the script docstring for the distinction between this SE and the **sample SD of the \(n\) binary votes** per row.
+
+### Output file
+
+- Default **`human_extraction/majority_gold_scores.csv`**: one row with means, SEs, paths, `n_items`, `ai_n_votes_per_row`, formula note, and assumption strings. Override with `--output-csv`.
 
 ---
 
@@ -143,6 +173,15 @@ SLURM (see `run_collect_9encode.sh` for `FROM_RAW` and paths):
 
 ```bash
 sbatch run_collect_9encode.sh
+```
+
+Majority-gold mean / SE and CSV (requires `_with_human_9encode.xlsx` + Qualtrics CSV):
+
+```bash
+python human_extraction/compute_majority_gold_scores.py \
+  --human-csv "path/to/Human_Extraction_export.csv" \
+  --xlsx-9encode human_extraction/debata_speeches_3234_filtered_with_human_9encode.xlsx \
+  --output-csv human_extraction/majority_gold_scores.csv
 ```
 
 ---

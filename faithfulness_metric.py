@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import argparse
-from name_maps import get_latex_name, get_plot_name
+from name_maps import get_latex_name, get_plot_name_single_line
 
 # Directory containing all model/suffix result folders
 RESULTS_DIR = "postprocess_results"
@@ -35,6 +35,23 @@ STANCE_LABELS = {
 def latex_escape(s):
     """Escape underscores for LaTeX (fallback for unknown names)."""
     return s.replace("_", "\\_")
+
+
+def bar_color_for_model(model_key, variant_models):
+    """Opaque bar color by model family (GPT main / GPT variant / Llama / Gemma / Qwen)."""
+    gpt_main = "#3d74ae"
+    gpt_variant = "#6a9fd4"  # lighter blue, same hue family as gpt_main
+    if model_key in variant_models:
+        return gpt_variant
+    if model_key.startswith("gpt_"):
+        return gpt_main
+    if "llama" in model_key:
+        return "#ee8539"
+    if "gemma" in model_key:
+        return "#529d40"
+    if "qwen" in model_key:
+        return "#8c69b7"
+    return "#7F7F7F"
 
 
 def generate_latex_tables(model_dirs, comprehensive=False):
@@ -160,7 +177,7 @@ def main():
     args = parser.parse_args()
 
     # Find all model/suffix subdirectories
-    # Variant models (gpt_4o_mini ablations/configurations) — colored brown
+    # Variant models (gpt_4o_mini ablations) — lighter GPT-adjacent blue
     VARIANT_MODELS = {
         "gpt_4o_mini_reversed",
         "gpt_4o_mini_temp0",
@@ -270,82 +287,120 @@ def main():
             model_averages[model_dir] = avg_difference
             model_stds[model_dir] = std_difference
 
-    # Create bar plot
-    if args.comprehensive:
-        plt.figure(figsize=(35, 14))  # Larger size for comprehensive comparison
-    else:
-        plt.figure(figsize=(25.31, 14))  # Standard size for subset
-    models = list(model_averages.keys())
-    averages = list(model_averages.values())
-    stds = list(model_stds.values())
-
-    # Create bar plot with optional error bars
-    if args.errorbar:
-        bars = plt.bar(range(len(models)), averages, yerr=stds, capsize=5, alpha=0.5)
-    else:
-        bars = plt.bar(range(len(models)), averages, capsize=5, alpha=0.5)
-
-    # Color specific bars: variants in brown, base models in dark blue
-    for i, (bar, model) in enumerate(zip(bars, models)):
-        if model in VARIANT_MODELS:
-            bar.set_color("brown")
-        else:
-            bar.set_color("darkblue")
-
-    # Customize the plot
+    # Create horizontal bar plot (models top→bottom: highest SPR first for raw/baseline;
+    # for negative_log, smallest -log(SPR) = highest SPR first)
+    triples = list(zip(
+        model_averages.keys(),
+        model_averages.values(),
+        model_stds.values(),
+    ))
     if args.metric == "negative_log":
-        plt.ylabel("-log(SPR)", fontsize=40, fontweight="bold")
+        triples.sort(key=lambda t: t[1])
+    else:
+        triples.sort(key=lambda t: t[1], reverse=True)
+    if triples:
+        models, averages, stds = map(list, zip(*triples))
+    else:
+        models, averages, stds = [], [], []
+    n = len(models)
+    y_pos = np.arange(n)
+
+    fig_w = 18 if args.comprehensive else 16
+    fig_h = max(8.0, 0.75 * n + 3)
+    plt.figure(figsize=(fig_w, fig_h))
+    ax = plt.gca()
+
+    colors = [bar_color_for_model(m, VARIANT_MODELS) for m in models]
+    bar_kwargs = {"height": 0.7, "alpha": 1.0, "color": colors}
+    if args.errorbar:
+        bars = ax.barh(
+            y_pos,
+            averages,
+            xerr=stds,
+            capsize=5,
+            ecolor="black",
+            **bar_kwargs,
+        )
+    else:
+        bars = ax.barh(y_pos, averages, **bar_kwargs)
+
+    ax.invert_yaxis()
+
+    xlabel_fs = 24
+    ytick_fs = 24
+    spr_title = "Stance Preservation Rate (SPR)"
+    if args.neutral_only:
+        spr_title += " (neutral only)"
+
+    if args.metric == "negative_log":
+        ax.set_xlabel(f"{spr_title}\n-log(SPR)", fontsize=xlabel_fs)
         metric_type = "Negative Log"
     elif args.metric == "baseline":
-        plt.ylabel(f"SPR Difference from {baseline_model}", fontsize=40, fontweight="bold")
+        ax.set_xlabel(
+            f"{spr_title}\nDifference from {baseline_model} "
+            f"(baseline mean SPR: {baseline_subset.mean():.3f})",
+            fontsize=xlabel_fs,
+        )
         metric_type = "Baseline"
     else:
-        plt.ylabel("SPR", fontsize=40, fontweight="bold")
+        ax.set_xlabel(spr_title, fontsize=xlabel_fs, fontweight="semibold")
         metric_type = "Raw"
-        plt.ylim(0, 1.05*max(averages))
-    plt.yticks(fontsize=30, fontweight="bold")
 
-    title = f"Stance Preservation Rate (SPR) Across Models"
-    if args.neutral_only:
-        title += " (Neutral Only)"
+    if args.metric == "raw":
+        xmax = max(1.05, max(averages) * 1.05) if averages else 1.05
+        ax.set_xlim(0, xmax)
+        ax.axvline(
+            1.0,
+            color="grey",
+            linestyle="-",
+            linewidth=2,
+            label="Perfect fidelity (SPR=1.0)",
+        )
+        ax.axvline(
+            0.2,
+            color="black",
+            linestyle="--",
+            linewidth=2,
+            label="Uniform random baseline (SPR=0.2)",
+        )
+        ax.legend(
+            fontsize=18,
+            loc="lower right",
+            bbox_to_anchor=(0.90, 0.02),
+        )
     elif args.metric == "baseline":
-        title += f"\n (Value of Baseline Model: {baseline_subset.mean():.3f})"
-    plt.title(title, fontsize=45, fontweight="bold")
+        lo, hi = min(averages), max(averages)
+        pad = 0.05 * (hi - lo) if hi != lo else 0.05 * (abs(hi) + 0.1)
+        ax.set_xlim(lo - pad, hi + pad)
+    else:
+        xmax = max(averages) * 1.05 if averages else 1.0
+        ax.set_xlim(0, xmax if xmax > 0 else 1.0)
 
-    # Set x-axis labels
-    plt.xlabel("Models", fontsize=40, fontweight="bold")
-    models_labels = [get_plot_name(model) for model in models]
-    plt.xticks(range(len(models)), models_labels, rotation=30, ha="center", fontsize=22, fontweight="bold")
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
 
-    # Add value labels inside bars
-    for i, (bar, avg) in enumerate(zip(bars, averages)):
-        # Position text inside the bar
-        if avg >= 0:
-            # For positive values, place text in the middle of the bar
-            plt.text(
-                bar.get_x() + bar.get_width() / 2,
-                bar.get_height() / 2,
-                f"{avg:.3f}",
-                ha="center",
-                va="center",
-                fontsize=32,
-                color="black",
-                fontweight="semibold",
-            )
-        else:
-            # For negative values, place text in the middle of the bar
-            plt.text(
-                bar.get_x() + bar.get_width() / 2,
-                bar.get_height() / 2,
-                f"{avg:.3f}",
-                ha="center",
-                va="center",
-                fontsize=32,
-                color="black",
-                fontweight="semibold",
-            )
+    ax.tick_params(axis="x", labelsize=24, width=2, length=6)
+    plt.setp(ax.get_xticklabels(), fontweight="semibold")
+    models_labels = [get_plot_name_single_line(model) for model in models]
+    ax.set_yticks(y_pos)
+    ax.set_yticklabels(models_labels, fontsize=ytick_fs)
+    plt.setp(ax.get_yticklabels(), ha="right", rotation=0, fontweight="semibold")
 
-    plt.grid(axis="y", alpha=0.3)
+    for bar, avg in zip(bars, averages):
+        cx = bar.get_x() + bar.get_width() / 2
+        cy = bar.get_y() + bar.get_height() / 2
+        ax.text(
+            cx,
+            cy,
+            f"{avg:.3f}",
+            ha="center",
+            va="center",
+            fontsize=xlabel_fs,
+            color="white",
+            fontweight="semibold",
+        )
+
+    ax.grid(axis="x", alpha=0.3)
     plt.tight_layout()
     
     # Set output filename based on mode
