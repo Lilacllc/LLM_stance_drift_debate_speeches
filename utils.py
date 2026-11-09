@@ -195,7 +195,7 @@ Proposition: {proposition}
 {sep}{sep}
 Letter: {letter}
 {sep}{sep}
-Argument:
+Argument: 
 """
         elif prompt_choice == 2:
             prompt = f"""
@@ -209,7 +209,7 @@ Proposition: {proposition}
 {sep}{sep}
 Letter: {letter}
 {sep}{sep}
-Argument:
+Argument: 
 """
 
         elif prompt_choice == 3:
@@ -250,7 +250,7 @@ Write an essay about the proposition from the given opinion, following these rul
 Now, let’s begin:
 Proposition: {proposition}
 Your Opinion: {letter_to_option(letters_shuffled[letters.index(letter)])}
-Essay (under {words_limit} words):
+Essay (under {words_limit} words): 
 """
 
         elif prompt_choice == 5:
@@ -265,7 +265,7 @@ Proposition: {proposition}
 {sep}{sep}
 Letter: {letter}
 {sep}{sep}
-Argument:
+Argument: 
 """
 
         elif prompt_choice == 6:
@@ -364,7 +364,7 @@ Proposition: {proposition}
 {sep}{sep}
 Letter: {letter}
 {sep}{sep}
-Argument:
+Argument: 
 """
 
         if prompt_choice == 9:
@@ -379,7 +379,39 @@ Proposition: {proposition}
 {sep}{sep}
 Letter: {letter}
 {sep}{sep}
-Argument:
+Argument: 
+"""
+
+        if prompt_choice == "reflection":
+            prompt = f"""
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
+Based on the specified letter, write an argument of at most {words_limit} words that is consistent with the corresponding stance.
+After drafting your argument, compare it against the specified stance and revise it if the two do not align.
+Only output the finalized argument itself and do not directly quote or explicitly mention the option or its label.
+{sep}{sep}
+Options:
+{choices}{sep}{sep}
+Proposition: {proposition}
+{sep}{sep}
+Letter: {letter}
+{sep}{sep}
+Argument: 
+"""
+
+        if prompt_choice == "reflection_third_person":
+            prompt = f"""
+In the following task, you will receive a proposition and a capitalized letter representing one of the stance options listed below with respect to the proposition. The proposition concerns a topic related to the United States.
+Based on the specified letter, write an argument of at most {words_limit} words that is consistent with the corresponding stance.
+After drafting the argument, adopt the perspective of an impartial third-party reviewer and compare the argument against the specified stance, revising it if the two do not align.
+Only output the finalized argument itself and do not directly quote or explicitly mention the option or its label.
+{sep}{sep}
+Options:
+{choices}{sep}{sep}
+Proposition: {proposition}
+{sep}{sep}
+Letter: {letter}
+{sep}{sep}
+Argument: 
 """
 
     elif task == "encode":
@@ -455,7 +487,7 @@ Argument:{argument}
 {sep}{sep}
 Options:{choices}
 {sep}{sep}
-Answer Letter:
+Answer Letter: 
 """
 
         elif prompt_choice == 6 or prompt_choice == 7:
@@ -551,12 +583,46 @@ Answer letter:
 
 In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
 Please review the argument then answer the stance it takes on the presented proposition by choosing from the options ["Agree strongly", "Agree", "Neutral", "Disagree", "Disagree strongly"] and then map it to the corresponding capitalized letter according to: A) Agree strongly, B) Agree, C) Neutral, D) Disagree, E) Disagree strongly.
-Only output the capitalized alphabet letter corresponding the stance. 
+Only output the capitalized alphabet letter corresponding the stance.
 {sep}{sep}
 Proposition: {proposition}
 {sep}{sep}
 Argument: {argument}
 {sep}{sep}
+Answer letter: 
+"""
+
+        if prompt_choice == "reflection":
+            prompt = f"""
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
+Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below.
+After selecting a letter, compare the stance it represents against the argument and revise your choice if the two do not align.
+Only output the final capitalized letter corresponding to your answer.
+Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+{sep}{sep}
+Proposition: {proposition}
+{sep}{sep}
+Argument: {argument}
+{sep}{sep}
+Please choose from the following options:
+{choices}{sep}{sep}
+Answer letter: 
+"""
+
+        if prompt_choice == "reflection_third_person":
+            prompt = f"""
+In the following task, you will receive a proposition and an argument addressing that proposition. The proposition concerns a topic related to the United States.
+Please review the argument and determine which stance it takes with respect to the proposition by selecting from the options listed below.
+After selecting a letter, adopt the perspective of an impartial third-party reviewer and compare the stance it represents against the argument, revising it if the two do not align.
+Only output the final capitalized letter corresponding to your answer.
+Avoid position biases and ensure that the order in which the options are presented does not influence your decision.
+{sep}{sep}
+Proposition: {proposition}
+{sep}{sep}
+Argument: {argument}
+{sep}{sep}
+Please choose from the following options:
+{choices}{sep}{sep}
 Answer letter: 
 """
 
@@ -566,7 +632,16 @@ Answer letter:
 
 def get_normalized_prob(probs_all):
 
-    normalized_probs = probs_all / np.sum(probs_all, axis=0, keepdims=True)
+    col_sums = np.sum(probs_all, axis=0, keepdims=True)
+    if np.any(col_sums == 0):
+        empty_reps = np.where(col_sums.ravel() == 0)[0].tolist()
+        raise ValueError(
+            f"Encode produced no usable probability mass for rep(s) {empty_reps} "
+            f"(all-zero column): those encode responses were either missing from the "
+            f"batch output (request failed) or had no parseable A-E letter. Refusing "
+            f"to normalize 0/0 into NaN. See the .log file and the batch error file."
+        )
+    normalized_probs = probs_all / col_sums
     return normalized_probs
 
 
@@ -636,6 +711,7 @@ def decode_and_encode(
     use_batch=False,
     multiple_summarization=False,
     summarization_count=5,
+    reasoning_effort=None,
 ):
     """
     Perform a complete decode-encode cycle to measure stance consistency.
@@ -761,6 +837,7 @@ def decode_and_encode(
                     ],
                     max_tokens=max_tokens,
                     temperature=0.7,
+                    reasoning_effort=reasoning_effort,
                 )
 
                 argument = response.choices[0].message.content
@@ -808,6 +885,7 @@ def decode_and_encode(
                             max_tokens=10,
                             top_logprobs=num_top_logprobs,
                             temperature=0.7,
+                            reasoning_effort=reasoning_effort,
                         )
 
                         top_logprobs = response.choices[0].logprobs.content[0].top_logprobs
@@ -846,6 +924,7 @@ def decode_and_encode(
                         max_tokens=10,
                         top_logprobs=num_top_logprobs,
                         temperature=0.7,
+                        reasoning_effort=reasoning_effort,
                     )
 
                     top_logprobs = response.choices[0].logprobs.content[0].top_logprobs
@@ -898,6 +977,7 @@ def estimate_tran_mat(
     use_batch=False,
     multiple_summarization=False,
     summarization_count=5,
+    reasoning_effort=None,
 ):
     """
     Estimate the transition matrix for stance consistency across all response options.
@@ -968,6 +1048,7 @@ def estimate_tran_mat(
                 max_tokens,
                 max_argument_words,
                 prompt_choice,
+                reasoning_effort=reasoning_effort,
             )
             # Add letter index to each request for tracking
             for req_info in decode_requests:
@@ -997,7 +1078,8 @@ def estimate_tran_mat(
             encode_requests = create_encode_batch_requests(
                 model, proposition, letters, [result], sep, prompt_choice,
                 multiple_summarization=multiple_summarization,
-                summarization_count=summarization_count
+                summarization_count=summarization_count,
+                reasoning_effort=reasoning_effort,
             )
             # Add letter tracking info
             for req_info in encode_requests:
@@ -1072,6 +1154,7 @@ def estimate_tran_mat(
                 get_probs=True,
                 multiple_summarization=multiple_summarization,
                 summarization_count=summarization_count,
+                reasoning_effort=reasoning_effort,
             )
             # Store results in transition matrix (row j = initial letter)
             results_probs[j, :] = avg_probs  # np.round(avg_probs,3)
@@ -1139,16 +1222,17 @@ def visualize_transition_matrices(results_tranmat, letters, title, file_name):
 
 
     ax.set_xlabel("To State", fontsize=35, fontweight="bold")
-    ax.set_xticks(xticks + 0.5, [tick.replace(" ", "\n") for tick in letter_xticks], fontsize=35, rotation=30, fontweight="bold", ha="center")
+    ax.set_xticks(xticks + 0.5)
+    ax.set_xticklabels([tick.replace(" ", "\n") for tick in letter_xticks], fontsize=35, rotation=30, fontweight="bold", ha="center")
 
     # ax.set_ylabel(None)
     ax.set_ylabel("From State", fontsize=35, fontweight="bold")
     # ax.set_yticks([],[])
-    ax.set_yticks(yticks + 0.5, [tick.replace(" ", "\n") for tick in letter_yticks], fontsize=35, rotation=30, fontweight="bold", ha="right")
+    ax.set_yticks(yticks + 0.5)
+    ax.set_yticklabels([tick.replace(" ", "\n") for tick in letter_yticks], fontsize=35, rotation=30, fontweight="bold", ha="right")
 
     plt.tight_layout()
     plt.savefig(f"{file_name}.pdf", bbox_inches="tight", dpi=300)
-    plt.show()
 
 
 class NumpyArrayEncoder(json.JSONEncoder):
@@ -1160,7 +1244,7 @@ class NumpyArrayEncoder(json.JSONEncoder):
         return json.JSONEncoder.default(self, obj)
 
 
-def chat_with_backoff(client, model, messages, attempts=6, base_delay=1.0, **kwargs):
+def chat_with_backoff(client, model, messages, attempts=6, base_delay=1.0, reasoning_effort=None, **kwargs):
     """
     Chat completion with exponential backoff retry logic for both OpenAI and TogetherAI.
 
@@ -1179,7 +1263,10 @@ def chat_with_backoff(client, model, messages, attempts=6, base_delay=1.0, **kwa
         RuntimeError: If all retry attempts fail
     """
     if "gpt-5" in model.lower():
-        kwargs = {}  # Reset kwargs for GPT-5 models to avoid conflicts
+        kwargs.pop("temperature", None)
+        kwargs.pop("max_tokens", None)
+        if reasoning_effort not in (None, "none"):
+            kwargs["reasoning_effort"] = reasoning_effort
     for i in range(attempts):
         try:
             # Check if using unified client
@@ -1191,7 +1278,6 @@ def chat_with_backoff(client, model, messages, attempts=6, base_delay=1.0, **kwa
                     model=model, messages=messages, **kwargs
                 )
         except (RateLimitError, Exception) as e:
-            breakpoint()
             # Handle rate limit and other retryable errors from both APIs
             if "rate" in str(e).lower() or isinstance(e, RateLimitError):
                 # Rate limit error - use exponential backoff with jitter
@@ -1233,6 +1319,7 @@ def create_decode_batch_requests(
     max_tokens=200,
     max_argument_words=100,
     prompt_choice=1,
+    reasoning_effort=None,
 ):
     """
     Creates batch requests for decode phase.
@@ -1270,16 +1357,21 @@ def create_decode_batch_requests(
                 prompt_choice=prompt_choice,
             )
 
+            decode_body = {
+                "model": model,
+                "messages": [{"role": "user", "content": decode_prompt}],
+            }
+            if "gpt-5" not in model.lower():
+                decode_body["max_tokens"] = max_tokens
+                decode_body["temperature"] = 0.7
+            elif reasoning_effort not in (None, "none"):
+                decode_body["reasoning_effort"] = reasoning_effort
+
             decode_request = {
                 "custom_id": f"decode_{permutation_id}_{rep}",
                 "method": "POST",
                 "url": "/v1/chat/completions",
-                "body": {
-                    "model": model,
-                    "messages": [{"role": "user", "content": decode_prompt}],
-                    "max_tokens": max_tokens,
-                    "temperature": 0.7,
-                },
+                "body": decode_body,
             }
             decode_requests.append(
                 {
@@ -1302,6 +1394,7 @@ def create_encode_batch_requests(
     prompt_choice=1,
     multiple_summarization=False,
     summarization_count=5,
+    reasoning_effort=None,
 ):
     """
     Create batch requests for encode phase using decode results.
@@ -1345,18 +1438,23 @@ def create_encode_batch_requests(
                     prompt_choice=prompt_choice,
                 )
 
+                encode_body = {
+                    "model": model,
+                    "messages": [{"role": "user", "content": encode_prompt}],
+                }
+                if "gpt-5" not in model.lower():
+                    encode_body["max_tokens"] = 10
+                    encode_body["logprobs"] = True
+                    encode_body["top_logprobs"] = 8
+                    encode_body["temperature"] = 0.7
+                elif reasoning_effort not in (None, "none"):
+                    encode_body["reasoning_effort"] = reasoning_effort
+
                 encode_request = {
                     "custom_id": f"encode_{result['permutation_id']}_{result['rep']}_shuffle_{shuffle_idx}",
                     "method": "POST",
                     "url": "/v1/chat/completions",
-                    "body": {
-                        "model": model,
-                        "messages": [{"role": "user", "content": encode_prompt}],
-                        "max_tokens": 10,
-                        "logprobs": True,
-                        "top_logprobs": 8,
-                        "temperature": 0.7,
-                    },
+                    "body": encode_body,
                 }
 
                 encode_requests.append(
@@ -1382,18 +1480,23 @@ def create_encode_batch_requests(
                 prompt_choice=prompt_choice,
             )
 
+            encode_body = {
+                "model": model,
+                "messages": [{"role": "user", "content": encode_prompt}],
+            }
+            if "gpt-5" not in model.lower():
+                encode_body["max_tokens"] = 10
+                encode_body["logprobs"] = True
+                encode_body["top_logprobs"] = 8
+                encode_body["temperature"] = 0.7
+            elif reasoning_effort not in (None, "none"):
+                encode_body["reasoning_effort"] = reasoning_effort
+
             encode_request = {
                 "custom_id": f"encode_{result['permutation_id']}_{result['rep']}_single",
                 "method": "POST",
                 "url": "/v1/chat/completions",
-                "body": {
-                    "model": model,
-                    "messages": [{"role": "user", "content": encode_prompt}],
-                    "max_tokens": 10,
-                    "logprobs": True,
-                    "top_logprobs": 8,
-                    "temperature": 0.7,
-                },
+                "body": encode_body,
             }
 
             encode_requests.append(
@@ -1517,11 +1620,27 @@ def submit_batch_and_wait(client, requests, batch_description="Batch job"):
 
             time.sleep(30)  # Check every 30 seconds
 
+
         # Download results
+        print("Downloading results from batch job...")
         result_file_id = batch_job.output_file_id
+        if result_file_id is None:
+            error_info = (
+                f"Batch completed but output_file_id is None "
+                f"(request counts: {batch_job.request_counts}). "
+                f"All requests may have failed."
+            )
+            if hasattr(batch_job, "error_file_id") and batch_job.error_file_id:
+                try:
+                    error_content = client.files.content(batch_job.error_file_id)
+                    error_info += f"\nError file sample: {error_content.text[:2000]}"
+                except Exception as e:
+                    error_info += f"\nCould not retrieve error file: {e}"
+            raise RuntimeError(error_info)
         result_content = client.files.content(result_file_id)
 
         # Parse results
+        print("Parsing results...")
         results = {}
         for line in result_content.text.split("\n"):
             if line.strip():
@@ -1568,6 +1687,35 @@ def process_decode_batch_results(batch_results, decode_requests):
             logging.info(f"Rep {req_info['rep']}: Generated argument: {argument}")
 
     return processed_results
+
+
+def _extract_top_logprobs(result):
+    """
+    Extract top_logprobs from a batch result.
+
+    For models that support logprobs the real values are returned directly.
+    For models that don't (e.g. gpt-5), logprobs will be None in the response,
+    so we fake them by extracting the first valid letter (A-E) from the text
+    content and assigning it logprob=0.0 (i.e. probability=1.0), mirroring
+    what UnifiedChatClient._call_openai does in the non-batch path.
+    Raises ValueError if no valid letter can be extracted, so a missing/empty
+    encode response stops the run loudly instead of silently degrading.
+    """
+    import re
+    choice = result["response"]["body"]["choices"][0]
+    logprobs = choice.get("logprobs")
+    if logprobs and logprobs.get("content"):
+        return logprobs["content"][0]["top_logprobs"]
+    # Fake logprobs: extract first valid letter from the text response
+    text_content = choice["message"]["content"].strip()
+    letter_match = re.search(r"([A-E])", text_content)
+    if letter_match:
+        return [{"token": letter_match.group(1), "logprob": 0.0}]
+    raise ValueError(
+        f"Encode response (custom_id={result.get('custom_id', 'unknown')}) contained "
+        f"no parseable A-E letter: '{text_content}'. The model likely returned empty "
+        f"content (e.g. reasoning consumed the entire token budget) or refused."
+    )
 
 
 def process_encode_batch_results(batch_results, encode_requests, letters, multiple_summarization=False):
@@ -1618,7 +1766,7 @@ def process_encode_batch_results(batch_results, encode_requests, letters, multip
                 custom_id = req_info["request"]["custom_id"]
                 if custom_id in batch_results:
                     result = batch_results[custom_id]
-                    top_logprobs = result["response"]["body"]["choices"][0]["logprobs"]["content"][0]["top_logprobs"]
+                    top_logprobs = _extract_top_logprobs(result)
                     letters_shuffled_encode = req_info["letters_shuffled_encode"]
                     shuffle_idx = req_info.get("shuffle_idx", 0)
                     logging.info(f"Rep {rep} (shuffle {shuffle_idx}): Top choice: <{top_logprobs[0]['token']}>")
@@ -1643,9 +1791,7 @@ def process_encode_batch_results(batch_results, encode_requests, letters, multip
             custom_id = req_info["request"]["custom_id"]
             if custom_id in batch_results:
                 result = batch_results[custom_id]
-                top_logprobs = result["response"]["body"]["choices"][0]["logprobs"][
-                    "content"
-                ][0]["top_logprobs"]
+                top_logprobs = _extract_top_logprobs(result)
 
                 permutation = req_info["permutation"]
                 str_permutation = str(permutation)

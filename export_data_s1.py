@@ -7,16 +7,16 @@ in machine-readable format (numeric columns, no formatted strings).
 Sheets:
     Fig2A_S3A   - Transition matrix (topic 2401, gpt_5_4): Mean & SE
     Fig2B_S3B   - Transition matrix (topic 3234, gpt_5_4): Mean & SE
-    Table1A     - Avg Probability of Stance Preservation (9 subset models)
+    Table1A     - Success rate by initial stance          (9 subset models)
     Table1B     - Bonferroni-Corrected CI Inclusion Rate  (9 subset models)
     Fig5        - SPR bar chart values (9 subset models)
-    TableS1     - Avg Probability of Stance Preservation (14 comprehensive models)
-    TableS2     - Bonferroni-Corrected CI Inclusion Rate  (14 comprehensive models)
-    TableS3     - CI Inclusion Rate                       (14 comprehensive models)
-    TableS4     - Success Rate                            (14 comprehensive models)
-    FigS4       - SPR bar chart values (14 comprehensive models)
-    FigS5A      - Success-rate vs threshold curves        (14 comprehensive models)
-    FigS5B      - AUC comparison                          (14 comprehensive models)
+    TableS1     - Success rate by initial stance          (18 comprehensive runs)
+    TableS2     - Bonferroni-Corrected CI Inclusion Rate  (18 comprehensive runs)
+    TableS3     - CI Inclusion Rate                       (18 comprehensive runs)
+    TableS4     - Pass rate at threshold 0.95             (18 comprehensive runs)
+    FigS4       - SPR bar chart values (18 comprehensive runs)
+    FigS6A      - Pass rate vs threshold curves           (18 comprehensive runs)
+    FigS6B      - AUC of the pass-rate curve (normalized) (18 comprehensive runs)
 """
 
 import os
@@ -67,6 +67,10 @@ COMPREHENSIVE_MODELS = [
     "gpt_4o_mini_multiple_summarization",
     "gpt_4o_mini_in_context",
     "gpt_4o_mini_assert",
+    "gpt_4o_mini_reflection",
+    "gpt_5_4_reflection",
+    "gpt_5_4_reflection_third_person",
+    "gpt_5_4_reflection_third_person_medium",
 ]
 
 HEATMAP_CONFIGS = [
@@ -144,7 +148,7 @@ def build_spr_df(model_list):
 
 
 def build_threshold_curves_df(model_list):
-    """Success-rate vs threshold: models as rows, thresholds as columns."""
+    """Pass rate vs threshold (Fig. S6A): models as rows, thresholds as columns."""
     records = []
     for model in model_list:
         csv_path = os.path.join(RESULTS_DIR, model, DETAILED_CSV)
@@ -215,20 +219,20 @@ def main():
         )
         sheet_count += 1
 
-        # Fig S5A (threshold curves)
+        # Fig S6A (pass-rate curves)
         build_threshold_curves_df(COMPREHENSIVE_MODELS).to_excel(
-            writer, sheet_name="FigS5A", index=False
+            writer, sheet_name="FigS6A", index=False
         )
         sheet_count += 1
 
-        # Fig S5B (AUC bar)
+        # Fig S6B (AUC bar)
         if os.path.exists(AUC_CSV):
             build_auc_df().to_excel(
-                writer, sheet_name="FigS5B", index=False
+                writer, sheet_name="FigS6B", index=False
             )
             sheet_count += 1
         else:
-            print(f"  Warning: {AUC_CSV} not found, skipping FigS5B.")
+            print(f"  Warning: {AUC_CSV} not found, skipping FigS6B.")
 
     print(f"Data S1 saved to: {OUTPUT_FILE}")
     print(f"  Sheets written: {sheet_count}")

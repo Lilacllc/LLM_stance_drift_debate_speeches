@@ -23,6 +23,7 @@ MODEL_NAME_MAP = {
     "gpt-4o-mini": "gpt_4o_mini",
     "gpt-4.1": "gpt_4_1",
     "gpt-5.4": "gpt_5_4",
+    "gpt-5.2": "gpt_5_2",
     "gpt-3.5-turbo": "gpt_3_5_turbo",
     "gpt-4o": "gpt_4o",
     "Qwen/Qwen3-Next-80B-A3B-Instruct": "qwen3_a3b",
@@ -87,9 +88,25 @@ def main():
     )
     parser.add_argument(
         "--prompt_choice",
-        type=int,
-        default=1,
-        help="Prompt choice for the experiment (default: 1)",
+        type=str,
+        default="1",
+        help=(
+            "Prompt choice for the experiment (default: 1). Numeric variants 1-9 "
+            "or a named variant: 'reflection', 'reflection_third_person'."
+        ),
+    )
+    parser.add_argument(
+        "--reasoning_effort",
+        type=str,
+        default=None,
+        choices=["none", "minimal", "low", "medium", "high"],
+        help=(
+            "Reasoning effort for reasoning models (gpt-5*). Default: omit the flag "
+            "to use the OpenAI default (no parameter sent). 'none' is treated "
+            "identically to omitting it (no parameter sent, no filename suffix); "
+            "only minimal/low/medium/high are sent to the API and labeled in output "
+            "filenames as _effort_<value>."
+        ),
     )
 
     args = parser.parse_args()
@@ -101,6 +118,11 @@ def main():
     multiple_summarization = args.multiple_summarization
     summarization_count = args.summarization_count
     prompt_choice = args.prompt_choice
+    # generate_prompt compares numeric variants as ints (== 1 ... == 9) and named
+    # variants as strings, so normalize digit strings from argparse back to int.
+    if prompt_choice.isdigit():
+        prompt_choice = int(prompt_choice)
+    reasoning_effort = args.reasoning_effort
 
     # Load debate speeches dataset
     print("Loading debate speeches dataset...")
@@ -124,6 +146,15 @@ def main():
     if use_batch and not model_name.startswith("gpt"):
         print("Error: Batch API is only supported with OpenAI models (gpt-*).")
         print("Either use an OpenAI model or remove the --batch flag.")
+        sys.exit(1)
+
+    # Validate reasoning_effort is only used with reasoning models (gpt-5*).
+    # 'none'/omitted means "send nothing", so they are allowed for any model.
+    if reasoning_effort not in (None, "none") and "gpt-5" not in model_name.lower():
+        print(
+            f"Error: --reasoning_effort is only valid for reasoning models (gpt-5*), "
+            f"not '{model_name}'."
+        )
         sys.exit(1)
 
     # Create output directory structure
@@ -174,11 +205,19 @@ def main():
             client = unified_client
         # Create filename with batch indicator
         batch_suffix = "_batch" if use_batch else ""
+        # Reasoning-effort suffix: only non-baseline efforts are labeled. Omitting the
+        # flag or passing 'none' yields no suffix, keeping baseline filenames unchanged.
+        effort_suffix = (
+            f"_effort_{reasoning_effort}"
+            if reasoning_effort not in (None, "none")
+            else ""
+        )
         file_name = (
             TOPIC
             + MODEL_NAME_MAP[model_name]
             + "_prompt_"
             + str(prompt_choice)
+            + effort_suffix
             #   + batch_suffix # no need to distinguish between batch and non-batch runs
         )
 
@@ -205,17 +244,14 @@ def main():
                 use_batch=use_batch,
                 multiple_summarization=multiple_summarization,
                 summarization_count=summarization_count,
+                reasoning_effort=reasoning_effort,
             )
-        except:
-            print(f"Error processing topic_id {topic_id} with model {model_name}.")
+        except Exception as e:
+            import traceback
+            print(f"Error processing topic_id {topic_id} with model {model_name}: {type(e).__name__}: {e}")
+            traceback.print_exc()
             print("Please check the log file for details:", log_file_path)
             continue
-
-        # Save visualization to the debate speeches output directory
-        plot_file_path = os.path.join(debate_speeches_output_dir, file_name)
-        visualize_transition_matrices(
-            results_tranmat, letter_list, proposition, plot_file_path
-        )
 
         try:
             with open(json_file_path, "w") as file_path:
@@ -224,6 +260,12 @@ def main():
                 json.dump(results_probs, file_path, cls=NumpyArrayEncoder, indent=4)
         except:
             pdb.set_trace()
+
+        # Save visualization to the debate speeches output directory
+        plot_file_path = os.path.join(debate_speeches_output_dir, file_name)
+        visualize_transition_matrices(
+            results_tranmat, letter_list, proposition, plot_file_path
+        )
 
         print(f"Completed processing for topic_id: {topic_id}")
         print(f"Results saved to: {json_file_path}")

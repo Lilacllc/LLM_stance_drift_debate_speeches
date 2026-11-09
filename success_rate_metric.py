@@ -22,13 +22,31 @@ def main():
     parser.add_argument(
         "--all-letters-only", action="store_true", help="Only output all letters results, skip neutral outputs"
     )
+    parser.add_argument(
+        "--models",
+        type=str,
+        default=None,
+        help="Comma-separated list of model dirs to plot. Overrides the hardcoded 14-model list.",
+    )
+    parser.add_argument(
+        "--output-suffix",
+        type=str,
+        default=None,
+        help="Suffix appended to all output filenames (before extension), to avoid clobbering the published figures.",
+    )
     args = parser.parse_args()
 
     # Create metrics directory if it doesn't exist
     metrics_dir = "figures"
     os.makedirs(metrics_dir, exist_ok=True)
 
-    # Fixed comprehensive model list (13 models)
+    def with_sfx(filename):
+        if not args.output_suffix:
+            return filename
+        base, ext = os.path.splitext(filename)
+        return f"{base}{args.output_suffix}{ext}"
+
+    # Fixed comprehensive model list (18 models)
     model_dirs = [
         "gpt_4o_mini",
         "gpt_4_1",
@@ -44,7 +62,14 @@ def main():
         "gpt_4o_mini_multiple_summarization",
         "gpt_4o_mini_in_context",
         "gpt_4o_mini_assert",
+        "gpt_4o_mini_reflection",
+        "gpt_5_4_reflection",
+        "gpt_5_4_reflection_third_person",
+        "gpt_5_4_reflection_third_person_medium",
     ]
+
+    if args.models:
+        model_dirs = [m.strip() for m in args.models.split(",") if m.strip()]
 
     # Store results for plotting
     curves = {}
@@ -116,15 +141,16 @@ def main():
         else:
             plt.plot(thresholds, avg_success, marker="o", label=get_plot_name(model_dir).replace("-\n", "-").replace("\n", " "))
     plt.xlabel("Threshold", fontsize=30, fontweight="bold")
-    plt.ylabel("Average Success Rate", fontsize=30, fontweight="bold")
+    plt.ylabel("Pass rate", fontsize=30, fontweight="bold")
     plt.yticks(fontsize=30, fontweight="bold")
     plt.xticks(fontsize=30, fontweight="bold")
     plt.xlim(0.5, 1.0)  # Align with AUC computation range (0.5 to 1.0)
-    plt.title("Threshold vs. Average Success Rate", fontsize=40, fontweight="bold")
-    plt.legend(prop={'size': 30}, ncol=2)
+    plt.title("Pass rate vs. threshold", fontsize=40, fontweight="bold")
+    # Legend below the axes so that 18 labels neither clip nor cover the curves
+    plt.legend(prop={'size': 26}, ncol=3, loc="upper center", bbox_to_anchor=(0.5, -0.1), frameon=False)
     plt.tight_layout()
     plt.savefig(
-        os.path.join(metrics_dir, "success_rate_vs_threshold_all_letters.pdf"),  dpi=500
+        os.path.join(metrics_dir, with_sfx("success_rate_vs_threshold_all_letters.pdf")),  dpi=500, bbox_inches="tight"
     )
     plt.close()
 
@@ -150,7 +176,7 @@ def main():
         plt.legend(prop={'size': 30}, ncol=2)
         plt.tight_layout()
         plt.savefig(
-            os.path.join(metrics_dir, "success_rate_vs_threshold_Neutral.pdf"),  dpi=500
+            os.path.join(metrics_dir, with_sfx("success_rate_vs_threshold_Neutral.pdf")),  dpi=500
         )
         plt.close()
 
@@ -160,7 +186,7 @@ def main():
 
     # Save to CSV files
     auc_df_all.to_csv(
-        os.path.join(metrics_dir, "auc_results_all_letters.csv"), index=False
+        os.path.join(metrics_dir, with_sfx("auc_results_all_letters.csv")), index=False
     )
     
     if not args.all_letters_only:
@@ -168,7 +194,7 @@ def main():
             "AUC", ascending=False
         )
         auc_df_neutral.to_csv(
-            os.path.join(metrics_dir, "auc_results_neutral.csv"), index=False
+            os.path.join(metrics_dir, with_sfx("auc_results_neutral.csv")), index=False
         )
 
     # Create bar plots for AUC results
@@ -178,6 +204,15 @@ def main():
     # Function to assign colors based on model type
     def get_model_color(model_name):
         model_lower = model_name.lower()
+        # Reflection variants — checked first so they don't fall through to baselines
+        reflection_variants = {
+            "gpt_4o_mini_reflection": "#7FE5CC",  # lighter teal (vs gpt_4o_mini #2AADA6)
+            "gpt_5_4_reflection": "#A5A8F4",  # lighter indigo (vs gpt_5_4 #6366F1)
+            "gpt_5_4_reflection_third_person": "#C3C5F8",  # next indigo tint
+            "gpt_5_4_reflection_third_person_medium": "#DDDEFB",  # lightest indigo tint
+        }
+        if model_lower in reflection_variants:
+            return reflection_variants[model_lower]
         # Check for GPT-4o-mini variants first (most specific)
         gpt4o_mini_variants = {
             "gpt_4o_mini_reversed": "#4ECDC4",  # Teal
@@ -243,7 +278,8 @@ def main():
         ].apply(format_model_name)
 
     # Plot 3: AUC Bar Plot - All Letters
-    plt.figure(figsize=(30.16, 12))
+    # Width scales with the number of models (~2.16 per bar ≈ the original 30.16 at n=14)
+    plt.figure(figsize=(max(12, 2.16 * len(auc_df_all_formatted)), 12))
 
     # Get colors for each model
     colors = [get_model_color(model) for model in auc_df_all_formatted["Model"]]
@@ -252,15 +288,16 @@ def main():
         range(len(auc_df_all_formatted)), auc_df_all_formatted["AUC"], color=colors
     )
     plt.xlabel("Model", fontsize=30, fontweight="bold")
-    plt.ylabel("Area Under Curve (AUC)", fontsize=30, fontweight="bold")
-    plt.title("AUC Comparison", fontsize=40, fontweight="bold")
+    plt.ylabel("Normalized AUC", fontsize=30, fontweight="bold")
+    plt.title("AUC of the pass-rate curve", fontsize=40, fontweight="bold")
     plt.xticks(
         range(len(auc_df_all_formatted)),
         auc_df_all_formatted["Model_Formatted"],
-        rotation=45,
-        ha="center",
+        rotation=60,
+        ha="right",
+        rotation_mode="anchor",
         fontweight="bold",
-        fontsize=30
+        fontsize=26
     )
     plt.yticks(fontsize=30, fontweight="bold")
 
@@ -280,7 +317,7 @@ def main():
 
     plt.tight_layout()
     plt.savefig(
-        os.path.join(metrics_dir, "auc_barplot_all_letters.pdf"),
+        os.path.join(metrics_dir, with_sfx("auc_barplot_all_letters.pdf")),
          dpi=500,
         bbox_inches="tight",
     )
@@ -288,7 +325,7 @@ def main():
 
     # Plot 4: AUC Bar Plot - Neutral (Letter C) - skip if --all-letters-only is set
     if not args.all_letters_only:
-        plt.figure(figsize=(30.16, 12))
+        plt.figure(figsize=(max(12, 2.16 * len(auc_df_neutral_formatted)), 12))
 
         # Get colors for each model
         colors_neutral = [
@@ -307,10 +344,11 @@ def main():
         plt.xticks(
             range(len(auc_df_neutral_formatted)),
             auc_df_neutral_formatted["Model_Formatted"],
-            rotation=45,
-            ha="center",
+            rotation=60,
+            ha="right",
+            rotation_mode="anchor",
             fontweight="bold",
-            fontsize=30
+            fontsize=26
         )
 
         # Add value labels on bars
@@ -329,7 +367,7 @@ def main():
 
         plt.tight_layout()
         plt.savefig(
-            os.path.join(metrics_dir, "auc_barplot_neutral.pdf"),
+            os.path.join(metrics_dir, with_sfx("auc_barplot_neutral.pdf")),
              dpi=500,
             bbox_inches="tight",
         )

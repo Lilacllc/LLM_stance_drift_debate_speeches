@@ -18,6 +18,10 @@ MODEL_NAME_LATEX = {
     "gpt_4o_mini_multiple_summarization": r"\texttt{GPT-4o-mini (multiple extraction)}",
     "gpt_4o_mini_in_context": r"\texttt{GPT-4o-mini (in-context)}",
     "gpt_4o_mini_assert": r"\texttt{GPT-4o-mini (assert)}",
+    "gpt_4o_mini_reflection": r"\texttt{GPT-4o-mini (reflection)}",
+    "gpt_5_4_reflection": r"\texttt{GPT-5.4 (reflection)}",
+    "gpt_5_4_reflection_third_person": r"\texttt{GPT-5.4 (third-person reflection)}",
+    "gpt_5_4_reflection_third_person_medium": r"\texttt{GPT-5.4 (third-person reflection, medium reasoning)}",
 }
 
 # Plot-formatted names (used in matplotlib xtick labels, with \n for line breaks)
@@ -36,6 +40,10 @@ MODEL_NAME_PLOT = {
     "gpt_4o_mini_multiple_summarization": "GPT-4o-mini\n(multiple\nextraction)",
     "gpt_4o_mini_in_context": "GPT-4o-mini\n(in-context)",
     "gpt_4o_mini_assert": "GPT-4o-mini\n(assert)",
+    "gpt_4o_mini_reflection": "GPT-4o-mini\n(reflection)",
+    "gpt_5_4_reflection": "GPT-5.4\n(reflection)",
+    "gpt_5_4_reflection_third_person": "GPT-5.4\n(third-person\nreflection)",
+    "gpt_5_4_reflection_third_person_medium": "GPT-5.4\n(third-person\nreflection,\nmedium reasoning)",
 }
 
 

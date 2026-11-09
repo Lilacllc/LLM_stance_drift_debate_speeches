@@ -1,6 +1,6 @@
 # LLM stance drift on debate speeches
 
-Code for studying how large language models **preserve or shift self-reported stance** when answering multiple-choice items tied to debate-speech propositions. The pipeline runs model calls, builds **empirical transition matrices** (stance before vs. after summarization / encoding), and aggregates **faithfulness** and **success-rate** metrics for paper figures and tables.
+Code for studying how large language models **preserve or shift self-reported stance** when answering multiple-choice items tied to debate-speech propositions. The pipeline runs model calls, builds **empirical transition matrices** (stance before vs. after summarization / encoding), and aggregates **faithfulness** and **success-rate** metrics for paper figures and tables. It also covers **prompt-variation / reasoning-effort runs** (reflection prompts, `--reasoning_effort` for gpt-5* models) and **SDR (Stance Drift Rate)** analysis decomposing off-diagonal drift into five classes (polarization, moderation, moderation to neutral, flipping, deviation from neutrality).
 
 ## Repository layout
 
@@ -9,7 +9,8 @@ Code for studying how large language models **preserve or shift self-reported st
 | `main.py` | Run LLM experiments over the debate-speeches dataset (`propositions.json` / `example.json`); writes per-topic logs and JSON under `results/`. |
 | `postprocess.py` | Aggregate runs into bar plots, CSV summaries, and `postprocess_results/model_comparison.csv`. |
 | `faithfulness_metric.py` | Model-comparison bar plots and LaTeX table snippets (subset / comprehensive). |
-| `success_rate_metric.py` | Success-rate vs. threshold curves and AUC summaries. |
+| `success_rate_metric.py` | Pass-rate vs. threshold curves and AUC summaries. |
+| `compare_prompt_variations.py` | GPT-5.4 prompt/reasoning ladder comparison (SPR + SDR drift modes by stance). |
 | `visualization.py` | Transition-matrix heatmaps for selected topics. |
 | `export_data_s1.py` | Multi-sheet supplementary Excel (`figures/data_S1.xlsx`). |
 | `human_extraction/` | Human survey postprocessing, majority-gold scoring (`compute_majority_gold_scores.py`), and related utilities. |

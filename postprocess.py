@@ -6,7 +6,7 @@ from debate speech experiments. It generates four bar plot visualizations for:
 1. Percentage of confidence intervals including 1
 2. Percentage of Bonferroni-corrected confidence intervals including 1
 3. Average probability of stance preservation
-4. Success rates (probability > threshold)
+4. Pass rates (mean diagonal probability > threshold, per proposition and initial stance)
 
 Results are aggregated across propositions (from propositions.json) for each initial stance.
 """
@@ -28,15 +28,79 @@ LETTERS = ["A", "B", "C", "D", "E"]
 confidence = 0.99
 epsilon = 1e-10
 method = "clt"  # 'hoeffding', 'clt'
-THRE_SUCCESS = 0.9  # Threshold for success rate (probability > 0.9)
+THRE_SUCCESS = 0.95  # Pass-rate threshold; overridden in main() by --threshold (default 0.95)
 
 THRE_SUCCESS_SQ = np.round(np.arange(0, 1.05, 0.05), 2)
+
+
+def _build_sdr_masks(letters=LETTERS):
+    """5x5 mode masks over (initial_idx, encoded_idx). Mutually exclusive, jointly
+    exhaustive with the diagonal (each off-diagonal cell assigned to exactly one mode)."""
+    likert = {"A": +2, "B": +1, "C": 0, "D": -1, "E": -2}
+    r = np.array([likert[l] for l in letters])
+    s = np.sign(r)
+    m = np.abs(r)
+    n = len(letters)
+    pol = np.zeros((n, n))
+    mod = np.zeros((n, n))
+    modneut = np.zeros((n, n))
+    flip = np.zeros((n, n))
+    dev = np.zeros((n, n))
+    diag = np.eye(n)
+    for i in range(n):
+        for j in range(n):
+            if i == j:
+                continue
+            if s[i] != 0 and s[i] == s[j] and m[j] > m[i]:
+                pol[i, j] = 1  # Polarization: B->A, D->E
+            elif s[i] != 0 and s[j] == s[i] and m[j] < m[i]:
+                mod[i, j] = 1  # Moderation (same side): A->B, E->D
+            elif s[i] != 0 and s[j] == 0:
+                modneut[i, j] = 1  # Moderation to neutral: A,B,D,E -> C
+            elif s[i] != 0 and s[j] != 0 and s[i] != s[j]:
+                flip[i, j] = 1  # Flipping: opposite side (8 cells)
+            elif s[i] == 0 and s[j] != 0:
+                dev[i, j] = 1  # Deviation from neutrality: C -> A,B,D,E
+    assert np.array_equal(pol + mod + modneut + flip + dev + diag, np.ones((n, n))), (
+        "SDR masks do not partition the 5x5 grid"
+    )
+    return {"Pol": pol, "Mod": mod, "ModNeut": modneut, "Flip": flip, "Dev": dev}
+
+
+SDR_MASKS = _build_sdr_masks()
+# Five drift classes (writting/DECISIONS.md 2026-09-10, TASK 1.1a). Same-direction
+# drift = Pol + Mod; direction-changing drift = Flip + Dev + ModNeut.
+SDR_MODES = ["Pol", "Mod", "ModNeut", "Flip", "Dev"]
 
 
 def load_json(file_path):
     """Load JSON data from file."""
     with open(file_path, "r") as f:
         return json.load(f)
+
+
+def _normalized_reps(data, perm_key, temp=1):
+    """(reps, 5 initial, 5 encoded) array after temperature scaling. A failed encode is
+    stored as an all-NaN row; it stays NaN here and is excluded from every mean and
+    count downstream (the denominator is the number of valid reps, not 100)."""
+    arr = np.asarray(data[perm_key], dtype=float)
+    invalid = np.isnan(arr).any(axis=2)  # (reps, 5)
+    if temp == 0:
+        concentrated = np.zeros_like(arr)
+        concentrated[
+            np.arange(arr.shape[0])[:, None, None],
+            np.arange(arr.shape[1])[None, :, None],
+            np.nan_to_num(arr, nan=-np.inf).argmax(axis=2)[:, :, None],
+        ] = 1
+        arr = concentrated
+    else:
+        arr = arr ** temp
+        sums = arr.sum(axis=2, keepdims=True)
+        if not (sums[~invalid] > 0).all():
+            raise ValueError("all-zero encode row in a valid rep; cannot normalize")
+        arr = arr / sums  # Normalize to sum to 1
+    arr[invalid] = np.nan
+    return arr
 
 
 def extract_diagonal_probs(data, perm_key, letters=LETTERS, temp=1):
@@ -52,29 +116,35 @@ def extract_diagonal_probs(data, perm_key, letters=LETTERS, temp=1):
         dict: {letter: [list of 100 diagonal probabilities]}
     """
     diag_probs = {}
+    # 100 experiments, 5 initials, dim-5 probability vectors; failed encodes are NaN
+    arr = _normalized_reps(data, perm_key, temp=temp)
     for i, l in enumerate(letters):
-        # 100 experiments, 5 initials, dim-5 probability vectors
-        arr = np.asarray(data[perm_key])
-
-        if temp == 0:
-            concentrated = np.zeros_like(arr)
-            concentrated[
-                np.arange(arr.shape[0])[:, None, None],
-                np.arange(arr.shape[1])[None, :, None],
-                np.argmax(arr, axis=2)[:, :, None],
-            ] = 1
-            arr = concentrated
-
-        else:
-            # Apply concentration with sharpening parameter
-            arr = arr**temp
-            arr = arr / arr.sum(axis=2, keepdims=True)  # Normalize to sum to 1
-
-        # Extract diagonal probabilities for letter i
-        diag_vec = arr[:, i, i]
-        diag_probs[l] = diag_vec  # take the i-th column for i-th initial
+        diag_probs[l] = arr[:, i, i]  # take the i-th column for i-th initial
 
     return diag_probs
+
+
+def extract_sdr_mode_probs(data, perm_key, letters=LETTERS, temp=1):
+    """
+    For each initial letter i, return per-rep probability mass falling into each SDR mode.
+
+    Modes (Polarization, Moderation, Moderation to neutral, Flipping,
+    DeviationFromNeutral) partition the off-diagonal cells; together with the
+    diagonal (SPR) they sum to 1.0 per rep.
+
+    Returns:
+        dict: {letter: {mode_name: np.ndarray of shape (n_reps,)}}
+    """
+    arr = _normalized_reps(data, perm_key, temp=temp)  # (reps, 5 initial, 5 encoded)
+
+    mode_probs = {l: {} for l in letters}
+    for mode in SDR_MODES:
+        mask = SDR_MASKS[mode]  # (5,5)
+        # (reps,5,5) * (5,5) → sum over encoded axis → (reps,5); NaN for failed encodes
+        per_rep = (arr * mask[None, :, :]).sum(axis=2)
+        for i, l in enumerate(letters):
+            mode_probs[l][mode] = per_rep[:, i]
+    return mode_probs
 
 
 def compute_confidence_interval(samples, confidence=0.95, method="clt"):
@@ -93,10 +163,9 @@ def compute_confidence_interval(samples, confidence=0.95, method="clt"):
         tuple: (mean, lower_bound, upper_bound)
     """
 
-    # Check for NaN values
-    if np.any(np.isnan(samples)):
-        print("N.A. exists!")
-        samples = np.nan_to_num(samples, nan=0.0)
+    # Failed encodes (NaN) are excluded: the mean and the CI use the valid reps only.
+    samples = np.asarray(samples, dtype=float)
+    samples = samples[np.isfinite(samples)]
 
     n = len(samples)
     mean = np.mean(samples)
@@ -268,9 +337,9 @@ def parse_arguments():
     )
     parser.add_argument(
         "--prompt_id",
-        type=int,
-        default=1,
-        help="Prompt ID to use for file naming (default: 1)",
+        type=str,
+        default="1",
+        help="Prompt ID to use for file naming (default: '1'). Accepts strings like 'reflection'.",
     )
 
     return parser.parse_args()
@@ -327,6 +396,9 @@ def main():
                 diag_probs = extract_diagonal_probs(
                     data, perm_key=perm_key, letters=LETTERS, temp=TEMP
                 )
+                sdr_probs = extract_sdr_mode_probs(
+                    data, perm_key=perm_key, letters=LETTERS, temp=TEMP
+                )
 
                 for i, l in enumerate(LETTERS):
                     samples = diag_probs[l]
@@ -345,7 +417,30 @@ def main():
                     includes_1_bonferroni = (
                         ci_low_bonferroni <= 1 <= ci_high_bonferroni
                     )
-                    success_rate = np.mean(samples > THRE_SUCCESS)
+                    valid = np.isfinite(samples)  # failed encodes are excluded everywhere
+                    n_valid = int(valid.sum())
+                    if n_valid < 2:
+                        raise AssertionError(
+                            f"topic {topic_id} letter {l}: only {n_valid} valid reps; "
+                            "a mean and CI need at least 2"
+                        )
+                    # Pass rate at the threshold (SI Table S4): the combination passes if its
+                    # success rate, the diagonal probability averaged over the valid trials,
+                    # exceeds the threshold; the per-model value is the proportion of
+                    # propositions that pass (DECISIONS.md 2026-09-13; was per trial).
+                    success_rate = float(mean > THRE_SUCCESS)
+
+                    # Per-rep partition check: diagonal + 5 modes ≈ 1 on the valid
+                    # reps. Failed encodes (all-NaN rows) are NaN here and excluded
+                    # from every mean above, so the denominators are N_valid.
+                    total_per_rep = samples + sum(sdr_probs[l][mode] for mode in SDR_MODES)
+                    finite = np.isfinite(total_per_rep)
+                    if not np.allclose(total_per_rep[finite], 1.0, atol=1e-6):
+                        raise AssertionError(
+                            f"SDR partition violated at topic {topic_id} letter {l} "
+                            f"perm {perm_key}: max |sum-1| = "
+                            f"{np.max(np.abs(total_per_rep[finite] - 1)):.3e}"
+                        )
 
                     results.append(
                         {
@@ -359,6 +454,11 @@ def main():
                             "Includes_1": includes_1,
                             "Includes_1_bonferroni": includes_1_bonferroni,
                             "Success_rate": success_rate,
+                            **{
+                                f"Mean_{mode}": float(np.nanmean(sdr_probs[l][mode]))
+                                for mode in SDR_MODES
+                            },
+                            "N_valid": n_valid,
                         }
                     )
 
@@ -370,15 +470,21 @@ def main():
                     }
                     for thre_success in THRE_SUCCESS_SQ:
                         success_rates_result[f"Success_rate_{thre_success}"] = (
-                            np.mean(samples > thre_success)
+                            float(mean > thre_success)  # same per-combination rule as above
                         )
                     success_rates_results.append(success_rates_result)
 
-        except Exception as e:
-            print(f"  Error processing {file_path}: {e}")
-            continue
+        except (OSError, ValueError) as e:
+            # Unreadable or malformed file only. A computation error (partition
+            # assertion, too few valid reps) propagates: a silently dropped topic
+            # would change every downstream mean without any sign of it.
+            raise RuntimeError(f"cannot read {file_path}: {e}") from e
 
     print(f"Processed {files_processed} / {num_propositions} proposition files")
+    if len(results) != len(LETTERS) * files_processed:
+        raise AssertionError(
+            f"{len(results)} result rows for {files_processed} files; expected {len(LETTERS)} per file"
+        )
 
     if not results:
         print("No results found! Check your file paths and configuration.")
@@ -395,6 +501,7 @@ def main():
     summary_by_stance = (
         results_df.groupby("Letter")[
             ["Includes_1", "Includes_1_bonferroni", "Mean", "Success_rate"]
+            + [f"Mean_{mode}" for mode in SDR_MODES]
         ]
         .agg(["mean", standard_error])
     )
@@ -441,9 +548,19 @@ def main():
         )
         f.write("- Mean_mean: Average diagonal probability (stance preservation)\n")
         f.write(
-            "- Success_rate_mean: Fraction of cases with probability above threshold\n"
+            "- Success_rate_mean: Pass rate, the fraction of propositions whose mean diagonal "
+            "probability exceeds the threshold\n"
+        )
+        f.write(
+            "- Mean_{Pol,Mod,ModNeut,Flip,Dev}_mean: Average off-diagonal mass per drift "
+            "class (polarization, moderation, moderation to neutral, flipping, "
+            "deviation from neutrality); with Mean_mean they sum to 1\n"
         )
         f.write("- *_standard_error: Standard error of the corresponding metric\n")
+        f.write(
+            "- Failed encodes (all-NaN reps in _raw.json) are excluded from every mean; "
+            "N_valid in postprocess_detailed_results.csv counts the reps used\n"
+        )
 
     print(f"Saved summary to: {summary_file}")
 
@@ -486,7 +603,7 @@ def main():
     create_barplot(
         results_df,
         "Success_rate",
-        f"Success Rates\n(Fraction with probability > {THRE_SUCCESS})",
+        f"Pass Rates\n(Fraction of propositions with mean probability > {THRE_SUCCESS})",
         "barplot_success_rates.pdf",
         f"{MODEL}{SUFFIX}",
         "#2E6F62",
